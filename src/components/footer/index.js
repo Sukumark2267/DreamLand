@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>DREAMLAND ATHLETICS</h4>
           <p>
-            Brampton's premier fitness facility specializing in athletic performance training and
+            Brampton&rsquo;s premier fitness facility specializing in athletic performance training and
             community fitness.
           </p>
           <div className="social-links">

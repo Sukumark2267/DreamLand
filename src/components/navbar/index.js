@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="fixed w-full bg-white z-50 transition-shadow duration-300">
     <div className="logo">
-      <img src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" />
+      <Image src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" />
       <span className="logo-text">DREAMLAND ATHLETICS</span>
     </div>
     <button className="mobile-menu-btn" id="mobileMenuBtn">
