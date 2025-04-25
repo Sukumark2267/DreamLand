@@ -36,7 +36,7 @@ const SuccessStories = () => {
       <div className="testimonials-container">
         {testimonials.map((item, idx) => (
           <div className="testimonial" key={idx}>
-            <p>&apos;{item.text}&apos;</p>
+            <p>&apos;{item.text}&apos;</p> 
             <div className="testimonial-author">
               {/* <Image
                 src={item.author.image}
