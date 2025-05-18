@@ -1,0 +1,115 @@
+
+.pricing-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .price-box {
+    
+    position: relative;
+    perspective: 1200px;
+    overflow: hidden;
+    height: 550px;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    border: 2px solid transparent;
+    background: var(--dark-bg);
+    transition: all 0.3s;
+  }
+  
+  .price-box:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  }
+  
+  
+  .price-box.popular {
+    position: relative;
+    border-color: var(--primary);
+  }
+  
+  .popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 0.3rem 1.5rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+  
+  .price-box h4 {
+    font-family: var(--font-geist-mono);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1.5rem 0;
+  }
+  
+  .price span {
+    font-size: 1rem;
+    color: var(--medium-text);
+  }
+
+  .price-box .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .price-box:hover .content {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .price-box .front,
+  .price-box .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  
+  .price-box .back {
+    transform: rotateY(180deg);
+    background: var(--darker-bg);
+  }
+  
+  .price-box .back-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .price-box .back-content ul li {
+    margin: 0.5rem 0;
+    color: var(--light-text);
+    font-size: 0.95rem;
+  }
+  
+  .popular-tag {
+    position: absolute;
+    /* top: 0px; */
+    font-weight: bold;
+    z-index: 10; 
+    pointer-events: none;
+  }
+  

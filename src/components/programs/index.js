@@ -43,6 +43,7 @@ const ProgramsSection = () => {
           <div key={index} className="program-card">
             <h4>{program.title}</h4>
             <p>{program.description}</p>
+            <br></br>
             <ul>
               {program.features.map((feature, idx) => (
                 <li key={idx}>{feature}</li>

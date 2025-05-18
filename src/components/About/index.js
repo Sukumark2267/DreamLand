@@ -19,14 +19,14 @@ export default function About() {
             </p>
           </div>
           
-          <div className="md:w-1/2 relative aspect-video">
+          {/* <div className="md:w-1/2 relative aspect-video">
             <Image 
-              src="/gym-interior.jpg" 
+              src="/abc.png" 
               alt="Dreamland Athletics Gym"
               fill
               className="object-cover rounded-lg shadow-xl"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

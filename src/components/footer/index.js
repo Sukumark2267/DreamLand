@@ -25,14 +25,25 @@ const Footer = () => {
         <div className="footer-column">
           <h4>QUICK LINKS</h4>
           <ul className="footer-links">
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#instagram">Instagram</a></li>
             <li><a href="#programs">Programs</a></li>
             <li><a href="#membership">Membership</a></li>
-            <li><a href="#trainers">Trainers</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {/* <li><a href="#trainers">Trainers</a></li> */}
+            {/* <li><a href="#contact">Contact</a></li> */}
           </ul>
         </div>
 
+        {/* Quick Links */}
+        <div className="footer-column">
+          <h4>Support</h4>
+          <ul className="footer-links">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">My Account</a></li>
+            {/* <li><a href="#membership">Membership</a></li> */}
+            {/* <li><a href="#trainers">Trainers</a></li> */}
+          </ul>
+        </div>
         {/* Hours */}
         <div className="footer-column">
           <h4>HOURS</h4>
@@ -52,3 +63,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

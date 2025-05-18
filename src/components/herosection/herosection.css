@@ -1,0 +1,21 @@
+.spline-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Above Spline */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    color: white; /* Ensure contrast */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Improve readability */
+  }
+
+  

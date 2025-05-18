@@ -7,20 +7,23 @@ import TrainersSection from '@/components/Trainers';
 import SuccessStoriesSection from '@/components/successstories';
 import InstagramSection from '@/components/instagram';
 import ContactSection from '@/components/contact';
+import Banner from '@/components/Banner';
 import Footer from '@/components/footer';
+
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <ProgramsSection />
       <MembershipSection />
-      <TrainersSection />
+      {/* <TrainersSection /> */}
       <SuccessStoriesSection />
       <InstagramSection />
       <ContactSection />
+      <Banner />
       <Footer />
     </main>
   );

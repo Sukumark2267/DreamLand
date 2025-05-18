@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import './navbar.css';
 
 export default function Navbar() {
   return (
@@ -8,17 +9,26 @@ export default function Navbar() {
       {/* <Image src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" width={100} height={100} /> */}
       <span className="logo-text">DREAMLAND ATHLETICS</span>
     </div>
+    <div className='right-section'>
     <button className="mobile-menu-btn" id="mobileMenuBtn">
       <i className="fas fa-bars"></i>
     </button>
     <nav id="mainNav">
-      <a href="#about">About</a>
+      <Link href="/">Home</Link>
+      <Link href="/about">About</Link>
+      <Link href="/programs">Programs</Link>
+      <Link href="/membership">Membership</Link>
+      <Link href="/contact">Contact</Link>
+
+      {/* <a href="#about">About</a>
       <a href="#programs">Programs</a>
-      <a href="#membership">Membership</a>
-      <a href="#trainers">Trainers</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#contact">Contact</a>
+      <a href="#membership">Membership</a> */}
+      {/* <a href="#trainers">Trainers</a> */}
+      {/* <a href="#instagram">Instagram</a> */}
+      {/* <a href="#contact">Contact</a> */}
     </nav>
+    <button className='login-button'><a href="/login">Login</a></button>
+    </div>
     </header>
   );
 }

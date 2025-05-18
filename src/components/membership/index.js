@@ -1,10 +1,11 @@
 // components/MembershipSection.jsx
 import React from 'react';
+import './membership.css';
 
 const membershipPlans = [
   {
     name: 'BASIC',
-    description: 'Perfect for those starting their fitness journey',
+    description: 'Perfect for starting your fitness journey',
     price: 59,
     features: [
       'Unlimited gym access',
@@ -48,25 +49,60 @@ const MembershipSection = () => {
         {membershipPlans.map((plan, index) => (
           <div key={index} className={`price-box ${plan.isPopular ? 'popular' : ''}`}>
             {plan.isPopular && <div className="popular-tag">MOST POPULAR</div>}
-            <h4>{plan.name}</h4>
-            <p>{plan.description}</p>
-            <div className="price">
-              ${plan.price}
-              <span>/month</span>
+            <div className="content">
+              {/* Front Face */}
+              <div className="front">
+                <h4>{plan.name}</h4>
+                <h4>Whats Included</h4>
+                  <ul>
+                    {plan.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                  {/* <button className="cta-button" style={{ marginTop: '1rem' }}>
+                    Join Now
+                  </button> */}
+
+                {/* <p>{plan.description}</p> */}
+                {/* <div className="price">
+                  ${plan.price}
+                  <span>/month</span>
+                </div> */}
+                <button className="cta-button" style={{ marginTop: '1.5rem' }}>
+                  View Features
+                </button>
+              </div>
+
+              {/* Back Face */}
+              <div className="back">
+                <div className="back-content">
+                <h4>{plan.name}</h4>
+                <div className="price">
+                  ${plan.price}
+                  <span>/month</span>
+                </div>
+                <button className="cta-button" style={{ marginTop: '1.5rem' }}>
+                  Join Now!!
+                </button>
+
+                  {/* <h4>Whats Included</h4>
+                  <ul>
+                    {plan.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                  <button className="cta-button" style={{ marginTop: '1rem' }}>
+                    Join Now
+                  </button> */}
+                </div>
+              </div>
             </div>
-            <ul>
-              {plan.features.map((feature, i) => (
-                <li key={i}>{feature}</li>
-              ))}
-            </ul>
-            <button className="cta-button" style={{ marginTop: '1.5rem' }}>
-              Join Now
-            </button>
           </div>
         ))}
       </div>
     </section>
   );
 };
+
 
 export default MembershipSection;

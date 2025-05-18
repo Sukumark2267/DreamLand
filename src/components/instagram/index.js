@@ -1,16 +1,17 @@
-// components/InstagramFeed.jsx
-import React from 'react';
-import Image from 'next/image';
+"use client";
+
+import React, { useEffect } from 'react';
 import { FaInstagram } from 'react-icons/fa';
 
-const instagramImages = [
-  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80',
-  'https://images.unsplash.com/photo-1571019614243-c4cd3aa76293?auto=format&fit=crop&w=500&q=80',
-  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80',
-  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500&q=80',
-];
-
 const InstagramFeed = () => {
+  // Load Elfsight script only on the client
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://static.elfsight.com/platform/platform.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <section id="instagram">
       <h2 className="section-title">#DREAMLANDLIFE</h2>
@@ -26,28 +27,25 @@ const InstagramFeed = () => {
         </a>{' '}
         for daily motivation, workout tips, and member spotlights.
       </p>
+      <br></br>
+      {/* Elfsight Instagram Widget */}
+      <div
+        className="elfsight-app-7b180250-b2c1-4467-8e15-f5da1f6eeb1b"
+        data-elfsight-app-lazy
+      ></div>
 
-      <div className="instagram-feed">
-        {instagramImages.map((src, index) => (
-          <div className="instagram-post" key={index}>
-            {/* <Image
-              src={src}
-              alt={`Instagram post ${index + 1}`}
-              width={300}
-              height={300}
-              className="object-cover w-full h-full"
-            /> */}
-            <div className="instagram-overlay">
-              <FaInstagram />
-            </div>
-          </div>
-        ))}
-      </div>
       <div className="instagram-cta">
-      <button className="cta-button">
-        <i className="fab fa-instagram"></i> Follow Us
-      </button>
+        <a
+          href="https://www.instagram.com/dreamland_brampton"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta-button inline-flex items-center justify-center"
+        >
+          <FaInstagram style={{ marginRight: '8px' }} />
+          Follow Us
+        </a>
       </div>
+
     </section>
   );
 };

@@ -1,14 +1,22 @@
 import Image from 'next/image';
+import Spline from '@splinetool/react-spline/next';
+import './herosection.css'
 
 export default function HeroSection() {
   return (
   <>
 <section className="hero">
-    <div className="hero-content">
+    <div className="hero-content">  
+      
       <h2>UNLEASH YOUR POTENTIAL</h2>
       <p>Brampton&rsquo;s premier fitness community where athletes are made. Join the movement that&rsquo;s transforming lives through strength, discipline, and community.</p>
       <button className="cta-button">Start Your Journey Today</button>
     </div>
+    <div className="spline-background">
+        <Spline
+          scene="https://prod.spline.design/0ciJ5ZeCPaRGiWCR/scene.splinecode"
+        />
+      </div>
   </section>
 
   <section id="about">
@@ -20,7 +28,15 @@ export default function HeroSection() {
         <p>We believe fitness is more than physical - it&rsquo;s mental resilience, community support, and personal growth. Every squat rack, battle rope, and weight plate at Dreamland tells a story of transformation.</p>
       </div>
       <div className="about-image">
-        {/* <Image src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80" alt="Dreamland Athletics Gym" height={100} width={100} /> */}
+      <div className="relative w-3/2  h-[200px] md:h-[300px] lg:h-[250px]">
+            <Image 
+              src="/abc.png" 
+              alt="Dreamland Athletics Gym"
+              fill
+              className="object-cover rounded-lg shadow-xl"
+              priority
+            />
+          </div>
       </div>
     </div>
   </section>

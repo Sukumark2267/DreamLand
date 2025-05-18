@@ -85,6 +85,8 @@ nav a:hover {
 }
 
 .hero h2 {
+  font-weight: bold;
+  font-family: var(--font-geist-sans);
   font-size: 3.5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -96,32 +98,40 @@ nav a:hover {
 }
 
 .cta-button {
+  border: 2px solid transparent; 
+  transition: border-color 0.3s ease;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   background: var(--primary);
   color: var(--secondary);
-  border: none;
   border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .cta-button:hover {
-  background: #e6c200;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+	color: var(--primary);
+	background-color: #000000;
+	transition-duration: 10ms;
+  border-radius: 30px;
+  border-color: var(--primary);
+	box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  border-style: solid;
 }
 
 section {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
 }
 
 .section-title {
+  font-weight: bold;
+  font-family: var(--font-geist-sans);
   font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 3rem;
@@ -145,7 +155,7 @@ section {
 }
 
 .about-text {
-  flex: 1;
+  flex: 5;
 }
 
 .about-image {
@@ -156,7 +166,7 @@ section {
 }
 
 .about-image img {
-  width: 100%;
+  width: 70% !important;
   height: auto;
   display: block;
 }
@@ -179,6 +189,8 @@ section {
 }
 
 .program-card h4 {
+  font-weight: bold;
+  font-family: var(--font-geist-mono);
   color: var(--primary);
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -202,60 +214,6 @@ section {
   left: 0;
 }
 
-.pricing-table {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.price-box {
-  background: var(--dark-bg);
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.3s;
-  border: 2px solid transparent;
-}
-
-.price-box:hover {
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-}
-
-.price-box.popular {
-  position: relative;
-  border-color: var(--primary);
-}
-
-.popular-tag {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: var(--secondary);
-  padding: 0.3rem 1.5rem;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-
-.price-box h4 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.price {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--primary);
-  margin: 1.5rem 0;
-}
-
-.price span {
-  font-size: 1rem;
-  color: var(--medium-text);
-}
 
 .trainers-grid {
   display: grid;
@@ -415,7 +373,10 @@ section {
 }
 
 .instagram-cta {
+  align-self: center;
   margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .contact-grid {
@@ -490,6 +451,8 @@ footer {
 }
 
 .footer-column h4 {
+  font-weight: bold;
+  font-family: var(--font-geist-sans);
   color: var(--primary);
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
@@ -538,6 +501,7 @@ footer {
 }
 
 .copyright {
+  font-family: var(--font-geist-mono);
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid #333;
