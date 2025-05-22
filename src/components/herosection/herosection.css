@@ -4,18 +4,90 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; 
+    z-index: 3; 
+    overflow-x: hidden;
   }
 
   .hero-content {
+    overflow-x: hidden;
     position: relative;
-    z-index: 2; /* Above Spline */
+    z-index: 99; 
+    max-height: 600px;
+    overflow-y: hidden;
     max-width: 600px;
     margin: 0 auto;
+    margin-left: 3%;
     padding: 2rem;
-    text-align: center;
-    color: white; /* Ensure contrast */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Improve readability */
+    text-align: left;
+    color: white; 
+    text-shadow: 3 4px 4px rgb(0, 0, 0); 
   }
 
+  .bg-imageB {
+    z-index: 5 ;
+    margin-left: 30%;
+    margin-bottom: 0%;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-content{
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .bg-imageB {
+    display:none;
+
+   }
+  }
+
+  @media (max-width: 769px) {
+
+    .spline-background {
+      z-index: 3; 
+      height: 100%;
+     }
+  }
   
+  @media (max-width: 1025px) {
+
+    .spline-background {
+      z-index: 3; 
+      height: 100%;
+     }
+  }
+
+    
+  @media (max-width: 1440px) {
+    .spline-background {
+      z-index: 3; 
+      height: 100%;
+     }
+  }
+  
+
+  
+
+  .bg-logo {
+    overflow-x: hidden;
+    text-shadow: 3 4px 4px rgb(0, 0, 0);
+    z-index: 2; 
+  }
+  
+  .bg-abovelayer {
+    overflow-x: hidden;
+    z-index: 5; 
+  }
+
+  .dividerborder {
+    overflow: hidden;
+  }
+ 
+  .bg-belowlayer {
+    z-index: 1;
+  }
+
+.hero-content .cta-button{
+  border-radius: 0.8rem;
+}
+

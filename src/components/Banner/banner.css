@@ -3,7 +3,7 @@
 -----------------------*/
 
 .cta-section {
-	background: var(--primary);
+	background: var(--gradient);
     max-width: 100%;
     margin: 0%;
 	padding-top: 1%;
@@ -11,14 +11,14 @@
 }
 
 .cta-section .cta-text {
-	font-family: var(--font-geist-sans);
+	font-family: 'AgudaBlack';
 	padding-left: 12%;
 	font-size: 20px;
 	float: left;
 }
 
 .cta-section .cta-text h3 {
-	font-family: var(--font-geist-sans);
+	font-family: 'AgudaBlack';
 	font-size: 25px;
 	font-weight: bold;
 	color: #000000;
@@ -38,6 +38,7 @@
 	background-image: -o-linear-gradient(left, #000000 100%, #000000 100%), -o-linear-gradient(left, #000000 0%, #000000 0%);
 	background-image: linear-gradient(to right, #000000 100%, #000000 100%), linear-gradient(to right, #000000 0%, #000000 0%);
 	margin-top: 14px;
+	font-family: 'AgudaBlack';
 }
 
 .primary-btn:hover{

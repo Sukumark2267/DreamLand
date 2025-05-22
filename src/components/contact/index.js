@@ -1,26 +1,77 @@
 // components/ContactSection.jsx
-"use client";
-import React from 'react';
+'use client';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import Image from 'next/image';
+import './contact.css';
 
 const ContactSection = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.4,
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        width: '100%',
+        transition: {
+          duration: 1,
+          ease: 'easeInOut',
+        },
+      });
+    } else {
+      controls.start({
+        width: '0%',
+        transition: {
+          duration: 0.8,
+          ease: 'easeOut',
+        },
+      });
+    }
+  }, [inView, controls]);
+
   return (
+    <>
+      <div className="flex justify-center">
+      <motion.div
+        ref={ref}
+        initial={{ width: '0%' }}
+        animate={controls}
+        className="yellowborder relative h-3 mt-[-1px] overflow-hidden"
+        style={{ originX: 0.5 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        
+        <Image
+          src="/images/elements/YellowBorder.png"
+          alt="Section Divider Border"
+          fill
+          className="object-cover"
+          priority
+        />
+      </motion.div>
+    </div>
+
     <section id="contact">
       <h2 className="section-title">GET IN TOUCH</h2>
 
       <div className="contact-grid">
-        {/* Contact Info */}
         <div>
           <div className="contact-info">
-            <h4 style={{fontWeight:'bold'}}>LOCATION</h4>
+            <h4 style={{fontWeight:'bolder'}}>LOCATION</h4>
             <p>860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
           </div>
           <div className="contact-info">
-            <h4 style={{fontWeight:'bold'}}>HOURS</h4>
+            <h4 style={{fontWeight:'bolder'}}>HOURS</h4>
             <p>Monday–Friday: 5am – 10pm</p>
             <p>Saturday–Sunday: 7am – 8pm</p>
           </div>
           <div className="contact-info">
-            <h4 style={{fontWeight:'bold'}}>CONTACT</h4>
+            <h4 style={{fontWeight:'bolder'}}>CONTACT</h4>
             <a href="tel:+19055551234">(905) 555-1234</a>
             <a href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
             <a
@@ -48,6 +99,14 @@ const ContactSection = () => {
       </div>
 
       {/* Google Map */}
+      <motion.div
+      className="map-container"
+      initial={{ opacity: 0, scaleX: 0.5, transformOrigin: 'center' }}
+      whileInView={{ opacity: 1, scaleX: 1 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: false, amount: 0.3 }}
+      style={{ overflow: 'hidden' }}
+    >
       <div className="map-container">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
@@ -59,7 +118,9 @@ const ContactSection = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      </motion.div>
     </section>
+    </>
   );
 };
 

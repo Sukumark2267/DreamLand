@@ -58,6 +58,8 @@
   }
   
   .price {
+    font-family: var(--font-geist-mono);
+
     font-size: 2.5rem;
     font-weight: bold;
     color: var(--primary);
@@ -115,9 +117,11 @@
   }
   
   .popular-tag {
+    font-weight: bolder;
     position: absolute;
     font-weight: bold;
     z-index: 10; 
     pointer-events: none;
   }
+  
   

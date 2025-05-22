@@ -16,9 +16,11 @@ export default function Navbar() {
     <nav id="mainNav">
       <Link href="/">Home</Link>
       <Link href="/about">About</Link>
-      <Link href="/programs">Programs</Link>
-      <Link href="/membership">Membership</Link>
+      {/* <Link href="/programs">Programs</Link> */}
       <Link href="/contact">Contact</Link>
+
+      <Link href="/membership">Membership</Link>
+      <Link href="/account">Account</Link>
 
       {/* <a href="#about">About</a>
       <a href="#programs">Programs</a>

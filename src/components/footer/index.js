@@ -1,5 +1,6 @@
 // components/Footer.jsx
 import React from 'react';
+import Image from 'next/image';
 import { FaInstagram, FaFacebookF, FaTwitter, FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
@@ -8,13 +9,19 @@ const Footer = () => {
       <div className="footer-content">
         {/* Brand Info */}
         <div className="footer-column">
-          <h4>DREAMLAND ATHLETICS</h4>
-          <p>
+        <Image
+            src="/images/logo/dl_white_empty_primary - text.png"
+            alt="Logo"
+            width={200}     
+            height={100}    
+          />   <br></br>
+          {/* <h4>DREAMLAND <br></br>ATHLETICS</h4> */}
+                <p>
             Brampton&rsquo;s premier fitness facility specializing in athletic performance training and
             community fitness.
           </p>
           <div className="social-links">
-            <a href="#" aria-label="Instagram"><FaInstagram /></a>
+            <a href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a>
             <a href="#" aria-label="Facebook"><FaFacebookF /></a>
             <a href="#" aria-label="Twitter"><FaTwitter /></a>
             <a href="#" aria-label="TikTok"><FaTiktok /></a>
