@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 import './Login.css';
 
@@ -37,6 +38,14 @@ const Login = () => {
                 <div className={`img__text m--in ${isSignUp ? 'active' : ''}`}>
                   <h3>If you already have an account, just sign in.</h3>
                 </div>
+                <div className="img relative w-full h-64"> 
+                <Image
+                  src="/images/logo/dl_black_icon.png" 
+                  alt="Dreamland Athletics"
+                  fill
+                  className="object-cover rounded"
+                  priority
+                /></div>
                 <div className="img__btn" onClick={toggleForm}>
                   <span className="m--up">Sign Up</span>
                   <span className="m--in">Sign In</span>

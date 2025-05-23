@@ -14,8 +14,7 @@ body {
 }
 
 .auth-container {
-
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "octinspray";
   /* background: var(--dark-bg); */
   display: flex;
   justify-content: center;
@@ -29,7 +28,7 @@ body {
   border: none;
   outline: none;
   background: none;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "AgudaBlack";
   justify-content:center;
 }
 
@@ -46,21 +45,18 @@ body {
 /* Container Styles */
 .auth-container .cont {
   text-align: center;
-  border-radius: 20px;
+  border-radius: 0 60px 0 60px ;
   overflow: hidden;
   position: relative;
   width: 900px;
   height: 550px;
   background-color: var(--dark-bg);
-  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3),
-              10px 10px 15px rgba(70, 70, 70, 0.15),
-              inset -10px -10px 15px rgba(255, 255, 255, 0.3),
-              inset 10px 10px 15px rgba(70, 70, 70, 0.15);
 }
 
 /* Form Styles */
 .auth-container .form {
   background: var(--dark-bg);
+  font-family: "AgudaBlack";
   position: relative;
   width: 640px;
   height: 100%;
@@ -86,6 +82,8 @@ body {
 
 /* Image Section Styles */
 .auth-container .img {
+  font-size: 1.5rem;
+  font-weight: bolder;
   overflow: hidden;
   z-index: 2;
   position: absolute;
@@ -156,13 +154,12 @@ body {
 
 /* Button Styles */
 .auth-container .img__btn {
-  font-weight: bold;
   overflow: hidden;
   z-index: 2;
   position: relative;
   width: 100px;
   height: 36px;
-  margin: 0 auto;
+  margin: 4rem auto;
   background: transparent;
   color: #fff;
   text-transform: uppercase;
@@ -171,6 +168,8 @@ body {
   border: 3px;
   border-radius: 30px;
   transition: all 0.4s ease-in-out;
+  font-family: 'AgudaBlack';
+  font-weight: lighter;
 }
 
 
