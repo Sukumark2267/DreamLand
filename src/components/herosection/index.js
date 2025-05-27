@@ -98,7 +98,7 @@ export default function HeroSection() {
 
       tl.to(".bg-belowlayer", {
         y: -230,        
-        scale: 0.5, 
+        scale: 0.55, 
         duration: 5,
       },"<");
 
@@ -209,8 +209,8 @@ export default function HeroSection() {
 
     </div>
     <div className="relative flex justify-center items-center h-[12rem] sm:h-[14rem] md:h-[16rem] z-20 pointer-events-none">
-       <h1 className="Dreamland-heading1">Dreamland Athletics</h1>
-        <h1 className="Dreamland-heading2">Dreamland Athletics</h1>
+       <h1 className="Dreamland-heading1">Dreamland <br/>Athletics</h1>
+        <h1 className="Dreamland-heading2">Dreamland <br/>Athletics</h1>
     </div>
 
 

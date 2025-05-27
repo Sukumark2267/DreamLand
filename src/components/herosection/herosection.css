@@ -80,6 +80,7 @@
  
   .bg-belowlayer {
     z-index: 32;
+    scale: 1.05;
   }
 
 .hero-content .cta-button{
@@ -141,22 +142,23 @@
 
 .Dreamland-heading1,
 .Dreamland-heading2 {
-  font-size: 8rem !important;
   font-family: 'AgudaBlack' !important;
   position: absolute;
-  margin-top: 20rem;
+  margin-top: 10rem;
   top: 20%;
   left: 50%;
   transform: translateX(-42%);
-  font-size: 4.5rem;
   font-weight: 800;
   text-align: start;
   width: max-content;
   pointer-events: none;
   z-index: 1;
+  text-align: center;
+  line-height: 1.1; 
 }
 
 .Dreamland-heading1 {
+  font-size: 8rem !important;
   color: #e7b826;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -167,3 +169,50 @@
   z-index: 0;
   transform: translateX(-42%) translateY(6px);
 }
+
+@media (max-width: 600px) {
+  .Dreamland-heading1,
+  .Dreamland-heading2 {
+    font-size: 4.0rem !important;
+    left: 5.0rem;
+    margin-top: 22rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .Dreamland-heading1,
+  .Dreamland-heading2 {
+    font-size: 7.5rem !important;
+    left: 3rem;
+    margin-top: 19rem;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1024px) {
+  .Dreamland-heading1,
+  .Dreamland-heading2 {
+    font-size: 7.5rem !important;
+    left: 3rem;
+    margin-top: 19rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .Dreamland-heading1,
+  .Dreamland-heading2 {
+    font-size: 8rem !important;
+    margin-left: 4rem;
+    margin-top: 21rem;
+  }
+}
+
+@media (min-width: 2025px) {
+  .Dreamland-heading1,
+  .Dreamland-heading2 {
+    font-size: 8rem !important;
+    margin-left: 4rem;
+    margin-top: 28rem;
+  }
+}
+
