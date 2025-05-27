@@ -164,6 +164,7 @@
 }
 
 .Dreamland-heading2 {
+  scale: 1.55;
   font-size: 8.2rem !important;
   color: black !important;
   z-index: 0;
