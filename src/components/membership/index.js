@@ -116,10 +116,14 @@ const MembershipSection = () => {
                   ${plan.price}
                   <span>/month</span>
                 </div>
-                <button className="cta-button" style={{ marginTop: '1.5rem' }}>
+                {/* <button className="cta-button" style={{ marginTop: '1.5rem' }}>
                   Join Now!!
-                </button>
-
+                </button> */}
+                <button className="cta-button" style={{ marginTop: '1.5rem' }} onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }}}>Join Now</button>
                   {/* <h4>Whats Included</h4>
                   <ul>
                     {plan.features.map((feature, i) => (

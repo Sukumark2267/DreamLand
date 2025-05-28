@@ -15,21 +15,21 @@ export default function Navbar() {
     </button>
     <nav id="mainNav">
       <Link href="/">Home</Link>
-      <Link href="/AboutUs">About</Link>
+      <Link href="#about">About</Link>
       {/* <Link href="/programs">Programs</Link> */}
-      <Link href="/contact">Contact</Link>
+      <Link href="#contact">Contact</Link>
 
-      <Link href="/membership">Membership</Link>
-      <Link href="/account">Account</Link>
+      <Link href="#membership">Membership</Link>
+      {/* <Link href="/">Account</Link> */}
 
       {/* <a href="#about">About</a>
       <a href="#programs">Programs</a>
       <a href="#membership">Membership</a> */}
       {/* <a href="#trainers">Trainers</a> */}
-      {/* <a href="#instagram">Instagram</a> */}
+      <a href="#instagram">Instagram</a>
       {/* <a href="#contact">Contact</a> */}
     </nav>
-    <button className='login-button'><a href="/login">Login</a></button>
+    <button className='login-button'><a href="#">Login</a></button>
     </div>
     </header>
   );

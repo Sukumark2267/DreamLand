@@ -33,7 +33,39 @@ const ContactSection = () => {
     }
   }, [inView, controls]);
 
-  return (
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const form = e.target;
+    const formData = {
+      name: form[0].value,
+      email: form[1].value,
+      phone: form[2].value,
+      message: form[3].value,
+    };
+  
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert(data.message);
+        form.reset();
+      } else {
+        alert(data.error || 'Something went wrong!');
+      }
+    } catch (err) {
+      alert('Network error. Please try again.');
+      console.error(err);
+    }
+  };
+
+    return (
     <>
       <div className="flex justify-center">
       <motion.div
@@ -86,7 +118,7 @@ const ContactSection = () => {
 
         {/* Contact Form */}
         <div className="contact-form">
-          <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={handleSubmit}>
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Your Email" required />
             <input type="tel" placeholder="Phone Number" />

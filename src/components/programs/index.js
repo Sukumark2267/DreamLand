@@ -102,7 +102,11 @@ const ProgramsSection = () => {
                 <li key={idx}>{feature}</li>
               ))}
             </ul>
-            <button className="cta-button">Join Now</button>
+            <button className="cta-button" onClick={() => {
+              const contactSection = document.querySelector('#contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }}}>Join Now</button>
           </div>
         ))}
       </div>
