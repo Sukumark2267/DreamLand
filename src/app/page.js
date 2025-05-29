@@ -10,9 +10,11 @@ import Services from '@/components/Services';
 import SuccessStoriesSection from '@/components/successstories';
 import InstagramSection from '@/components/instagram';
 import ContactSection from '@/components/contact';
+import Newsletter from '@/components/newsletter';
 import Banner from '@/components/Banner';
 import Footer from '@/components/footer';
 import Preloader from '@/components/Preloader';
+import ComingSoon from '@/components/pages/ComingSoon';
 
 
 export default function Home() {
@@ -30,17 +32,19 @@ export default function Home() {
 
   return (
     <main>
-      <Navbar />
+      <ComingSoon/>
+      {/* <Navbar />
       <HeroSection />
       <AboutSection />
       <ProgramsSection />
       <Services />
       <MembershipSection />
+      <Newsletter />
       <SuccessStoriesSection />
       <InstagramSection />
       <ContactSection />
       <Banner />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
