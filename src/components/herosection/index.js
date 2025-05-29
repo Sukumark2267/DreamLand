@@ -15,7 +15,7 @@ export default function HeroSection() {
         scrollTrigger: {
           trigger: ".hero",
           start: "top 10%",
-          end: "+=5000",
+          end: "+=2000",
           scrub: 2,
           pin: true,
           // markers: true,
@@ -23,10 +23,10 @@ export default function HeroSection() {
         },
       });
   
-      tl.from(".img-lightBulb", {
-        opacity: 0,
-        duration: 2,
-      }, "-=2.0");
+      // tl.from(".img-lightBulb", {
+      //   opacity: 0,
+      //   duration: 2,
+      // }, "-=2.0");
   
       tl.from(".bg-logo", {
         opacity: 0,
@@ -36,45 +36,45 @@ export default function HeroSection() {
       tl.to(".marquee", {
         xPercent: -200,
         ease: "none",
-        duration: 5,
+        duration: 3,
       });
-      tl.from(".gym-equipment-right-bg", {
-        opacity: 0,
-        ease: "none",
-        duration: 2,
-      });
+      // tl.from(".gym-equipment-right-bg", {
+      //   opacity: 0,
+      //   ease: "none",
+      //   duration: 2,
+      // });
   
-      tl.from(".gym-equipment-middle-bg", {
-        opacity: 0,
-        ease: "none",
-        duration: 2,
-      });
+      // tl.from(".gym-equipment-middle-bg", {
+      //   opacity: 0,
+      //   ease: "none",
+      //   duration: 2,
+      // });
   
-      tl.from(".gym-equipment-left-bg", {
-        opacity: 0,
-        ease: "none",
-        duration: 2,
-      });
-      tl.from(".gym-equipment-right", {
-        opacity: 0,
-        xPercent: -10,
-        ease: "none",
-        duration: 2,
-      });
+      // tl.from(".gym-equipment-left-bg", {
+      //   opacity: 0,
+      //   ease: "none",
+      //   duration: 2,
+      // });
+      // tl.from(".gym-equipment-right", {
+      //   opacity: 0,
+      //   xPercent: -10,
+      //   ease: "none",
+      //   duration: 2,
+      // });
   
-      tl.from(".gym-equipment-middle", {
-        opacity: 0,
-        yPercent: 10,
-        ease: "none",
-        duration: 2,
-      });
+      // tl.from(".gym-equipment-middle", {
+      //   opacity: 0,
+      //   yPercent: 10,
+      //   ease: "none",
+      //   duration: 2,
+      // });
   
-      tl.from(".gym-equipment-left", {
-        opacity: 0,
-        xPercent: 10,
-        ease: "none",
-        duration: 2,
-      });
+      // tl.from(".gym-equipment-left", {
+      //   opacity: 0,
+      //   xPercent: 10,
+      //   ease: "none",
+      //   duration: 2,
+      // });
   
       tl.from(".Dreamland-heading1", {
         opacity: 0,
@@ -148,7 +148,7 @@ export default function HeroSection() {
    </div>
 
   {/* Gym equipment container */}
-  <div className="equipment-container absolute inset-0 pointer-events-none">
+  {/* <div className="equipment-container absolute inset-0 pointer-events-none">
         <Image
         src="/images/elements/gym-equipment-right.png"
         alt="gym-equipment-right"
@@ -176,10 +176,10 @@ export default function HeroSection() {
           w-40 sm:w-56 md:w-72 lg:w-[22rem] xl:w-[43rem]"
       />
 
-    </div>
+    </div> */}
 
   {/* Gym equipment container */}
-  <div className="equipment-container-bg absolute inset-0 pointer-events-none">
+  {/* <div className="equipment-container-bg absolute inset-0 pointer-events-none">
         <Image
         src="/images/elements/gym-equipment-right-bg.png"
         alt="gym-equipment-right"
@@ -207,7 +207,7 @@ export default function HeroSection() {
           w-40 sm:w-56 md:w-72 lg:w-[22rem] xl:w-[43rem]"
       />
 
-    </div>
+    </div> */}
     <div className="relative flex justify-center items-center h-[12rem] sm:h-[14rem] md:h-[16rem] z-20 pointer-events-none">
        <h1 className="Dreamland-heading1">Dreamland <br/>Athletics</h1>
         <h1 className="Dreamland-heading2">Dreamland <br/>Athletics</h1>

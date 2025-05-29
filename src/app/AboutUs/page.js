@@ -5,6 +5,7 @@ import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import AboutCards from '@/components/AboutCards';
+import AboutSection2 from '@/components/AboutSection2';
 import ContactSection from '@/components/contact';
 import Preloader from '@/components/Preloader';
 
@@ -29,8 +30,7 @@ export default function About() {
          <h1>ABOUT US</h1>
          </div>
          <AboutCards />   
-         <div className="Aboutsection3">
-         </div>  
+         <AboutSection2 />
          <ContactSection />
          <Footer />
           </section>

@@ -27,6 +27,20 @@
   color: var(--primary);
 }
 
+@media (max-width: 1024px) {
+  .Aboutsection1 h1 {
+    padding-top: 35vh;
+    font-size: 9rem;
+  }
+}  
+
+@media (max-width: 500px) {
+  .Aboutsection1 h1 {
+    padding-top: 35vh;
+    font-size: 6rem;
+  }
+}  
+
 .Aboutsection3 {
   background-color: #fff;
   /* top: 100%; */
