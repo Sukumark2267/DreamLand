@@ -105,7 +105,7 @@
   color: #ccc;
 }
 
-.cta-button {
+#membership .cta-button {
   background: var(--primary);
   color: rgb(0, 0, 0);
   /* border: none; */
@@ -116,7 +116,7 @@
   transition: background 0.3s;
 }
 
-.cta-button:hover {
+#membership .cta-button:hover {
   background: var(--dark-bg);
 }
 

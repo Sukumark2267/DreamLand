@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { z } from "zod";
 import { toast } from "sonner";
+import { PulseLoader } from "react-spinners";
 
 const newsletterSchema = z.object({
   fname: z.string().min(1, "Name is required"),
@@ -11,17 +12,18 @@ const newsletterSchema = z.object({
 });
 
 export default function ComingSoon() {
-  const [form, setForm] = useState({fname: "", email: ""});
+  let [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ fname: "", email: "" });
 
   const handleChange = (e) => {
-    setForm({...form, [e.target.name]: e.target.value});
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fname = form.fname;
     const email = form.email;
-  
+
     // Validate with Zod
     const result = newsletterSchema.safeParse({ fname, email });
     if (!result.success) {
@@ -33,20 +35,26 @@ export default function ComingSoon() {
       // alert(result.error.issues[0].message);
       return;
     }
-  
-    // Send to API
-    const res = await fetch("/api/newsletter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ fname, email }),
-    });
 
-    console.log(res)
-    // Handle response
-    if (res.ok) {
-      toast.success("Thank you for signing up!");
-    } else {
+    try {
+      setLoading(true);
+      // Send to API
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fname, email }),
+      });
+
+      // Handle response
+      if (res.ok) {
+        toast.success("Thank you for signing up!");
+      } else {
+        toast.error("There was an error. Please try again.");
+      }
+    } catch (error) {
       toast.error("There was an error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,7 +64,7 @@ export default function ComingSoon() {
       style={{
         background: "url('/images/elements/bg-texture.webp')",
         fontFamily: "'AgudaBlack', 'Roboto', 'Arial', sans-serif",
-        }}
+      }}
     >
       <Image
         src="/images/logo/logo-primary.png"
@@ -120,7 +128,11 @@ export default function ComingSoon() {
                 type="submit"
                 className="cta-button px-7 py-3 w-full mt-2"
               >
-                Sign Up
+                {loading ? (
+                  <PulseLoader color="#000" speedMultiplier={0.75} />
+                ) : (
+                  "Sign Up"
+                )}
               </button>
             </form>
           </div>
