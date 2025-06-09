@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['images.unsplash.com'],
-        domains: ['cdn.easyfrontend.com'],
+  images: {
+    remotePatterns: [
+      {
+        hostname: "images.unsplash.com",
       },
+      {
+        hostname: "cdn.easyfrontend.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
-
