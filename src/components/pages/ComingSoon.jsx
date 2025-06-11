@@ -202,10 +202,12 @@ export default function ComingSoon() {
                 <div>
                   <Card className="bg-white/10 md:bg-white/5 md:hover:bg-white/10 border-primary/20 hover:border-primary transition-all duration-300">
                     <CardHeader className="text-center">
-                      <CardTitle className="text-white">24/7 Access</CardTitle>
+                      <CardTitle className="text-white">
+                        State-of-the-art Equipment
+                      </CardTitle>
                       <CardDescription className="text-gray-400">
-                        Train on your schedule with round-the-clock access to
-                        our premium facilities and equipment.
+                        State-of-the-art equipment and facilities to help you
+                        achieve your goals.
                       </CardDescription>
                     </CardHeader>
                   </Card>
@@ -247,6 +249,20 @@ export default function ComingSoon() {
                     </div>
                     <div>
                       <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                        Stretching Area
+                      </h3>
+                      <p className="text-sm md:text-lg text-gray-400">
+                        Stretching area with professional stretching equipment.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
+                      <span className="text-xl font-bold text-black">🏋️</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                         Strength Training Zone
                       </h3>
                       <p className="text-sm md:text-lg text-gray-400">
@@ -262,16 +278,16 @@ export default function ComingSoon() {
                     </div>
                     <div>
                       <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                        Cardio Theater
+                        High-Intensity Interval Training Zone
                       </h3>
                       <p className="text-sm md:text-lg text-gray-400">
-                        State-of-the-art cardio equipment with entertainment
-                        systems to keep you motivated.
+                        High-intensity interval training equipment with
+                        entertainment systems to keep you motivated.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
+                  {/* <div className="flex items-start space-x-4 bg-white/10 lg:bg-transparent lg:hover:bg-white/10 p-4 rounded-lg transition-colors duration-300">
                     <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0 transform transition-transform duration-300 hover:rotate-12">
                       <span className="text-xl font-bold text-black">🥊</span>
                     </div>
@@ -299,14 +315,14 @@ export default function ComingSoon() {
                         premium amenities.
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </section>
 
           {/* Testimonials Section */}
-          <section className="py-16 px-4 rounded-xl flex items-center my-5">
+          {/* <section className="py-16 px-4 rounded-xl flex items-center my-5">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
                 <Badge
@@ -397,7 +413,7 @@ export default function ComingSoon() {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* Newsletter Section */}
           <section className="py-16 px-4 rounded-xl flex items-center my-5">
