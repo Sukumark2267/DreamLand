@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { z } from "zod";
 import { toast } from "sonner";
@@ -14,6 +14,9 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import SplitType from 'split-type';
+import gsap from 'gsap';
+
 
 const newsletterSchema = z.object({
   fname: z.string().min(1, "Name is required"),
@@ -78,6 +81,7 @@ const shuffle = (array) => {
 
 
 export default function ComingSoon() {
+  const headingRef = useRef(null);
   let [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ fname: "", email: "" });
 
@@ -122,6 +126,22 @@ export default function ComingSoon() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const split = new SplitType(headingRef.current, { types: 'chars' });
+
+    gsap.from('.char', {
+      y: -100,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'bounce.out',
+      stagger: 0.05,
+    });
+
+    // Clean up
+    return () => split.revert();
+  }, []);
+
 
   return (
     <div className="landing-page min-h-screen bg-black text-white">
@@ -170,7 +190,8 @@ export default function ComingSoon() {
           Premium Fitness Experience
         </Badge>
 
-        <h1
+        <h1 id="Hero-Heading"
+              ref={headingRef}
           className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
           style={{
             fontFamily: "Swiss721Bold",
