@@ -834,3 +834,9 @@ footer {
       display: none;
   } 
 }
+
+@media (min-width: 500px) {
+  .footer-badge-pc {
+    display: none;
+  }
+}

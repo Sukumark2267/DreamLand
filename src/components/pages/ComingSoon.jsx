@@ -563,9 +563,15 @@ export default function ComingSoon() {
             </Badge>
             <Badge
               variant="outline"
-              className="text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+              className="footer-badge text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
               Elite Training
+            </Badge>
+            <Badge
+              variant="outline"
+              className="footer-badge-pc text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
+            >
+              Elite training, pro coaching, and top-tier facilities.
             </Badge>
             <Badge
               variant="outline"
