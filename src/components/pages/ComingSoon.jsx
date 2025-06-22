@@ -571,7 +571,7 @@ export default function ComingSoon() {
               variant="outline"
               className="footer-badge-pc text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
             >
-              Elite training, pro coaching, and top-tier facilities.
+              Elite training, Pro coaching, and Top-Tier Facilities.
             </Badge>
             <Badge
               variant="outline"
