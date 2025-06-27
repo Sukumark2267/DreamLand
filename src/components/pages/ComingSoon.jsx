@@ -202,14 +202,14 @@ export default function ComingSoon() {
 
         <h1 id="Hero-Heading"
               ref={headingRef}
-          className="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-primary"
+          className="text-3xl md:text-6xl lg:text-8xl font-bold mb-6 leading-tight text-white"
           style={{
-            fontFamily: "Swiss721Bold",
+            fontFamily: "Swiss721Black",
             textShadow: "0 0 20px rgba(0,0,0,0.8)",
             letterSpacing: "2px",
           }}
         >
-          Dreamland Athletics
+          DREAMLAND ATHLETICS
         </h1>
 
         <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl leading-relaxed text-white">
@@ -221,7 +221,7 @@ export default function ComingSoon() {
           athletes who dare to dream big and work harder.
         </p>
         <Link
-          href="#"
+          href=".Newsletter"
           className="btn--primary inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg"
         >
           Start Your Journey
@@ -508,7 +508,7 @@ export default function ComingSoon() {
           </section> */}
 
           {/* Newsletter Section */}
-          <section className="py-16 px-4 rounded-xl flex items-center my-5">
+          <section className="Newsletter py-16 px-4 rounded-xl flex items-center my-5">
             <div className="max-w-4xl mx-auto text-center">
               <Badge
                 variant="outline"

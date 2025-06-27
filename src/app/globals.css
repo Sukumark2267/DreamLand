@@ -14,8 +14,8 @@
 }
 
 @font-face {
-  font-family: "Swiss721Bold";
-  src: url("/fonts/Swiss721Bold.woff") format("woff");
+  font-family: "Swiss721Black";
+  src: url("/fonts/Swiss721Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
