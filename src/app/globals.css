@@ -38,7 +38,7 @@
 }
 
 :root {
-  --primary: #ffd700;
+  --primary: #f1c419;
   --secondary: #000;
   --dark-bg: #111;
   --light-text: #fff;
@@ -705,7 +705,7 @@ footer {
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: #ffd700;
+  --color-primary: #f1c419;
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: #000;
   --color-secondary-foreground: var(--secondary-foreground);
@@ -779,11 +779,12 @@ footer {
 .btn--primary {
   border: 2px solid transparent;
   transition: border-color 0.3s ease;
-  padding: 1rem 2.0rem;
+  /* padding: 1rem 2.0rem; */
+  padding: auto;
   font-size: 1.1rem;
   background: var(--primary);
   color: var(--secondary);
-  border-radius: 8px;
+  border-radius: 35px;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s;
@@ -796,11 +797,10 @@ footer {
   color: var(--primary);
   background-color: #000000;
   transition-duration: 10ms;
-  border-radius: 8px;
+  border-radius: 35px;
   border-color: var(--primary);
   box-shadow: 0 10px 100px rgba(255, 215, 0, 0.1);
   border-style: solid;
-  transform: translateY(-3px);
 }
 
 .btn--secondary {

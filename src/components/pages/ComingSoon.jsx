@@ -226,17 +226,18 @@ export default function ComingSoon() {
         <p className="text-xl md:text-[2.05rem] lg:text-[3rem] mb-8 leading-relaxed text-white">
           SLOW. STEADY. UNSTOPPABLE.
         </p>
-{/* 
-        <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
+{/*       <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
           Your journey to greatness starts here. Join the elite community of
           athletes who dare to dream big and work harder.
         </p> */}
+        <div className="lg:m-15 md:m-30">
         <Link
           href=".Newsletter"
-          className="btn--primary inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-lg"
+          className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-5 px-10 rounded-lg transition duration-300 text-md"
         >
-          Start Your Journey
+          LET'S GO !!
         </Link>
+        </div>
       </div>
     </section>
 

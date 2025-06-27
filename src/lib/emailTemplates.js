@@ -11,7 +11,7 @@ export function customerNewsletterTemplate({ fname }) {
     subject: "Thank you for signing up!",
     text: `Hi ${fname},\n\nThank you for signing up for the Dreamland Athletics newsletter! We'll keep you updated.`,
     html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-            <div style="background-color: #FFD700; padding: 16px; text-align: center;">
+            <div style="background-color: #f1c419; padding: 16px; text-align: center;">
               <h2 style="margin: 0; color: #000;">Hi ${fname},</h2>
             </div>
             <div style="padding: 24px; background-color: #fff; color: #333;">

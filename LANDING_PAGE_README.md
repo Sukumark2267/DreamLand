@@ -103,7 +103,7 @@ The newsletter form posts to `/api/newsletter`. Ensure this endpoint exists and 
 
 ### Colors
 
-- **Primary Gold**: #ffd700
+- **Primary Gold**: #f1c419
 - **Background**: Black (#000000)
 - **Secondary Background**: Gray-900 (#111827)
 - **Text**: White (#ffffff)
