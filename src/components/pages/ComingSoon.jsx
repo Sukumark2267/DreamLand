@@ -224,7 +224,7 @@ export default function ComingSoon() {
         </h1>
 
         <p className="text-xl md:text-[2.05rem] lg:text-[3rem] mb-8 leading-relaxed text-white">
-          SLOW. STEADY. UNSTOPPABLE.
+          SLOW<span className="text-[#e7b826]">.</span>STEADY<span className="text-[#e7b826]">.</span>UNSTOPPABLE<span className="text-[#e7b826]">.</span>
         </p>
 {/*       <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
           Your journey to greatness starts here. Join the elite community of
