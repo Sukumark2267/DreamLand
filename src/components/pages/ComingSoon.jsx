@@ -192,7 +192,7 @@ export default function ComingSoon() {
           alt="Dreamland Athletics Gym"
           width={256}
           height={256}
-          className="w-32 md:w-48 lg:w-36 h-auto object-contain rounded-xl"
+          className="w-32 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
           priority
         />
         <h1 id="Hero-Heading"
