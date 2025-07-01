@@ -443,6 +443,20 @@ section {
   padding-right: 10rem;
 }
 
+@media (max-width: 800px) {
+  #instagram {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  #instagram {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .instagram-feed {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

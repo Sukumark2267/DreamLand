@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import SplitType from 'split-type';
 import gsap from 'gsap';
+import InstagramFeed from "../instagram";
 
 
 const newsletterSchema = z.object({
@@ -242,7 +243,7 @@ export default function ComingSoon() {
     </section>
 
       {/* Main content */}
-      <div className="relative my-5">
+      <div className="relative">
         <div
           className="fixed inset-0 top-0 h-screen"
           style={{
@@ -253,7 +254,7 @@ export default function ComingSoon() {
             zIndex: 0,
           }}
         />
-        <div className="flex flex-col gap-5 mx-auto p-3 lg:px-8 h-full">
+        <div className="flex flex-col gap-5 mx-auto lg:px-8 h-full">
           {/* About Section */}
           <section className="py-16 px-4 rounded-xl flex items-center my-5">
             <div className="max-w-7xl w-full mx-auto">
@@ -486,7 +487,7 @@ export default function ComingSoon() {
           </section> */}
 
           {/* Newsletter Section */}
-          <section id="Newsletter" className="Newsletter py-16 px-4 rounded-xl flex items-center my-5">
+          <section id="Newsletter" className="Newsletter py-16 px-4 rounded-xl flex items-center">
             <div className="max-w-4xl mx-auto text-center">
               {/* <Badge
                 variant="outline"
@@ -543,6 +544,8 @@ export default function ComingSoon() {
         </div>
       </div>
 
+      <InstagramFeed/>
+      
       {/* Footer */}
       <footer className="relative py-16 px-4 bg-gray-900 border-t border-gray-800">
         <div className="max-w-7xl mx-auto text-center">
