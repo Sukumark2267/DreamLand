@@ -550,9 +550,9 @@ export default function ComingSoon() {
             <Image
               src="/images/logo/logo-primary.png"
               alt="Dreamland Athletics"
-              width={150}
-              height={150}
-              className="w-24 h-auto mx-auto mb-6"
+              width={250}
+              height={250}
+              className="w-50 h-auto mx-auto mb-6"
             />
           </div>
           <h3 className="text-2xl font-bold mb-4 text-primary">
@@ -563,7 +563,7 @@ export default function ComingSoon() {
             relentless pursuit of excellence.
           </p>
 
-          <div className="flex justify-center space-x-6 mb-8">
+          {/* <div className="flex justify-center space-x-6 mb-8">
             <Badge
               variant="outline"
               className="footer-badge text-gray-400 border-gray-600 hover:border-primary hover:text-primary transition-colors duration-300"
@@ -588,7 +588,7 @@ export default function ComingSoon() {
             >
               Professional Coaching
             </Badge>
-          </div>
+          </div> */}
 
           <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} Dreamland Athletics. All rights
