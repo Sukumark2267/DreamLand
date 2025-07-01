@@ -552,7 +552,7 @@ export default function ComingSoon() {
               alt="Dreamland Athletics"
               width={250}
               height={250}
-              className="w-50 h-auto mx-auto mb-6"
+              className="w-50 h-auto mx-auto mb-2"
             />
           </div>
           <h3 className="text-6xl tracking-wide mb-4 text-primary">
