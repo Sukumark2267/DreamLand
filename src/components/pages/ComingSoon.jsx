@@ -494,10 +494,10 @@ export default function ComingSoon() {
               >
                 Join the Movement
               </Badge> */}
-              <h2 className="text-4xl md:text-5xl lg:text-8xl mb-6 text-white">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl mb-6 text-white">
                 Be the First to Know
               </h2>
-              <p className="text-sm md:text-lg text-gray-300 mb-12 leading-relaxed">
+              <p className="text-md md:text-lg lg:text-2xl text-gray-300 mb-12 leading-relaxed">
                 Get exclusive access to training tips, member benefits, and be
                 the first to hear about our grand opening.
               </p>
@@ -558,7 +558,7 @@ export default function ComingSoon() {
           <h3 className="text-6xl tracking-wide mb-4 text-primary">
             Dreamland Athletics
           </h3>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-400 mb-8 max-w-2xl lg:text-xl md:text-lg mx-auto">
             Where dreams become reality through dedication, hard work, and the
             relentless pursuit of excellence.
           </p>
