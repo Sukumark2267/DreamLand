@@ -351,21 +351,21 @@ export default function ComingSoon() {
                     {/* Contact Info */}
                     <div className="flex-2 space-y-6">
                       <div className="contact-info">
-                        <h4 className="font-bold text-3xl">LOCATION</h4>
-                        <p className="text-xl font-light">860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
+                        <h4 className="bold text-3xl">LOCATION</h4>
+                        <p className="text-lg font-light">860 N Park Dr, Brampton, ON L6S 4N5, Canada</p>
                       </div>
 
                       <div className="contact-info">
-                        <h4 className="font-bold text-3xl">HOURS</h4>
-                        <p className="text-xl font-light">Monday–Friday: 5am – 10pm</p>
-                        <p className="text-xl font-light">Saturday–Sunday: 7am – 8pm</p>
+                        <h4 className="text-3xl">HOURS</h4>
+                        <p className="text-lg font-light">Monday–Friday: 5am – 10pm</p>
+                        <p className="text-lg font-light">Saturday–Sunday: 7am – 8pm</p>
                       </div>
 
                       <div className="contact-info">
-                        <h4 className="font-bold text-3xl">CONTACT</h4>
-                        <a className="block text-xl text-blue-600 hover:underline font-light" href="tel:+19055551234">(905) 555-1234</a>
-                        <a className="block text-xl text-blue-600 hover:underline font-light" href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
-                        <a className="block text-xl text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
+                        <h4 className="text-3xl">CONTACT</h4>
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="tel:+19055551234">(905) 555-1234</a>
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
                           @dreamland_brampton
                         </a>
                       </div>
