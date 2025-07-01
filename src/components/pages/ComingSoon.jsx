@@ -204,7 +204,7 @@ export default function ComingSoon() {
             letterSpacing: "2px",
           }}
         >
-          DREAMLAND <br/> ATHLETICS-
+          DREAMLAND <br/> ATHLETICS
         </h1>
 
         {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
