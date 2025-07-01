@@ -16,7 +16,7 @@ const InstagramFeed = () => {
 
   return (
     <section id="instagram">
-        <h2 className="text-6xl md:text-8xl lg:text-8xl  my-5 text-center uppercase text-primary">
+        <h2 className="text-6xl md:text-8xl lg:text-8xl my-5 text-center uppercase text-primary">
           #DreamlandLIFE
         </h2>
         <p>

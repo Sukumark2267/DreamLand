@@ -336,14 +336,8 @@ export default function ComingSoon() {
           </section>
 
           {/* Features Section */}
-          <section className="py-16 px-10 md:px-10 lg:px-40 rounded-xl items-center my-5">
+          <section className="py-16 px-10 md:px-10 lg:px-40 rounded-xl items-center ">
             <div className="mx-auto">
-              <div className="text-center mb-16">
-                {/* <h2 className="text-4xl md:text-5xl lg:text-8xl mb-6 text-white">
-                  Everything You Need to Succeed
-                </h2> */}
-              </div>
-
               <div className="flex flex-col gap-12 justify-center h-full">
                   <section id="contact">
                   {/* <h2 className="section-title text-3xl font-bold text-center mb-10">GET IN TOUCH</h2> */}
@@ -365,10 +359,11 @@ export default function ComingSoon() {
                       <div className="contact-info">
                         <h4 className="text-3xl">CONTACT</h4>
                         <a className="block text-lg text-blue-600 hover:underline font-light" href="tel:+19055551234">(905) 555-1234</a>
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:info@dreamlandathletics.com">info@dreamlandathletics.com</a>
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
+                        {/* <a className="block text-lg text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
                           @dreamland_brampton
-                        </a>
+                        </a> */}
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:jay@dreamlandathletics.com">jay@dreamlandathletics.com</a>
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:chirag@dreamlandathletics.com">chirag@dreamlandathletics.com</a>
                       </div>
                     </div>
 
