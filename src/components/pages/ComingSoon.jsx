@@ -491,7 +491,7 @@ export default function ComingSoon() {
               >
                 Join the Movement
               </Badge> */}
-              <h2 className="text-6xl md:text-7xl lg:text-8xl mb-6 text-white">
+              <h2 className="text-6xl md:text-7xl lg:text-8xl mb-6 text-white uppercase">
                 Be the First to Know
               </h2>
               <p className="text-md md:text-lg lg:text-2xl text-gray-300 mb-12 leading-relaxed">

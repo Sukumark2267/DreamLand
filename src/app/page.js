@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-
+import Script from 'next/script';
 import Preloader from '@/components/Preloader';
 import ComingSoon from '@/components/pages/ComingSoon';
 
@@ -19,9 +19,16 @@ export default function Home() {
   if (loading) return <Preloader />;
 
   return (
+  <>
+    <Script
+    src="https://static.elfsight.com/platform/platform.js"
+    strategy="beforeInteractive" // Injects before hydration
+    id="elfsight-platform"
+  />
     <main>
       <ComingSoon/>
     </main>
+    </>
   );
 }
 

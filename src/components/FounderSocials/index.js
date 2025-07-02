@@ -61,12 +61,18 @@ const Card = ({ bg, profileImg, socials, name, description }) => (
 
 const FounderSocials = () => {
   return (
+  <>
+  <section className="py-20 px-4 text-white text-center m-10">
+    <h2 className="text-6xl md:text-7xl lg:text-8xl mb-6 text-white uppercase">
+        Our Founders
+    </h2> 
     <div className="w-full flex flex-col md:flex-row items-center justify-center gap-10 px-4 py-10">
+
       <Card
         bg="bg-[#1a1a1a]"
         profileImg="/images/elements/founder1.png"
         socials={card1Socials}
-        name="Chirag Vyas"
+        name="Chirag Guleria"
         description="I'm Chirag, the mind behind Elevate With Chirag. I help people grow through motivating content and real talk that inspires daily progress."
       />
       <Card
@@ -77,6 +83,8 @@ const FounderSocials = () => {
         description="I'm Jay, a digital creator who blends style and stories. My passion lies in curating content that connects people and aesthetics through Instagram."
       />
     </div>
+    </section>
+    </>
   );
 };
 
