@@ -869,3 +869,7 @@ footer {
     display: none;
   }
 }
+
+footer h3 {
+  font-family: 'Swiss721Black';
+}
