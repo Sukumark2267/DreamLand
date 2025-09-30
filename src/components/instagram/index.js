@@ -16,7 +16,7 @@ const InstagramFeed = () => {
 
   return (
     <section id="instagram">
-        <h2 className="text-6xl md:text-8xl lg:text-8xl my-5 text-center uppercase text-primary">
+        <h2 className="text-6xl md:text-8xl lg:text-8xl pt-10 text-center uppercase text-primary">
           #DreamlandLIFE
         </h2>
         <p>
@@ -35,10 +35,10 @@ const InstagramFeed = () => {
       {/* Elfsight Instagram Widget */}
       <div
         className="elfsight-app-7b180250-b2c1-4467-8e15-f5da1f6eeb1b"
-        data-elfsight-app-lazy
+        data-elfsight-app-priority
       ></div>
 
-      <div className="instagram-cta mb-6">
+      <div className="instagram-cta ">
         <a
           href="https://www.instagram.com/dreamland_brampton"
           target="_blank"
@@ -49,7 +49,7 @@ const InstagramFeed = () => {
           Follow Us
         </a>
       </div>
-      <div className="min-h-20 bg-none flex justify-center">
+      <div className="min-h-20 bg-none flex justify-center mb-6">
             <SocialButtons />
         </div>
     </section>

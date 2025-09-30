@@ -1,0 +1,27 @@
+.AboutSection2 {
+  background-color: var(--dark-bg);
+  background-size: 100% auto;
+}
+  .more-button {
+  background: none;
+  color: #fbca1f;
+  border: 1px solid var(--primary);
+
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+.more-button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.more-button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
