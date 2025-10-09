@@ -4,7 +4,7 @@ import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <header className="fixed w-full bg-white z-50 transition-shadow duration-300">
+    <header className="fixed w-full bg-white z-50 transition-shadow duration-300 overflow-hidden">
       <div className="logo px-15 z-99">
         {/* <Image src="https://via.placeholder.com/50x50" alt="Dreamland Athletics Logo" width={100} height={100} /> */}
         <Link href="/">
@@ -25,7 +25,7 @@ export default function Navbar() {
             alt="Logo"
             width={1000}
             height={1000}
-            className="w-18 scale-2000 pt-1"
+            className="w-18 scale-2000 sm:scale-10www00 md:scale-1000 lg:scale-2000 pt-1"
           />
         </Link>{" "}
       </div>

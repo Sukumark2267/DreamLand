@@ -80,10 +80,10 @@ const Footer = () => {
                 <Link href="/ContactUs">Contact Us</Link>
               </li>
               <li>
-                <Link href="/instagram">Privacy Policies</Link>
+                <Link href="/PrivacyPolicy">Privacy Policies</Link>
               </li>
               <li>
-                <Link href="/instagram">Terms & Conditions</Link>
+                <Link href="/TermsAndConditions">Terms & Conditions</Link>
               </li>
               {/* <li><a href="#trainers">Trainers</a></li> */}
             </ul>
