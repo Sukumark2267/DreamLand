@@ -34,10 +34,10 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-3xl mb-3 tracking-normal">1. Introduction</h2>
               <p>
-                Welcome to Dreamland Athletics ("we", "our", "us"). These Terms
-                and Conditions ("Terms") govern your access to and use of our
+                Welcome to Dreamland Athletics (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms
+                and Conditions (&quot;Terms&quot;) govern your access to and use of our
                 website, digital services, and any products or features we
-                provide (collectively, the “Services”). By accessing or using
+                provide (collectively, the &quot;Services&quot;). By accessing or using
                 our website, you agree to comply with these Terms. If you do not
                 agree, please discontinue use immediately.
               </p>
@@ -166,7 +166,7 @@ export default function TermsAndConditions() {
                 8. Disclaimer of Warranties
               </h2>
               <p>
-                Our Services are provided on an “as is” and “as available” basis
+                Our Services are provided on an &quot;as is&quot; and &quot;as available&quot; basis
                 without any warranties of any kind, express or implied,
                 including but not limited to fitness for a particular purpose or
                 non-infringement.
@@ -228,7 +228,7 @@ export default function TermsAndConditions() {
               <p>
                 Dreamland Athletics reserves the right to modify or replace
                 these Terms at any time. We will notify users of any major
-                changes by updating the "Last Updated" date at the top of this
+                changes by updating the &quot;Last Updated&quot; date at the top of this
                 page. Your continued use of the site after such changes implies
                 acceptance of the new Terms.
               </p>
