@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import './Services.css';
+import './Contact.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer'; 
@@ -30,11 +30,11 @@ export default function ContactUs() {
 
   if (loading) return <Preloader />;
   return (
-    <>
+    <main className='overflow-x-hidden'>
          <Navbar />
-         <section className="Services">
-         <div className="Servicessection1 items-center flex justify-center">
-         <div className="h-[6rem] sm:h-[7rem] md:h-[9rem] lg:h-[12rem] xl:h-[15rem] 2xl:h-[22rem] w-full">
+         <section className="ContactUs">
+         <div className="Contactssection1 items-center flex justify-center">
+         <div className="h-[5rem] sm:h-[6rem] md:h-[9rem] lg:h-[12rem] xl:h-[15rem] 2xl:h-[22rem] w-full">
          <TextHoverEffect className="about-us-text font-bold" text="CONTACT US" />
 
          {/* <TextHoverEffect h1>ABOUT US</h1> */}
@@ -45,6 +45,6 @@ export default function ContactUs() {
          <SpecialPrograms /> */}
          <Footer />
          </section>
-    </>
+    </main>
   );
 }

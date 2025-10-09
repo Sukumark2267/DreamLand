@@ -20,7 +20,7 @@ const card2Socials = [
 
 const Card = ({ bg, profileImg, socials, name, description }) => (
   <div
-    className={`w-[24em] h-[32.5em] ${bg} border-2 border-yellow-400 p-5
+    className={`w-[22em] h-[32.5em] ${bg} border-2 border-yellow-400 p-5
                 transition-all duration-1000 ease-in-out 
                 flex flex-col rounded-tr-[20px] rounded-bl-[20px] 
                 [clip-path:polygon(30px_0%,100%_0,100%_calc(100%_-_30px),calc(100%_-_30px)_100%,0_100%,0%_30px)]`}

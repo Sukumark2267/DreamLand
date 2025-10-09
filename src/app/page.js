@@ -36,7 +36,8 @@ export default function Home() {
     strategy="beforeInteractive"
     id="elfsight-platform"
   />
-    <main>
+    <main className='overflow-x-hidden'>
+
     <Navbar />
 
       <HeroSection/>

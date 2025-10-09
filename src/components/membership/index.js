@@ -47,35 +47,6 @@ const membershipPlans = [
 ];
 
 const MembershipSection = () => {
-  // useLayoutEffect(() => {
-  //   const cards = gsap.utils.toArray('.price-box');
-  
-  //   cards.forEach((card) => {
-  //     gsap.fromTo(
-  //       card,
-  //       { rotateX: 35, rotateY: 20, opacity: 0 },
-  //       {
-  //         rotateX: 0,
-  //         rotateY: 0,
-  //         opacity: 1,
-  //         delay:0.1,
-  //         duration: 1,
-  //         ease: 'power2.out',
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: 'top 80%',
-  //           toggleActions: 'play none none none',
-  //           once: true,
-  //         },
-  //       }
-  //     );
-  //   });
-  
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-  //   };
-  // }, []);
-  
   
   return (
     <section id="membership">

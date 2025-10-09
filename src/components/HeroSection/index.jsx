@@ -123,7 +123,7 @@ export default function ComingSoon() {
   return (
     <div className="landing-page min-h-screen bg-black text-white">
       {/* Hero Section with Video */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden pt-20 md:pt-10 lg:pt-20">
       {/* Background Collage */}
       <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
       {[...Array(6)].map((_, rowIndex) => {
@@ -145,7 +145,7 @@ export default function ComingSoon() {
                     key={`${rowIndex}-${idx}`}
                     src={src}
                     alt={`Thumb ${idx}`}
-                    className="aspect-[2/1] w-40 md:w-60 xl:w-80 object-cover mx-[2px] rounded"
+                    className="aspect-[2/1] w-80 md:w-60 xl:w-80 object-cover mx-[2px] rounded"
                   />
                 ))}
               </div>

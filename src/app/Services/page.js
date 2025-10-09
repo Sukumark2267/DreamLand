@@ -32,7 +32,7 @@ export default function Services() {
   return (
     <>
          <Navbar />
-         <section className="Services">
+         <section className="Services overflow-x-clip">
          <div className="Servicessection1 items-center flex justify-center">
          <div className="h-[6rem] sm:h-[8rem] md:h-[11rem] lg:h-[15rem] xl:h-[20rem]  2xl:h-[25rem] w-full">
          <TextHoverEffect className="about-us-text font-bold" text="SERVICES" />

@@ -1,4 +1,4 @@
-.Services {
+.ContactUs {
     background: url('/images/elements/J.webp') no-repeat center center fixed;
     background-size: contain;
     background-color: #000;
@@ -7,16 +7,17 @@
     height: 100vh;
     padding: 0% 0% 0% 0%;
     position: relative;
+    overflow-x: hidden !important;
   }
   
-  .Servicessection1 {
+  .Contactssection1 {
     background-color: none;
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
     position: relative;
   }
   
-  .Servicessection1 text {
+  .Contactsection1 text {
     font-family: 'Swiss721Bold';
     font-weight: bold;
   }

@@ -13,8 +13,8 @@ const InstagramFeed = () => {
   }, []);
 
   return (
-    <section id="instagram">
-      <h2 className="section-title text-8xl">#DREAMLANDLIFE</h2>
+    <section id="instagram" className='py-5'>
+      <h2 className="section-title text-6xl md:text-5xl lg:text-8xl">#DREAMLANDLIFE</h2>
       <p>
         Follow our vibrant community on Instagram{' '}
         <a
