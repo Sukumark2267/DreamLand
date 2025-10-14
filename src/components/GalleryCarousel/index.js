@@ -19,7 +19,13 @@ export default function ImageCarousel() {
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
+    <>
+            <h2 className="text-2xl md:text-5xl py-5 text-center">
+          <span className="text-white font-medium">GALLERY</span>
+        </h2>
     <div className="relative flex items-center justify-center w-full overflow-hidden h-screen">
+
+
       {/* Left Button */}
       <button
         onClick={prev}
@@ -91,5 +97,6 @@ export default function ImageCarousel() {
         <ChevronRight className="w-15 h-15" />
       </button>
     </div>
+    </>
   );
 }
