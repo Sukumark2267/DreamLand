@@ -50,23 +50,46 @@ export function contactTemplate({ fname, email, phone, message }) {
     subject: "We have recieved your request",
     text: `Name: ${fname}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-            <div style="background-color: #FFD700; padding: 16px; text-align: center;">
-              <h2 style="margin: 0; color: #000;">We have recieved your request</h2>
-            </div>
-            <div style="padding: 24px; background-color: #fff; color: #333;">
-              <p><strong>Name:</strong> ${fname}</p>
-              <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Phone:</strong> ${phone}</p>
-              <p><strong>Message:</strong><br/>${message.replace(
-                /\n/g,
-                "<br/>"
-              )}</p>
-            </div>
-            <div style="background-color: #f9f9f9; padding: 12px; text-align: center; font-size: 12px; color: #777;">
-              <p>This message was sent via Dreamland Athletics.</p>
-            </div>
-          </div>
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+
+  <!-- Header -->
+  <div style="background-color: #000; text-align: center; padding: 20px;">
+    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760465879/dl_white_empty_secondary_zznkbl.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
+  </div>
+
+  <!-- Title -->
+  <div style="background-color: #FFD700; padding: 20px; text-align: center;">
+    <h2 style="margin: 0; color: #000; font-size: 22px;">We’ve Received Your Request</h2>
+  </div>
+
+  <!-- Body -->
+  <div style="padding: 28px 24px; background-color: #fff; color: #333; line-height: 1.6;">
+    <p style="margin-bottom: 16px; font-size: 15px; color: #444;">
+      Hi <strong>${fname}</strong>,<br />
+      Thank you for reaching out to Dreamland Athletics! Our team has received your message and will get back to you as soon as possible.
+    </p>
+
+    <div style="background-color: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 16px; margin-top: 20px;">
+      <p style="margin: 0 0 8px;"><strong>Name:</strong> ${fname}</p>
+      <p style="margin: 0 0 8px;"><strong>Email:</strong> ${email}</p>
+      <p style="margin: 0 0 8px;"><strong>Phone:</strong> ${phone}</p>
+      <p style="margin: 0;"><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
+    </div>
+
+    <p style="margin-top: 20px; font-size: 14px; color: #555;">
+      We appreciate your patience and interest. You’ll hear from us soon!
+    </p>
+  </div>
+
+  <!-- Divider -->
+  <hr style="border: none; border-top: 1px solid #eee; margin: 0;" />
+
+  <!-- Footer -->
+  <div style="background-color: #fafafa; padding: 16px; text-align: center; font-size: 12px; color: #888;">
+    <p style="margin: 0;">This message was sent via the Dreamland Athletics Team.</p>
+    <p style="margin: 4px 0 0;">© ${new Date().getFullYear()} Dreamland Athletics. All rights reserved.</p>
+  </div>
+</div>
         `,
   };
 }
