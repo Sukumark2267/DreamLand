@@ -11,17 +11,14 @@ export function customerNewsletterTemplate({ fname }) {
     subject: "Thank you for signing up!",
     text: `Hi ${fname},\n\nThank you for signing up for the Dreamland Athletics newsletter! We'll keep you updated.`,
     html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <!-- Header -->
   <div style="background-color: #000; text-align: center; padding: 20px;">
     <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760465879/dl_white_empty_secondary_zznkbl.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
   </div>
 
-  <!-- Greeting -->
   <div style="background-color: #f1c419; text-align: center; padding: 20px;">
     <h2 style="margin: 0; color: #000; font-size: 24px;">Hi ${fname},</h2>
   </div>
 
-  <!-- Body -->
   <div style="padding: 30px 24px; color: #333; text-align: center; line-height: 1.6;">
     <h3 style="margin-bottom: 12px; font-size: 20px;">Welcome to Dreamland Athletics!</h3>
     <p style="margin: 0; font-size: 15px; color: #555;">
@@ -33,10 +30,8 @@ export function customerNewsletterTemplate({ fname }) {
     </p>
   </div>
 
-  <!-- Divider -->
   <hr style="border: none; border-top: 1px solid #eee; margin: 0;" />
 
-  <!-- Footer -->
   <div style="background-color: #fafafa; padding: 16px; text-align: center; font-size: 12px; color: #888;">
     <p style="margin: 0;">This message was sent by the Dreamland Athletics Team.</p>
     <p style="margin: 4px 0 0;">© ${new Date().getFullYear()} Dreamland Athletics. All rights reserved.</p>
@@ -52,17 +47,14 @@ export function contactTemplate({ fname, email, phone, message }) {
     html: `
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
 
-  <!-- Header -->
   <div style="background-color: #000; text-align: center; padding: 20px;">
     <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760465879/dl_white_empty_secondary_zznkbl.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
   </div>
 
-  <!-- Title -->
   <div style="background-color: #FFD700; padding: 20px; text-align: center;">
     <h2 style="margin: 0; color: #000; font-size: 22px;">We’ve Received Your Request</h2>
   </div>
 
-  <!-- Body -->
   <div style="padding: 28px 24px; background-color: #fff; color: #333; line-height: 1.6;">
     <p style="margin-bottom: 16px; font-size: 15px; color: #444;">
       Hi <strong>${fname}</strong>,<br />
@@ -81,10 +73,8 @@ export function contactTemplate({ fname, email, phone, message }) {
     </p>
   </div>
 
-  <!-- Divider -->
   <hr style="border: none; border-top: 1px solid #eee; margin: 0;" />
 
-  <!-- Footer -->
   <div style="background-color: #fafafa; padding: 16px; text-align: center; font-size: 12px; color: #888;">
     <p style="margin: 0;">This message was sent via the Dreamland Athletics Team.</p>
     <p style="margin: 4px 0 0;">© ${new Date().getFullYear()} Dreamland Athletics. All rights reserved.</p>
