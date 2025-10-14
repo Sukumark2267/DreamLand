@@ -21,7 +21,7 @@ export default function ImageCarousel() {
 
   return (
     <>
-      <h2 className="text-2xl md:text-5xl py-5 text-center">
+      <h2 className="text-2xl md:text-5xl pt-7 text-center">
         <span className="text-white font-medium">GALLERY</span>
       </h2>
       <div className="relative flex items-center justify-center w-full overflow-hidden h-screen">
