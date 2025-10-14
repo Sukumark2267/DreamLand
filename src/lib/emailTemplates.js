@@ -11,8 +11,8 @@ export function customerNewsletterTemplate({ fname }) {
     subject: "Thank you for signing up!",
     text: `Hi ${fname},\n\nThank you for signing up for the Dreamland Athletics newsletter! We'll keep you updated.`,
     html: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-  <div style="background-color: #000; text-align: center; padding: 20px;">
-    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760465879/dl_white_empty_secondary_zznkbl.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
+  <div style="background-color: #000; text-align: center; padding: 0px;">
+    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760466815/dl_white_empty_secondary_-_Copy_oleksu.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
   </div>
 
   <div style="background-color: #f1c419; text-align: center; padding: 20px;">
@@ -47,8 +47,8 @@ export function contactTemplate({ fname, email, phone, message }) {
     html: `
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
 
-  <div style="background-color: #000; text-align: center; padding: 20px;">
-    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760465879/dl_white_empty_secondary_zznkbl.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
+  <div style="background-color: #000; text-align: center; padding: 0px;">
+    <img src="https://res.cloudinary.com/dzhgubztu/image/upload/v1760466815/dl_white_empty_secondary_-_Copy_oleksu.png" alt="Dreamland Athletics" style="max-width: 160px; height: auto;" />
   </div>
 
   <div style="background-color: #FFD700; padding: 20px; text-align: center;">
