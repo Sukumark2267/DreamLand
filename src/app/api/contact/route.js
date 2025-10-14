@@ -1,44 +1,60 @@
+import { NextResponse } from "next/server";
 import { transporter } from "@/lib/mailer";
 import { contactTemplate } from "@/lib/emailTemplates";
-import { NextResponse } from "next/server";
 
-export default async function POST(request) {
-  const { subject, text, html } = contactTemplate({
-    fname,
-    email,
-    phone,
-    message,
-  });
+export async function POST(req) {
   try {
-    const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { fname, email, phone, message } = await req.json();
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!fname || !email || !phone) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
+    // Admin email (where you want to receive contact form messages)
+    const adminEmail = "Jay@dreamlandathletics.com";
+
+    // Email sender identity
+    const fromMail = "Dreamland Athletics <Jay@dreamlandathletics.com>";
+    const customerMail = contactTemplate({ fname, email, phone, message });
+
+    // Generate email content from your template
+    const { subject, text, html } = contactTemplate({
+      fname,
+      email,
+      phone,
+      message,
+    });
+
+    // Send email to admin
     await transporter.sendMail({
-      from: `"Dreamland Athletics" <${process.env.EMAIL_USER}>`,
-      to: email,
+      from: fromMail,
+      to: adminEmail,
       subject,
       text,
       html,
     });
 
-    console.log("New Contact Submission:", { name, email, phone, message });
-
-    // TODO: Replace with your actual processing logic (email, DB, etc.)
-
-    return NextResponse.json({
-      success: true,
-      message: "Message sent successfully!",
+    await transporter.sendMail({
+      from: fromMail,
+      to: email,
+      subject: customerMail.subject,
+      text: customerMail.text,
+      html: customerMail.html,
     });
+
+    console.log("📩 New Contact Submission:", { fname, email, phone, message });
+
+    return NextResponse.json(
+      { success: true, message: "Message sent successfully!" },
+      { status: 200 }
+    );
+
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("❌ Contact form error:", error);
     return NextResponse.json(
       { error: "Server error. Please try again later." },
       { status: 500 }

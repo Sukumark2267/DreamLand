@@ -17,13 +17,13 @@ const socialButtons = [
     name: 'WhatsApp',
     icon: <FaWhatsapp />,
     bg: 'bg-gradient-to-tr from-[#02ff2c] to-[#008a12]',
-    href: 'https://wa.me/9055551234',
+    href: 'https://wa.me/15488882122?text=Hello%20Dreamland%20Athletics!',
   },
   {
     name: 'Linkedin',
     icon: <FaLinkedin/>,
     bg: 'bg-[#45bbff]',
-    href: 'https://www.linkedin.com/in/chirag-guleria-22337098',
+    href: 'https://www.linkedin.com/company/dreamlandathletics/',
   },
   {
     name: 'Tiktok',

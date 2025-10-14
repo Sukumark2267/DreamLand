@@ -24,17 +24,17 @@ export function customerNewsletterTemplate({ fname }) {
   };
 }
 
-export function contactTemplate({ name, email, phone, message }) {
+export function contactTemplate({ fname, email, phone, message }) {
   return {
     subject: "We have recieved your request",
-    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    text: `Name: ${fname}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
             <div style="background-color: #FFD700; padding: 16px; text-align: center;">
               <h2 style="margin: 0; color: #000;">We have recieved your request</h2>
             </div>
             <div style="padding: 24px; background-color: #fff; color: #333;">
-              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Name:</strong> ${fname}</p>
               <p><strong>Email:</strong> ${email}</p>
               <p><strong>Phone:</strong> ${phone}</p>
               <p><strong>Message:</strong><br/>${message.replace(

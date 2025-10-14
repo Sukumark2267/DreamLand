@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
 
         {/* Hours */}
-        <div className="footer-column-mob pt-3">
+        <div className="footer-column-mob pt-3 lg:hidden">
           <div className="footer-column-3-mob">
             <h4>Timings</h4>
             <ul className="footer-links-mob">

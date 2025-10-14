@@ -34,7 +34,7 @@ export default function Navbar() {
             alt="Logo"
             width={170}
             height={100}
-            className="scale-135"
+            className="scale-135 -mt-2"
           />
         </Link>
       </div>

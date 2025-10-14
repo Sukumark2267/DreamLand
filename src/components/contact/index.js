@@ -38,13 +38,15 @@ const ContactSection = () => {
   
     const form = e.target;
     const formData = {
-      name: form[0].value,
+      fname: form[0].value,
       email: form[1].value,
       phone: form[2].value,
       message: form[3].value,
     };
   
     try {
+      console.log(formData);
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

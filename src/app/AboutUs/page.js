@@ -4,8 +4,9 @@ import './AboutUs.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import AboutCards from '@/components/AboutCards';
+import StudioTimings from '@/components/StudioTimings';
 import AboutSection2 from '@/components/AboutSection2';
+import GalleryCarousel from '@/components/GalleryCarousel';
 import Newsletter from '@/components/Newsletter';
 import Preloader from '@/components/Preloader';
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
@@ -37,6 +38,8 @@ export default function About() {
          </div>
          {/* <AboutCards />    */}
          <AboutSection2 />
+         <StudioTimings />
+         <GalleryCarousel />
          <Newsletter />
          <Footer />
           </section>
