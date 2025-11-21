@@ -12,6 +12,9 @@
     cursor: pointer;
     transition: 400ms;
 }
+.dl-navbar {
+  background: var(--dl-gold-gradient);
+}
 
 .login-button > a {
     margin-left: 0rem;

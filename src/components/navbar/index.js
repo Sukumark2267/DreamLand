@@ -22,62 +22,68 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed w-full z-50 bg-white transition-all duration-300 overflow-hidden ${
-        scrolled ? "shadow-lg" : "shadow-none"
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-black shadow-lg" : "bg-black/95"
       }`}
     >
-      {/* LEFT LOGO */}
-      <div className="logo px-6 lg:px-10 z-11">
-        <Link href="/">
-          <Image
-            src="/images/logo/dl_white_empty_primary - text.png"
-            alt="Logo"
-            width={170}
-            height={100}
-            className="scale-135 -mt-2"
-          />
-        </Link>
-      </div>
-
-      {/* CENTER LOGO */}
-      <div className="logo z-10">
-        <Link href="/">
-          <Image
-            src="/images/logo/logo-primary.png"
-            alt="Logo"
-            width={1000}
-            height={1000}
-            className="w-18 scale-2000 sm:scale-1000 md:scale-1000 lg:scale-2000 pt-1"
-          />
-        </Link>
-      </div>
-
-      {/* RIGHT SECTION */}
-      <div className="right-section px-6 lg:px-10 z-10 flex items-center justify-end gap-6">
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 text-white font-medium">
-          <Link href="/AboutUs" className="transition">
-            About
+      {/* Full-width, small padding, reduced height */}
+      <div className="w-full flex items-center justify-between px-2 lg:px-5 h-10">
+        {/* LEFT: logo + desktop menu in one flex row */}
+        <div className="flex items-center">
+          {/* LOGO – primary brand logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo/dl_primary_logo.png"
+              alt="Dreamland Athletics"
+              width={200}
+              height={50}
+              priority
+              className="h-[40px] w-auto object-contain"  // smaller height
+            />
           </Link>
-          <Link href="/Services" className="transition">
-            Services
-          </Link>
-          <Link href="/ContactUs" className="transition">
-            Contact
-          </Link>
-        </nav>
 
-        {/* Mobile Menu Button */}
+          {/* DESKTOP MENU */}
+          <nav className="hidden lg:flex items-center gap-4 ml-6 font-swiss text-[11px] tracking-[0.18em] uppercase text-white">
+            <Link href="/" className="hover:text-[#e7b826] transition">
+              Home
+            </Link>
+            <Link href="/AboutUs" className="hover:text-[#e7b826] transition">
+              About
+            </Link>
+            <Link
+              href="/#services"
+              className="hover:text-[#e7b826] transition whitespace-nowrap"
+            >
+              What We Offer
+            </Link>
+            <Link
+              href="/#memberships"
+              className="hover:text-[#e7b826] transition"
+            >
+              Memberships
+            </Link>
+            <Link href="/Gallery" className="hover:text-[#e7b826] transition">
+              Gallery
+            </Link>
+            <Link href="/#reviews" className="hover:text-[#e7b826] transition">
+              Reviews
+            </Link>
+            <Link href="/ContactUs" className="hover:text-[#e7b826] transition">
+              Contact
+            </Link>
+          </nav>
+        </div>
+
+        {/* RIGHT: mobile menu button only */}
         <button
           className="block lg:hidden text-white focus:outline-none cursor-pointer"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <Menu size={30} />
+          <Menu size={26} />
         </button>
       </div>
 
-      {/* Mobile Menu Component */}
       <MobileMenu isOpen={menuOpen} onClose={closeMenu} />
     </header>
   );

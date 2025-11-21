@@ -25,8 +25,6 @@ const newsletterSchema = z.object({
   email: z.string().email("Invalid email"),
 });
 
-// Collage thumbnails provided by thumbs data
-
 const shuffle = (array) => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -42,25 +40,18 @@ export default function ComingSoon() {
   const [form, setForm] = useState({ fname: "", email: "" });
   const [rowCount, setRowCount] = useState(6); // Default to desktop
 
-  // Hook to handle responsive row count
+  // Responsive row count for background collage
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        // Mobile: 9-10 rows (using 10)
-        setRowCount(10);
+        setRowCount(10); // Mobile: more rows
       } else {
-        // Desktop: 6 rows
-        setRowCount(6);
+        setRowCount(6); // Desktop: fewer rows
       }
     };
 
-    // Set initial value
     handleResize();
-
-    // Add event listener
     window.addEventListener("resize", handleResize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -73,7 +64,6 @@ export default function ComingSoon() {
     const fname = form.fname;
     const email = form.email;
 
-    // Validate with Zod
     const result = newsletterSchema.safeParse({ fname, email });
     if (!result.success) {
       console.log(result.error);
@@ -85,17 +75,15 @@ export default function ComingSoon() {
 
     try {
       setLoading(true);
-      // Send to API
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fname, email }),
       });
 
-      // Handle response
       if (res.ok) {
         toast.success("Thank you for signing up!");
-        setForm({ fname: "", email: "" }); // Reset form on success
+        setForm({ fname: "", email: "" });
       } else {
         toast.error("There was an error. Please try again.");
       }
@@ -106,31 +94,14 @@ export default function ComingSoon() {
     }
   };
 
-  // useEffect(() => {
-  //   const split = new SplitType(headingRef.current, { types: 'chars' });
-
-  //   gsap.from('.char', {
-  //     y: -100,
-  //     opacity: 0,
-  //     duration: 0.6,
-  //     ease: 'bounce.out',
-  //     stagger: 0.05,
-  //   });
-
-  //   return () => split.revert();
-  // }, []);
-
   return (
     <div className="landing-page min-h-screen bg-black text-white">
-      {/* Hero Section with Video */}
-      <section className="relative min-h-screen overflow-hidden pt-20 md:pt-10 lg:pt-20">
-      {/* Background Collage */}
-      <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
-      {[...Array(6)].map((_, rowIndex) => {
-        // Shuffle + double the array to ensure smooth looping
-        const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
-
-
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen overflow-hidden pt-16">
+        {/* Background Collage */}
+        <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
+          {[...Array(rowCount)].map((_, rowIndex) => {
+            const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
             return (
               <div
                 key={rowIndex}
@@ -153,82 +124,91 @@ export default function ComingSoon() {
           })}
         </div>
 
-        {/* Hero Content */}
-      <div className="relative z-20 flex flex-col justify-start items-center h-full px-4 top-5 text-center">
-        <Image
-          src="/images/logo/logo-primary.png"
-          alt="Dreamland Athletics Gym"
-          width={256}
-          height={256}
-          className="w-32 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
-          priority
-        />
-        <h1 id="Hero-Heading"
-              ref={headingRef}
-          className="text-3xl md:text-md lg:text-4xl font-bold lg:px-100 md:px-50 px-15 pt-2 pb-10 leading-tight text-white"
-          style={{
-            fontFamily: "Swiss721Black",
-            textShadow: "0 0 20px rgba(0,0,0,0.8)",
-            letterSpacing: "2px",
-          }}
-        >
-          DREAMLAND <br/> ATHLETICS
-        </h1>
+        {/* Dark overlay to make text readable */}
+        <div className="absolute inset-0 z-10 bg-black/70" />
 
-        {/* <Badge variant="outline" className="mb-6 text-primary border-primary">
+        {/* Hero Content – anchored near first row */}
+        <div className="absolute inset-x-0 top-0 md:top-1 lg:top-9 z-20 flex flex-col items-center px-4 text-center">
+          {/* Logo */}
+          <Image
+            src="/images/logo/logo-primary.png"
+            alt="Dreamland Athletics Gym"
+            width={220}
+            height={220}
+            className="w-20 md:w-28 lg:w-32 h-auto object-contain rounded-xl mb-3"
+            priority
+          />
 
-          Premium Fitness Experience
-        </Badge> */}
+          {/* Line 1: BEST STUDIO IN BRAMPTON, ONTARIO */}
+         <h1
+  className="font-gothic text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-1"
+>
+  BEST STUDIO IN{" "}
+  <span className="text-[#e7b826]">BRAMPTON, ONTARIO</span>
+</h1>
 
-          <h1
-            className="text-[6rem] md:text-[8rem] xl:text-[12rem] 2xl:text-[15rem] m-0 leading-tight text-white relative h-25 md:h-35 xl:h-55 before:content-[''] before:block before:w-[110%] before:h-[4px] before:bg-primary before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2"
-            style={{
-              fontFamily: "AlternateGothicNo1",
-              textShadow: "0 0 20px rgba(0,0,0,0.8)",
-              letterSpacing: "2px",
-            }}
-          >
-            BE A TURTLE
-          </h1>
 
-          <p className="text-[1.35rem] md:text-[1.75rem] xl:text-[3rem] mb-6 leading-relaxed text-white">
-            SLOW<span className="text-[#e7b826]">.</span>STEADY
-            <span className="text-[#e7b826]">.</span>UNSTOPPABLE
-            <span className="text-[#e7b826]">.</span>
+          {/* Line 2: CANADIAN FITNESS BRAND HIGHLY FOCUSED ON */}
+          <p className="font-swiss text-gray-200 text-xs md:text-sm lg:text-base tracking-[0.12em] mb-2">
+             CANADIAN FITNESS BRAND HIGHLY FOCUSED ON
           </p>
-          {/*       <p className="text-base md:text-xl mb-12 max-w-3xl text-gray-300 leading-relaxed">
-          Your journey to greatness starts here. Join the elite community of
-          athletes who dare to dream big and work harder.
-        </p> */}
-          <Link
-            href="#Newsletter"
-            className="btn--primary bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-8 md:py-3.5 md:px-10 rounded-lg transition duration-300 text-sm md:text-md"
-          >
-            LET'S GO !!
-          </Link>
-        </div>
 
-        {/* Dark Overlay */}
-        {/* <div className="absolute inset-0 bg-black/60 z-[20]" /> */}
+
+          {/* Subline: Community, Transformation, Results */}
+         <p className="font-swiss text-gray-300 text-xs md:text-sm lg:text-base tracking-[0.10em] mb-4 uppercase opacity-90">
+         Community <span className="text-[#e7b826]">•</span> Transformation <span className="text-[#e7b826]">•</span> Results
+          </p>
+
+
+          {/* Line 3: BE A TURTLE – SLOW. STEADY. UNSTOPPABLE. */}
+             <h2
+  className="font-octin text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 tracking-[0.15em]"
+  style={{
+    textShadow: "0 0 25px rgba(0,0,0,0.85)",
+  }}
+>
+  <span className="text-[#e7b826]">BE A TURTLE</span>
+  <span className="text-white"> – SLOW</span>
+  <span className="text-[#ff7a00]">.</span>
+  <span className="text-[#ff7a00]"> STEADY</span>
+  <span className="text-[#ff3b30]">.</span>
+  <span className="text-[#ff3b30]"> UNSTOPPABLE</span>
+  <span className="text-[#e7b826]">.</span>
+</h2>
+
+
+
+      <p
+  className="font-swiss text-gray-300 text-xs md:text-sm lg:text-base max-w-xl leading-relaxed tracking-[0.05em] mb-5 opacity-90"
+>
+  Private, highly focused training studio for serious people who believe in slow,
+  steady, unstoppable progress.
+</p>
+
+
+          {/* CTAs */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+           <Link
+  href="#memberships"
+  className="dl-btn-primary py-2 px-6 md:py-2.5 md:px-8 rounded-lg text-xs md:text-sm uppercase tracking-wide"
+>
+  View Memberships
+</Link>
+
+
+     <Link
+  href="/#free-pass"
+  className="hidden lg:inline-flex dl-btn-primary px-5 py-2 rounded-sm text-sm font-bold"
+>
+  FREE PASS
+</Link>
+
+
+          </div>
+        </div>
       </section>
 
-      {/* Main content */}
-      {/* <div className="relative"> */}
-        {/* <div
-          className="inset-0 top-0 h-screen"
-          style={{
-            backgroundImage: "url('/images/elements/bg-texture.webp')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            zIndex: 0,
-          }}
-        /> */}
-        {/* <div className="flex flex-col gap-5 mx-auto lg:px-8 h-full">
-        </div> */}
-    
-      {/* </div> */}
-
+      {/* Optional: you can re-enable these later if needed */}
       {/* <InstagramFeed />
       <FounderSocials /> */}
     </div>

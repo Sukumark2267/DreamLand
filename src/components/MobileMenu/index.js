@@ -1,96 +1,83 @@
 "use client";
 
-import Link from "next/link";
-import { X } from "lucide-react";
 import Image from "next/image";
-import SocialButtons from "../SocialButtons";
+import Link from "next/link";
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
-export default function MobileMenu({ isOpen, onClose }) {
+export default function MobileMenu() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <div
-        className={`fixed inset-0 bg-black text-white z-50 transition-transform duration-300 max-h-screen max-w-screen ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex justify-end p-6">
-          <button
-            onClick={onClose}
-            aria-label="Close menu"
-            className="text-white focus:outline-none"
-          >
-            <X size={35} />
-          </button>
-        </div>
-        <div className="relative z-20 flex flex-col justify-start items-center px-4 text-center">
+      {/* Mobile Header */}
+      <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-black border-b border-neutral-800">
+        
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo/logo-primary.png"
-            alt="Dreamland Athletics Gym"
-            width={256}
-            height={256}
-            className="w-20 md:w-48 lg:w-44 h-auto object-contain rounded-xl"
+            src="/images/logo/dl_primary_logo.png"
+            alt="Dreamland Athletics"
+            width={150}
+            height={50}
+            className="h-auto w-[150px]"
             priority
           />
-          <h1
-            id="Hero-Heading"
-            className="text-2xl md:text-md lg:text-4xl font-bold lg:px-100 md:px-50 px-15 pt-2 pb-10 leading-tight text-white"
-            style={{
-              fontFamily: "Swiss721Black",
-              textShadow: "0 0 20px rgba(0,0,0,0.8)",
-              letterSpacing: "2px",
-            }}
-          >
-            DREAMLAND <br /> ATHLETICS
-          </h1>
-        </div>
-        <div className="flex flex-col items-center justify-center pt-0 gap-8 text-lg font-semibold">
-          <Link
-            href="/AboutUs"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            About
-          </Link>
-          <Link
-            href="/Services"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            Services
-          </Link>
-          <Link
-            href="/ContactUs"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="https://www.instagram.com/dreamland_brampton"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            Instagram
-          </Link>
-          <Link
-            href="/PrivacyPolicy"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            Privacy Policies
-          </Link>
-          <Link
-            href="/TermsAndConditions"
-            onClick={onClose}
-            className="hover:text-[#ffc92e] text-white"
-          >
-            Terms & Conditions
-          </Link>
-          <div className="min-h-20 bg-none flex justify-center lg:justify-start md:scale-80 lg:scale-85">
-            <SocialButtons />
-          </div>
-        </div>
+        </Link>
+
+        {/* Menu Toggle Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-white text-3xl"
+        >
+          {open ? <HiX /> : <HiMenu />}
+        </button>
       </div>
+
+      {/* Mobile Slide Menu */}
+      {open && (
+        <div className="lg:hidden bg-black text-white px-6 py-4 font-swiss text-[14px] tracking-[0.15em] uppercase">
+          <nav className="flex flex-col space-y-4">
+
+            <Link href="/" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              Home
+            </Link>
+
+            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              About
+            </Link>
+
+            <Link href="/what-we-offer" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              What We Offer
+            </Link>
+
+            <Link href="/memberships" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              Memberships
+            </Link>
+
+            <Link href="/gallery" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              Gallery
+            </Link>
+
+            <Link href="/reviews" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              Reviews
+            </Link>
+
+            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
+              Contact
+            </Link>
+
+            {/* Free Pass Button */}
+            <Link
+              href="/free-pass"
+              onClick={() => setOpen(false)}
+              className="mt-4 bg-[var(--dl-gold)] text-black py-2 px-5 rounded-md font-bold text-[13px] uppercase tracking-[0.20em] text-center"
+            >
+              Free Pass
+            </Link>
+          </nav>
+        </div>
+      )}
     </>
   );
 }

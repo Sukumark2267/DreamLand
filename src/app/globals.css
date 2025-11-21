@@ -3,6 +3,55 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+/* ==== Dreamland Brand Fonts from /public/fonts ==== */
+
+@font-face {
+  font-family: "AlternateGothic";
+  src: url("/fonts/alternategothicno1.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Swiss721";
+  src: url("/fonts/Swiss721Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Swiss721";
+  src: url("/fonts/Swiss721Black.woff") format("woff");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "OctinSpray";
+  src: url("/fonts/octinspray.woff") format("woff");
+}
+
+@font-face {
+  font-family: "AgudaBlack";
+  src: url("/fonts/AgudaBlack.ttf") format("truetype");
+}
+/* Font utility classes */
+
+.font-swiss {
+  font-family: "Swiss721", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-gothic {
+  font-family: "AlternateGothic", "Swiss721", sans-serif;
+}
+
+.font-octin {
+  font-family: "OctinSpray", "Swiss721", sans-serif;
+}
+
+.font-aguda {
+  font-family: "AgudaBlack", "Swiss721", sans-serif;
+}
+
 
 @font-face {
   font-family: "AlternateGothicNo1";
@@ -37,6 +86,19 @@
 }
 
 :root {
+   --dl-gold: #e7b826;
+  --dl-gold-soft: #ffd84e;
+  --dl-white: #ffffff;
+  --dl-grey-light: #848484;
+  --dl-grey-mid: #5e5e5e;
+  --dl-grey-dark: #1e1e1e;
+
+  --dl-gold: #ffc92e;
+  --dl-gold-soft: #e7b826;
+  --dl-gold-deep: #987b0a;
+
+  /* Gradients */
+  --dl-gold-gradient: linear-gradient(135deg, #1e1e1e 0%, #987b0a 100%);
   --primary: #f1c419;
   --secondary: #000;
   --dark-bg: #111;
@@ -1203,4 +1265,53 @@ footer {
     width: 120px;
     height: 40px;
   }
+}
+/* Dreamland Athletics Brand Button Styles */
+
+.dl-btn-primary {
+   background: var(--dl-gold);
+  color: #000;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.dl-btn-primary:hover {
+  background: var(--dl-gold-soft);
+}
+
+.dl-btn-outline {
+  border: 2px solid var(--dl-gold);
+  color: var(--dl-gold);
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.dl-btn-outline:hover {
+  background: var(--dl-gold);
+  color: #000;
+}
+:root {
+  --font-dreamland: 'Dreamland', sans-serif;
+}
+
+/* Tailwind font utility */
+.font-dl {
+  font-family: var(--font-dreamland);
+}
+@keyframes fadeInSmooth {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInSmooth 1.2s ease-out both;
+}
+
+@keyframes underlineGrow {
+  0% { width: 0; }
+  100% { width: 80%; }
+}
+
+.animate-underline {
+  animation: underlineGrow 1s ease-out 0.4s forwards;
 }

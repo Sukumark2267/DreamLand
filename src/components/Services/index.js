@@ -1,72 +1,71 @@
-'use client';
+"use client";
 
-import React, { useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
-import './services.css';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from "react";
+import Image from "next/image";
+import "./services.css";
 
 const services = [
   {
-    title: 'Personal Training',
-    image: '/images/elements/C.png',
+    title: "PRIVATE STUDIO ACCESS",
+    image: "/images/elements/C.png",
   },
   {
-    title: 'Strength & Conditioning',
-    image: '/images/elements/2.png',
+    title: "ONE-ON-ONE TRAINING",
+    image: "/images/elements/2.png",
   },
   {
-    title: 'High-Intensity Training',
-    image: '/images/elements/A.png',
+    title: "GROUP FITNESS",
+    image: "/images/elements/A.png",
   },
   {
-    title: 'Nutritional Consultation',
-    image: '/images/elements/B.png',
+    title: "POWERLIFTING WORKSHOP",
+    image: "/images/elements/B.png",
+  },
+  {
+    title: "KIDS WORKOUT",
+    image: "/images/elements/E.png",
+  },
+  {
+    title: "NUTRITION GUIDANCE",
+    image: "/images/elements/O.png",
   },
 ];
 
 export default function ServicesSection() {
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: '.services-section',
-        start: 'top 30%',
-        end: '+=2000',
-        scrub: true,
-        // markers: true,
-        animation: gsap.to('.services-left-box', {
-          y: '80vh',
-        }),
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section className="services-section">
-      {/* Left Box */}
-      <div className="services-left-box">
-        <h2 className="services-title">
-          <p>FIND YOUR</p> <span className="highlight">PERFECT</span> SERVICE
-        </h2>
-        <button className="more-button">MORE</button>
+    <section id="services" className="dl-services-wrapper services-section">
+      {/* Heading */}
+      <div className="text-center mb-12">
+        <h2 className="dl-heading-center dl-gold">WHAT WE OFFER</h2>
+
+        <p className="dl-description-center">
+          PREMIUM <span className="dl-gold">TRAINING SERVICES</span>
+        </p>
+
+        <p className="dl-description-center">
+          Choose from specialized programs designed for strength, endurance,
+          weight loss, kids training and overall transformation.
+        </p>
       </div>
 
-      {/* Services List */}
-      <div className="services-list">
+      {/* GRID (6 cards like membership) */}
+      <div className="services-grid">
         {services.map((service, index) => (
           <div key={index} className="service-card">
-            <div className="service-label">{service.title}</div>
-            <div className="service-image-wrapper">
+            <div className="service-img-wrapper">
               <Image
                 src={service.image}
                 alt={service.title}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
             </div>
+
+            <div className="service-content">
+              <h3>{service.title}</h3>
+            </div>
+
+            <div className="service-border" />
           </div>
         ))}
       </div>
