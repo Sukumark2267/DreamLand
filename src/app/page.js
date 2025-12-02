@@ -13,6 +13,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import InstagramFeed from '@/components/instagram';
 import FounderSocials from '@/components/FounderSocials';
+import GoogleReviews from "@/components/GoogleReviews";
 
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
       <Services/>
       <FounderSocials/>
       <Newsletter/>
+      <GoogleReviews/>
       <Banner/>
       <Footer />
 

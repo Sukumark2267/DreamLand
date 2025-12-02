@@ -20,231 +20,310 @@ export default function TermsAndConditions() {
   return (
     <>
       <Navbar />
-      <section className="TermsAndConditions px-6 md:px-20 py-16 text-gray-100 bg-[#0a0a0a]">
+      <section className="TermsAndConditions px-6 md:px-20 py-20 text-gray-100 bg-gradient-to-b from-black via-[#050505] to-[#050505]">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl mb-8 text-center tracking-widest">
-            Terms & Conditions
+          {/* Page Title */}
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-center tracking-[0.25em] uppercase">
+            Terms &amp; Conditions
           </h1>
-          <p className="mb-6 text-lg text-gray-300 text-center">
-            Last updated: October 9, 2025
+
+          {/* Meta Info */}
+          <p className="mb-2 text-sm md:text-base text-gray-300 text-center">
+            <span className="font-semibold text-[#e7b826]">
+              Dreamland Athletics – Official Policy
+            </span>
+          </p>
+          <p className="mb-1 text-sm md:text-base text-gray-400 text-center">
+            Last Updated: <span className="font-medium text-gray-200">November 2025</span>
+          </p>
+          <p className="mb-8 text-sm md:text-base text-gray-400 text-center">
+            Location: <span className="font-medium text-gray-200">Brampton, Ontario, Canada</span>
           </p>
 
-          <div className="space-y-10 text-gray-300 leading-relaxed">
-            {/* SECTION 1 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">1. Introduction</h2>
-              <p>
-                Welcome to Dreamland Athletics (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms
-                and Conditions (&quot;Terms&quot;) govern your access to and use of our
-                website, digital services, and any products or features we
-                provide (collectively, the &quot;Services&quot;). By accessing or using
-                our website, you agree to comply with these Terms. If you do not
-                agree, please discontinue use immediately.
-              </p>
-              <p className="mt-3">
-                These Terms apply to all visitors, users, and others who access
-                or use the Services. Your continued use of the website after any
-                modification to these Terms constitutes acceptance of those
-                changes.
-              </p>
-            </section>
+          <div className="h-px w-24 mx-auto mb-10 bg-gradient-to-r from-transparent via-[#e7b826] to-transparent" />
 
-            {/* SECTION 2 */}
+          {/* Content */}
+          <div className="space-y-10 text-gray-300 leading-relaxed text-sm md:text-base">
+            {/* 1. Membership & Personal Training Commitments */}
             <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                2. Eligibility & User Obligations
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                1. Membership &amp; Personal Training Commitments
               </h2>
-              <p>
-                By using our Services, you represent that you are at least 16
-                years of age or have legal parental consent. You agree not to
-                use the website for any unlawful purpose or in a manner that
-                could damage, disable, or interfere with the operation of our
-                Services or any third party’s use.
-              </p>
-              <ul className="list-disc list-inside mt-3 space-y-2">
-                <li>Provide accurate and up-to-date information.</li>
+              <ul className="list-disc list-inside space-y-2">
                 <li>
-                  Not engage in fraudulent, abusive, or illegal activities.
+                  <span className="font-semibold">
+                    1.1 Automatic Renewals:
+                  </span>{" "}
+                  All recurring memberships renew automatically unless cancelled
+                  with a{" "}
+                  <span className="font-semibold text-[#e7b826]">
+                    30-day written notice
+                  </span>
+                  .
                 </li>
                 <li>
-                  Respect the intellectual property and privacy rights of
-                  others.
+                  <span className="font-semibold">
+                    1.2 Paid-in-Full Packages:
+                  </span>{" "}
+                  All paid-in-full packages (memberships, class packs, personal
+                  training packages, kids programs, events, and promotions) are{" "}
+                  <span className="font-semibold uppercase text-red-400">
+                    non-transferable and non-refundable
+                  </span>
+                  .
+                </li>
+                <li>
+                  <span className="font-semibold">1.3 Banked Sessions:</span>{" "}
+                  Any banked or unused sessions remain valid for{" "}
+                  <span className="font-semibold">6 months</span> from the date
+                  of cancellation notice. After this period, unused sessions
+                  will automatically expire.
                 </li>
               </ul>
             </section>
 
-            {/* SECTION 3 */}
+            {/* 2. NO REFUND POLICY */}
             <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                3. Intellectual Property Rights
+              <div className="border-l-4 border-red-500 bg-white/5 rounded-md px-4 py-4 shadow-md">
+                <h2 className="text-2xl md:text-3xl mb-2 font-semibold tracking-normal text-red-400">
+                  2. NO REFUND POLICY
+                </h2>
+                <p className="mb-2">
+                  All payments made to Dreamland Athletics are{" "}
+                  <span className="font-semibold uppercase text-red-400">
+                    strictly NON-REFUNDABLE
+                  </span>
+                  .
+                </p>
+                <p>
+                  This includes, but is not limited to: memberships, personal
+                  training, kids programs, class packs, workshops, events, and
+                  promotional offers. Missed sessions, schedule changes, partial
+                  usage, or early cancellations do not qualify for refunds.
+                </p>
+              </div>
+            </section>
+
+            {/* 3. 30-DAY CANCELLATION POLICY */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                3. 30-Day Cancellation Policy
               </h2>
               <p>
-                All materials, including text, images, graphics, videos, and
-                logos on this website are owned or licensed by Dreamland
-                Athletics and are protected by copyright, trademark, and other
-                intellectual property laws. Unauthorized use, reproduction, or
-                redistribution of our content is strictly prohibited.
+                A{" "}
+                <span className="font-semibold text-[#e7b826]">
+                  written 30-day notice
+                </span>{" "}
+                is required for cancelling any recurring membership.
               </p>
+              <ul className="list-disc list-inside mt-3 space-y-2">
+                <li>
+                  The final invoice will be billed during the 30-day notice
+                  period.
+                </li>
+                <li>
+                  Cancellation requests must be emailed to{" "}
+                  <a
+                    href="mailto:dreamlandathletics@gmail.com"
+                    className="text-[#e7b826] underline"
+                  >
+                    dreamlandathletics@gmail.com
+                  </a>
+                  .
+                </li>
+                <li>
+                  Verbal requests, text messages, or social media messages are{" "}
+                  <span className="font-semibold">not accepted</span> as
+                  official cancellation.
+                </li>
+              </ul>
+            </section>
+
+            {/* 4. Assumption of Risk & Liability Waiver */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                4. Assumption of Risk &amp; Liability Waiver
+              </h2>
+              <p className="mb-3">
+                By participating in any Dreamland Athletics program, class, or
+                personal training session, clients acknowledge that all physical
+                activity involves inherent risks.
+              </p>
+              <p>
+                Clients participate voluntarily and assume all risks of injury,
+                accident, or damage. Dreamland Athletics, its owners, coaches,
+                and staff are{" "}
+                <span className="font-semibold">
+                  not liable for any injuries, losses, or damages
+                </span>{" "}
+                arising from participation, improper equipment use, or failure
+                to follow instructions.
+              </p>
+            </section>
+
+            {/* 5. Kids’ Programs */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                5. Kids’ Programs
+              </h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>
+                  <span className="font-semibold">
+                    Parental/guardian consent
+                  </span>{" "}
+                  is mandatory for all kids’ programs.
+                </li>
+                <li>
+                  Dreamland Athletics reserves the right to{" "}
+                  <span className="font-semibold">
+                    discontinue a child&apos;s participation
+                  </span>{" "}
+                  due to safety concerns, behavioural issues, or repeated
+                  non-compliance.
+                </li>
+                <li>
+                  Dreamland Athletics is{" "}
+                    <span className="font-semibold">
+                      not responsible for children
+                    </span>{" "}
+                  before or after their scheduled session time. Parents or
+                  guardians must ensure timely drop-off and pick-up.
+                </li>
+              </ul>
+            </section>
+
+            {/* 6. Payment Policies */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                6. Payment Policies
+              </h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>
+                  Payments may be processed securely via{" "}
+                  <span className="font-semibold">third-party gateways</span>.
+                </li>
+                <li>
+                  If a payment fails, it may be{" "}
+                  <span className="font-semibold">
+                    automatically reattempted within 48–72 hours
+                  </span>
+                  .
+                </li>
+                <li>
+                  Members are responsible for keeping payment information
+                  accurate and up to date. Unresolved failed payments may result
+                  in suspension of access.
+                </li>
+              </ul>
+            </section>
+
+            {/* 7. Privacy & Data Protection */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                7. Privacy &amp; Data Protection
+              </h2>
+              <p className="mb-3">
+                Dreamland Athletics follows{" "}
+                <span className="font-semibold">PIPEDA</span> (Personal
+                Information Protection and Electronic Documents Act) guidelines
+                for handling personal data.
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>
+                  Personal information is stored securely and used only for
+                  service delivery, communication, and billing.
+                </li>
+                <li>
+                  Dreamland Athletics does{" "}
+                  <span className="font-semibold uppercase">
+                    not sell personal data
+                  </span>{" "}
+                  to third parties.
+                </li>
+                <li>
+                  Clients may request access to or correction of their data by
+                  contacting us.
+                </li>
+              </ul>
+            </section>
+
+            {/* 8. Conduct & Studio Rules */}
+            <section>
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                8. Conduct &amp; Studio Rules
+              </h2>
+              <p className="mb-3">
+                To maintain a safe and respectful environment, all members are
+                expected to:
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Maintain personal hygiene and wear appropriate attire.</li>
+                <li>Respect gym equipment and use it safely and correctly.</li>
+                <li>Follow coach and staff guidance at all times.</li>
+                <li>Treat staff and fellow members with respect.</li>
+              </ul>
               <p className="mt-3">
-                You are granted a limited, non-exclusive, and revocable license
-                to access and use our website for personal, non-commercial
-                purposes only.
+                Violations of these rules, harassment, or unsafe behaviour may
+                result in{" "}
+                <span className="font-semibold">
+                  suspension or termination of membership
+                </span>{" "}
+                without refund.
               </p>
             </section>
 
-            {/* SECTION 4 */}
+            {/* 9. Website Terms */}
             <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                4. Purchases, Orders, and Payment
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                9. Website Terms
               </h2>
               <p>
-                If you purchase products or services through Dreamland
-                Athletics, you agree to provide accurate billing and payment
-                information. All prices are listed in your local currency unless
-                otherwise stated and are subject to change without prior notice.
+                Users agree not to misuse the Dreamland Athletics website or its
+                content. This includes:
               </p>
-              <p className="mt-3">
-                We reserve the right to refuse or cancel orders that appear to
-                be fraudulent, unauthorized, or violate these Terms. Refunds, if
-                applicable, will be processed according to our Refund Policy.
-              </p>
+              <ul className="list-disc list-inside mt-3 space-y-2">
+                <li>Attempting unauthorized access to any part of the system.</li>
+                <li>Copying or redistributing website content without permission.</li>
+                <li>Engaging in any activity that disrupts site functionality.</li>
+              </ul>
             </section>
 
-            {/* SECTION 5 */}
+            {/* 10. Changes to Terms */}
             <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                5. User Accounts
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                10. Changes to Terms
               </h2>
               <p>
-                You may be required to create an account to access certain
-                features of the website. You are responsible for maintaining the
-                confidentiality of your account credentials and all activities
-                that occur under your account.
-              </p>
-              <p className="mt-3">
-                Dreamland Athletics reserves the right to suspend or terminate
-                your account if we detect misuse, fraudulent activity, or breach
-                of these Terms.
+                Dreamland Athletics may update or modify these Terms &amp;
+                Conditions at any time. Changes will be reflected by updating
+                the{" "}
+                <span className="font-semibold">&quot;Last Updated&quot;</span>{" "}
+                date at the top of this page. Your continued use of our website
+                or services after any changes indicates your acceptance of the
+                updated Terms.
               </p>
             </section>
 
-            {/* SECTION 6 */}
+            {/* 11. Contact */}
             <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                6. Links to Third-Party Websites
+              <h2 className="text-2xl md:text-3xl mb-3 font-semibold tracking-normal">
+                11. Contact
               </h2>
-              <p>
-                Our website may contain links to third-party websites or
-                services that are not owned or controlled by Dreamland
-                Athletics. We are not responsible for the content, policies, or
-                practices of any third-party sites. Visiting those sites is at
-                your own risk.
+              <p className="mb-2">
+                For questions, cancellation requests, or concerns related to
+                these Terms &amp; Conditions, please contact:
               </p>
-            </section>
-
-            {/* SECTION 7 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                7. Limitation of Liability
-              </h2>
-              <p>
-                To the fullest extent permitted by law, Dreamland Athletics, its
-                directors, employees, or affiliates shall not be liable for any
-                indirect, incidental, consequential, or punitive damages arising
-                from your use or inability to use our website or services.
-              </p>
-              <p className="mt-3">
-                We do not warrant that our Services will be uninterrupted,
-                error-free, or completely secure. You acknowledge that you use
-                the website at your own risk.
-              </p>
-            </section>
-
-            {/* SECTION 8 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                8. Disclaimer of Warranties
-              </h2>
-              <p>
-                Our Services are provided on an &quot;as is&quot; and &quot;as available&quot; basis
-                without any warranties of any kind, express or implied,
-                including but not limited to fitness for a particular purpose or
-                non-infringement.
-              </p>
-              <p className="mt-3">
-                Dreamland Athletics makes no representations or warranties about
-                the accuracy, completeness, or reliability of any content on the
-                website.
-              </p>
-            </section>
-
-            {/* SECTION 9 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                9. Indemnification
-              </h2>
-              <p>
-                You agree to defend, indemnify, and hold harmless Dreamland
-                Athletics, its officers, employees, agents, and affiliates from
-                any claims, liabilities, damages, losses, or expenses (including
-                legal fees) arising out of your violation of these Terms or your
-                misuse of the Services.
-              </p>
-            </section>
-
-            {/* SECTION 10 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                10. Termination
-              </h2>
-              <p>
-                We may suspend or terminate your access to our Services at any
-                time, without prior notice or liability, for any reason
-                whatsoever, including if you breach these Terms. Upon
-                termination, all rights granted to you under these Terms will
-                immediately cease.
-              </p>
-            </section>
-
-            {/* SECTION 11 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                11. Governing Law
-              </h2>
-              <p>
-                These Terms shall be governed by and construed in accordance
-                with the laws of Ontario, Canada, without regard to conflict of
-                law principles. Any disputes arising under these Terms shall be
-                subject to the exclusive jurisdiction of the courts located in
-                Ontario, Canada.
-              </p>
-            </section>
-
-            {/* SECTION 12 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">
-                12. Changes to These Terms
-              </h2>
-              <p>
-                Dreamland Athletics reserves the right to modify or replace
-                these Terms at any time. We will notify users of any major
-                changes by updating the &quot;Last Updated&quot; date at the top of this
-                page. Your continued use of the site after such changes implies
-                acceptance of the new Terms.
-              </p>
-            </section>
-
-            {/* SECTION 13 */}
-            <section>
-              <h2 className="text-3xl mb-3 tracking-normal">13. Contact Us</h2>
-              <p>
-                For questions, feedback, or concerns about these Terms and
-                Conditions, please reach out to us:
-              </p>
-              <p className="mt-3">
-                <strong>Email:</strong> support@dreamlandathletics.com <br />
-                <strong>Address:</strong> 860 N Park Dr, Brampton, ON L6S 4N5,
-                Canada
+              <p className="mt-1">
+                <span className="font-semibold">Email:</span>{" "}
+                <a
+                  href="mailto:dreamlandathletics@gmail.com"
+                  className="text-[#e7b826] underline"
+                >
+                  dreamlandathletics@gmail.com
+                </a>
+                <br />
+                <span className="font-semibold">Location:</span> Brampton,
+                Ontario, Canada
               </p>
             </section>
           </div>
