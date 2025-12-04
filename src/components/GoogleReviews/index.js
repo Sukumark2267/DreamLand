@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-const SCRIPT_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS591jqu8ft79u3Q1ISFAiG98gqRPTN6iQ11RVPHB_OpvEIhJFcORxjqSFKV0Cw1KzfcG5wqmOGbkM6/pubhtml"; // <-- paste here
-
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycby7e9cqFss-FDkTf-mbiTU1xP0dL4EQxgncPAewrtjSlWfFirO7AZYaUIOw2C4-VgV1/exec";
 export default function ReviewForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,44 +14,58 @@ export default function ReviewForm() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
+  // ---------------- UPDATED SUBMIT FUNCTION ----------------
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError("");
+  e.preventDefault();
+  setError("");
+  setSubmitted(false);
 
-    try {
-      const res = await fetch(SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify({
-          type: "review",
-          name,
-          email,
-          phone,
-          rating,
-          message,
-          source: "Dreamland Website"
-        })
-      });
+  // I’ll assume: email + message required, name/phone optional
+  if (!email || !message) {
+    setError("Email and review are required.");
+    return;
+  }
 
-      const data = await res.json();
+  if (phone && !phone.match(/^\d{10}$/)) {
+    setError("Phone number must be 10 digits.");
+    return;
+  }
 
-      if (data.status === "success") {
-        setSubmitted(true);
-        setName("");
-        setEmail("");
-        setPhone("");
-        setRating(5);
-        setMessage("");
-      } else {
-        setError("There was an error saving your review. Please try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      setError("Network error. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  setSubmitting(true);
+
+  try {
+    const formData = new FormData();
+    formData.append("type", "review");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("rating", rating.toString());
+    formData.append("message", message);
+    formData.append("source", "Dreamland Website");
+
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",   // ok for Apps Script, we debug from server side
+      body: formData,
+    });
+
+    setSubmitted(true);
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setRating(5);
+    setMessage("");
+
+    setTimeout(() => setSubmitted(false), 5000);
+  } catch (err) {
+    console.error(err);
+    setError("There was an error submitting your review.");
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 
   return (
     <section
@@ -62,14 +76,16 @@ export default function ReviewForm() {
         Share Your Experience
       </h2>
       <p className="text-sm md:text-base text-gray-300 mb-6 text-center">
-        Your review helps others discover Dreamland Athletics. Thank you for supporting our community.
+        Your review helps others discover Dreamland Athletics. Thank you for
+        supporting our community.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Name */}
         <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Name (optional)</label>
+            <label className="block text-sm text-gray-300 mb-1">
+              Name (optional)
+            </label>
             <input
               type="text"
               value={name}
@@ -80,7 +96,9 @@ export default function ReviewForm() {
           </div>
 
           <div>
-            <label className="block text-sm text-gray-300 mb-1">Phone (optional)</label>
+            <label className="block text-sm text-gray-300 mb-1">
+              Phone (optional)
+            </label>
             <input
               type="tel"
               value={phone}
@@ -91,7 +109,6 @@ export default function ReviewForm() {
           </div>
         </div>
 
-        {/* Email */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Email</label>
           <input
@@ -104,7 +121,6 @@ export default function ReviewForm() {
           />
         </div>
 
-        {/* Rating */}
         <div>
           <label className="block text-sm text-gray-300 mb-1">Rating</label>
           <div className="flex items-center gap-2">
@@ -124,9 +140,10 @@ export default function ReviewForm() {
           </div>
         </div>
 
-        {/* Message */}
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Your Review</label>
+          <label className="block text-sm text-gray-300 mb-1">
+            Your Review
+          </label>
           <textarea
             required
             value={message}
@@ -137,12 +154,8 @@ export default function ReviewForm() {
           />
         </div>
 
-        {/* Errors */}
-        {error && (
-          <p className="text-xs text-red-400">{error}</p>
-        )}
+        {error && <p className="text-xs text-red-400">{error}</p>}
 
-        {/* Submit */}
         <button
           type="submit"
           disabled={submitting}
@@ -151,7 +164,7 @@ export default function ReviewForm() {
           {submitting ? "Submitting..." : "Submit Review"}
         </button>
 
-        {submitted && (
+        {submitted && !error && (
           <p className="text-xs mt-2 text-green-400 text-center">
             Thank you! Your review has been recorded.
           </p>
