@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycby7e9cqFss-FDkTf-mbiTU1xP0dL4EQxgncPAewrtjSlWfFirO7AZYaUIOw2C4-VgV1/exec";
+"https://script.google.com/macros/s/AKfycby1fW9Zp2yEZthtYjkin8LIdHIr8Dq5dYFYsHARJ8UGKPE5wVurP0W2QWvFebRkzlSM/exec";
 export default function ReviewForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +20,6 @@ export default function ReviewForm() {
   setError("");
   setSubmitted(false);
 
-  // I’ll assume: email + message required, name/phone optional
   if (!email || !message) {
     setError("Email and review are required.");
     return;
