@@ -16,7 +16,7 @@ const membershipPlans = [
     features: [
       "Full studio access",
       "Unlimited workouts",
-      "Ideal for beginners",
+      "Ideal for beginners", 
     ],
     isPopular: false,
   },
