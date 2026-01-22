@@ -104,7 +104,7 @@ export default function SocialMediaSection() {
             </a>
 
             {/* X (Twitter) */}
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export default function SocialMediaSection() {
               <p className="text-gray-300 text-xs">
                 Quick updates, thoughts & fitness announcements.
               </p>
-            </a>
+            </a> */}
 
             {/* Facebook */}
             <a

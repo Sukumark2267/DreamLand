@@ -1,216 +1,109 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { z } from "zod";
-import { toast } from "sonner";
-import { PulseLoader } from "react-spinners";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import SplitType from "split-type";
-import gsap from "gsap";
-import InstagramFeed from "../instagram";
-import FounderSocials from "../FounderSocials";
-import { thumbnails } from "@/data/thumbs";
-
-const newsletterSchema = z.object({
-  fname: z.string().min(1, "Name is required"),
-  email: z.string().email("Invalid email"),
-});
-
-const shuffle = (array) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
 
 export default function ComingSoon() {
-  const headingRef = useRef(null);
-  let [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ fname: "", email: "" });
-  const [rowCount, setRowCount] = useState(6); // Default to desktop
-
-  // Responsive row count for background collage
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setRowCount(10); // Mobile: more rows
-      } else {
-        setRowCount(6); // Desktop: fewer rows
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const fname = form.fname;
-    const email = form.email;
-
-    const result = newsletterSchema.safeParse({ fname, email });
-    if (!result.success) {
-      console.log(result.error);
-      toast.error("Something went wrong.", {
-        description: result.error.issues[0].message,
-      });
-      return;
-    }
-
-    try {
-      setLoading(true);
-      const res = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fname, email }),
-      });
-
-      if (res.ok) {
-        toast.success("Thank you for signing up!");
-        setForm({ fname: "", email: "" });
-      } else {
-        toast.error("There was an error. Please try again.");
-      }
-    } catch (error) {
-      toast.error("There was an error. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="landing-page min-h-screen bg-black text-white">
+    <div className="landing-page bg-black text-white">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen overflow-hidden pt-16">
-        {/* Background Collage */}
-        <div className="absolute inset-0 z-0 flex flex-col space-y-1 overflow-hidden">
-          {[...Array(rowCount)].map((_, rowIndex) => {
-            const rowImages = [...shuffle(thumbnails), ...shuffle(thumbnails)];
-            return (
-              <div
-                key={rowIndex}
-                className={`flex whitespace-nowrap ${
-                  rowIndex % 2 === 0
-                    ? "animate-scroll-ltr"
-                    : "animate-scroll-rtl"
-                }`}
-              >
-                {rowImages.map((src, idx) => (
-                  <img
-                    key={`${rowIndex}-${idx}`}
-                    src={src}
-                    alt={`Thumb ${idx}`}
-                    className="aspect-[2/1] w-80 md:w-60 xl:w-80 object-cover mx-[2px] rounded"
-                  />
-                ))}
-              </div>
-            );
-          })}
+      <section className="relative h-[100svh] overflow-hidden">
+        {/* ✅ Static Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/fitness_1.jpg"
+            alt="Dreamland Athletics Hero Background"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
         </div>
 
-        {/* Dark overlay to make text readable */}
-        <div className="absolute inset-0 z-10 bg-black/70" />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 z-10 bg-black/75" />
 
-        {/* Hero Content – anchored near first row */}
-        <div className="absolute inset-x-0 top-0 md:top-1 lg:top-9 z-20 flex flex-col items-center px-4 text-center">
+        {/* ✅ Hero Content (fits in one screen) */}
+        <div className="relative z-20 mx-auto h-full max-w-6xl px-4 text-center flex flex-col items-center justify-center">
           {/* Logo */}
           <Image
             src="/images/logo/logo-primary.png"
             alt="Dreamland Athletics Gym"
             width={220}
             height={220}
-            className="w-20 md:w-28 lg:w-32 h-auto object-contain rounded-xl mb-3"
+            className="w-16 md:w-20 lg:w-24 h-auto object-contain rounded-xl mb-3"
             priority
           />
 
-          {/* Line 1: BEST STUDIO IN BRAMPTON, ONTARIO */}
-         <h1
-  className="font-gothic text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-1"
->
-  BEST STUDIO IN{" "}
-  <span className="text-[#e7b826]">BRAMPTON, ONTARIO</span>
-</h1>
+          {/* Headline */}
+          <h1 className="font-gothic text-xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight tracking-[0.12em] mb-2">
+            BEST FITNESS STUDIO{" "}
+            <span className="text-[#e7b826]">FRANCHISE</span> IN{" "}
+            <span className="text-[#e7b826]">CANADA</span>
+          </h1>
 
-
-          {/* Line 2: CANADIAN FITNESS BRAND HIGHLY FOCUSED ON */}
-          <p className="font-swiss text-gray-200 text-xs md:text-sm lg:text-base tracking-[0.12em] mb-2">
-             CANADIAN FITNESS BRAND HIGHLY FOCUSED ON
+          {/* Location */}
+          <p className="font-swiss text-gray-200 text-[11px] md:text-sm lg:text-base tracking-[0.10em] mb-3 uppercase opacity-90">
+            Currently operating in{" "}
+            <span className="text-[#e7b826]">Brampton, Ontario</span>
           </p>
 
-
-          {/* Subline: Community, Transformation, Results */}
-         <p className="font-swiss text-gray-300 text-xs md:text-sm lg:text-base tracking-[0.10em] mb-4 uppercase opacity-90">
-         Community <span className="text-[#e7b826]">•</span> Transformation <span className="text-[#e7b826]">•</span> Results
+          {/* Brand line */}
+          <p className="font-swiss text-gray-200 text-[11px] md:text-sm lg:text-base tracking-[0.12em] mb-1">
+            CANADIAN FITNESS BRAND HIGHLY FOCUSED ON
           </p>
 
+          {/* Community line */}
+          <p className="font-swiss text-gray-300 text-[11px] md:text-sm lg:text-base tracking-[0.10em] mb-3 uppercase opacity-90">
+            Community <span className="text-[#e7b826]">•</span> Transformation{" "}
+            <span className="text-[#e7b826]">•</span> Results
+          </p>
 
-          {/* Line 3: BE A TURTLE – SLOW. STEADY. UNSTOPPABLE. */}
-             <h2
-  className="font-octin text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 tracking-[0.15em]"
-  style={{
-    textShadow: "0 0 25px rgba(0,0,0,0.85)",
-  }}
->
-  <span className="text-[#e7b826]">BE A TURTLE</span>
-  <span className="text-white"> – SLOW</span>
-  <span className="text-[#ff7a00]">.</span>
-  <span className="text-[#ff7a00]"> STEADY</span>
-  <span className="text-[#ff3b30]">.</span>
-  <span className="text-[#ff3b30]"> UNSTOPPABLE</span>
-  <span className="text-[#e7b826]">.</span>
-</h2>
+          {/* Turtle line */}
+          <h2
+            className="text-base sm:text-xl md:text-2xl lg:text-2xl font-extrabold uppercase tracking-[0.22em] text-white"
+            style={{ textShadow: "0 0 22px rgba(0,0,0,0.85)" }}
+          >
+            <span className="text-[#e7b826]">Be a Turtle</span>
+            <span className="text-white"> — Slow</span>
+            <span className="text-[#ff7a00]">.</span>
+            <span className="text-[#ff7a00]"> Steady</span>
+            <span className="text-[#ff3b30]">.</span>
+            <span className="text-[#ff3b30]"> Unstoppable</span>
+            <span className="text-[#e7b826]">.</span>
+          </h2>
 
-
-
-      <p
-  className="font-swiss text-gray-300 text-xs md:text-sm lg:text-base max-w-xl leading-relaxed tracking-[0.05em] mb-5 opacity-90"
->
-  Private, highly focused training studio for serious people who believe in slow,
-  steady, unstoppable progress.
-</p>
-
+          {/* Supporting line */}
+          <p className="text-[11px] sm:text-sm md:text-base text-gray-300 max-w-2xl leading-relaxed opacity-90 ">
+            Private, highly focused training studio for serious people who
+            believe in slow, steady, unstoppable progress.
+          </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-           <Link
-  href="#memberships"
-  className="dl-btn-primary py-2 px-6 md:py-2.5 md:px-8 rounded-lg text-xs md:text-sm uppercase tracking-wide"
->
-  View Memberships
-</Link>
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            <Link
+              href="#memberships"
+              className="bg-[#e7b826] hover:bg-[#ffd84e] text-black font-semibold py-2 px-5 md:py-2.5 md:px-8 rounded-lg transition duration-300 text-xs md:text-sm uppercase tracking-wide"
+            >
+              View Memberships
+            </Link>
 
+            <Link
+              href="#contact"
+              className="border border-[#e7b826] text-[#e7b826] hover:bg-[#e7b826] hover:text-black font-semibold py-2 px-5 md:py-2.5 md:px-8 rounded-lg transition duration-300 text-xs md:text-sm uppercase tracking-wide"
+            >
+              Start Your Journey
+            </Link>
 
-     <Link
-  href="/#free-pass"
-  className="hidden lg:inline-flex dl-btn-primary px-5 py-2 rounded-sm text-sm font-bold"
->
-  FREE PASS
-</Link>
-
-
+            <Link
+              href="#contact"
+              className="bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold py-2 px-5 md:py-2.5 md:px-8 rounded-lg transition duration-300 text-xs md:text-sm uppercase tracking-wide backdrop-blur"
+            >
+              Book a Consultation
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Optional: you can re-enable these later if needed */}
-      {/* <InstagramFeed />
-      <FounderSocials /> */}
     </div>
   );
 }

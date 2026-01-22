@@ -7,7 +7,7 @@ import Image from "next/image";
 const card1Socials = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/jay.chundawat23?igsh=MjY5N2NkaGh3Z2p6&utm_source=qr",
+    href: "https://www.instagram.com/elevatewith_chirag?igsh=MWRlZzkyZ3Fkc2drOA%3D%3D&utm_source=qr",
     icon: <FaInstagram size={28} />,
   },
 ];
@@ -15,7 +15,7 @@ const card1Socials = [
 const card2Socials = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/elevatewith_chirag?igsh=MWRlZzkyZ3Fkc2drOA%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/jay.chundawat23?igsh=MjY5N2NkaGh3Z2p6&utm_source=qr",
     icon: <FaInstagram size={28} />,
   },
 ];

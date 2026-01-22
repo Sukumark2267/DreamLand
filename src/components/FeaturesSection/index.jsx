@@ -25,8 +25,8 @@
                         {/* <a className="block text-lg text-blue-600 hover:underline font-light" href="https://www.instagram.com/dreamland_brampton" target="_blank" rel="noopener noreferrer">
                           @dreamland_brampton
                         </a> */}
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:jay@dreamlandathletics.com">jay@dreamlandathletics.com</a>
-                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:chirag@dreamlandathletics.com">chirag@dreamlandathletics.com</a>
+                        <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:dreamlandathletics@gmail.com">dreamlandathletics@gmail.com</a>
+                        {/* <a className="block text-lg text-blue-600 hover:underline font-light" href="mailto:chirag@dreamlandathletics.com">chirag@dreamlandathletics.com</a> */}
                       </div>
                     </div>
 

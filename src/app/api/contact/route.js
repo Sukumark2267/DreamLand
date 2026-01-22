@@ -15,10 +15,10 @@ export async function POST(req) {
     }
 
     // Admin email (where you want to receive contact form messages)
-    const adminEmail = "Jay@dreamlandathletics.com";
+    const adminEmail = "dreamlandathletics@gmail.com";
 
     // Email sender identity
-    const fromMail = "Dreamland Athletics <Jay@dreamlandathletics.com>";
+    const fromMail = "Dreamland Athletics <dreamlandathletics@gmail.com>";
     const customerMail = contactTemplate({ fname, email, phone, message });
 
     // Generate email content from your template

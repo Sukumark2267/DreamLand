@@ -25,12 +25,12 @@ const socialButtons = [
     bg: 'bg-[#45bbff]',
     href: 'https://www.linkedin.com/company/dreamlandathletics/',
   },
-  {
-    name: 'Tiktok',
-    icon: <FaTiktok />,
-    bg: 'bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045]',
-    href: 'https://www.tiktok.com/@dreamlandathletics?_t=ZM-8xfOaYLpTXS&_r=1',
-  },
+  // {
+  //   name: 'Tiktok',
+  //   icon: <FaTiktok />,
+  //   bg: 'bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045]',
+  //   href: 'https://www.tiktok.com/@dreamlandathletics?_t=ZM-8xfOaYLpTXS&_r=1',
+  // },
 ];
 
 const SocialButtons = () => {

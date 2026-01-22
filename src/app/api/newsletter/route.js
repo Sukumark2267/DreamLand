@@ -8,10 +8,10 @@ import {
 export async function POST(req) {
   const { fname, email } = await req.json();
 
-  const adminEmail = "Jay@dreamlandathletics.com";
+  const adminEmail = "dreamlandathletics@gmail.com";
 
   // const fromMail = "Dreamland Athletics <dreamlandathletics@gmail.com>";
-  const fromMail = "Dreamland Athletics <Jay@dreamlandathletics.com>";
+  const fromMail = "Dreamland Athletics <dreamlandathletics@gmail.com>";
   const adminMail = adminNewsletterTemplate({ fname, email });
   const customerMail = customerNewsletterTemplate({ fname });
 
