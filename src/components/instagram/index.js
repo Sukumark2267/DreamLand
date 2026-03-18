@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect } from "react";
+import { Inter } from "next/font/google";
+
 import {
   FaInstagram,
   FaYoutube,
@@ -8,6 +10,10 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 export default function SocialMediaSection() {
   // Load Elfsight script for Instagram
   useEffect(() => {
@@ -27,129 +33,49 @@ export default function SocialMediaSection() {
         {/* LEFT SIDE — SOCIAL CARDS */}
         <div className="relative z-20 text-white">
 
-          {/* Section Title */}
-{/* SECTION HEADER */}
-{/* SECTION HEADER */}
-<div className="col-span-full text-center mb-12 animate-fade-in">
-  <p className="text-[#e7b826] tracking-[0.35em] text-xs uppercase mb-2">
-    SOCIAL MEDIA
-  </p>
+         {/* ABOUT US CONTENT */}
+<div
+  className={`${inter.className} group rounded-xl p-6 sm:p-7 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/15 hover:border-[#e7b826] transition duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.6)]`}
+>
+  <div className="flex flex-col h-full justify-between">
+    <div>
+      <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-2 font-medium">
+        ABOUT US
+      </p>
 
-  <h2 className="font-gothic text-4xl md:text-5xl lg:text-6xl font-bold uppercase inline-block relative">
-    #DREAMLANDLIFE
+      <h2 className="text-xl sm:text-2xl  text-white leading-snug mb-3 tracking-tight">
+        Welcome to Dreamland Athletics
+      </h2>
 
-    {/* Gold underline animation */}
-    <span
-      className="absolute left-1/2 -bottom-2 w-0 h-[3px] bg-[#e7b826] rounded-full animate-underline"
-      style={{ transform: "translateX(-50%)" }}
-    ></span>
-  </h2>
+      <div className="w-14 h-[2px] bg-[#e7b826] mb-5"></div>
 
-  <p className="mt-4 text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed tracking-wide">
-    Follow our community across{" "}
-    <span className="text-[#e7b826] font-semibold">
-      Instagram, YouTube, X, and Facebook
-    </span>{" "}
-    for workouts, member wins, and studio moments.
-  </p>
+      <p className="text-gray-300 text-sm leading-7 mb-4 font-normal">
+        Dreamland Athletics is where ambition meets opportunity. Our training
+        grounds serve as a launching pad for athletes of all levels who are
+        ready to elevate their potential.
+      </p>
+
+      <p className="text-gray-300 text-sm leading-7 mb-4 font-normal">
+        We combine proven training methodologies with innovation and a
+        supportive environment to help individuals achieve personal
+        breakthroughs.
+      </p>
+
+      <p className="text-gray-300 text-sm leading-7 font-normal">
+        From beginners to elite performers, everyone at Dreamland is treated
+        like family. Here, dreams are nurtured, and champions are made—on and
+        off the field.
+      </p>
+    </div>
+
+    <div className="mt-6 rounded-lg border border-white/10 bg-white/5 px-4 py-3">
+      <p className="text-sm text-[#e7b826] font-medium">
+        Where ambition becomes achievement.
+      </p>
+    </div>
+  </div>
 </div>
 
-          {/* SOCIAL CARDS */}
-          <div className="grid gap-6 sm:grid-cols-2">
-
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/dreamland_brampton"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-xl p-5 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-[#e7b826] transition shadow-[0_8px_25px_rgba(0,0,0,0.6)]"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-10 w-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-400">
-                  <FaInstagram className="text-white text-lg" />
-                </span>
-                <div>
-                  <p className="text-[11px] tracking-[0.25em] text-gray-300 uppercase">
-                    INSTAGRAM
-                  </p>
-                  <p className="font-semibold text-sm">@dreamland_brampton</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-xs">
-                Daily stories, transformation posts & studio moments.
-              </p>
-            </a>
-
-            {/* YouTube */}
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-xl p-5 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-[#e7b826] transition shadow-[0_8px_25px_rgba(0,0,0,0.6)]"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-10 w-10 rounded-full flex items-center justify-center bg-[#FF0000]">
-                  <FaYoutube className="text-white text-lg" />
-                </span>
-                <div>
-                  <p className="text-[11px] tracking-[0.25em] text-gray-300 uppercase">
-                    YOUTUBE
-                  </p>
-                  <p className="font-semibold text-sm">Dreamland Athletics</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-xs">
-                Long-form tips, routines & coaching breakdowns.
-              </p>
-            </a>
-
-            {/* X (Twitter) */}
-            {/* <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-xl p-5 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-[#e7b826] transition shadow-[0_8px_25px_rgba(0,0,0,0.6)]"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-10 w-10 rounded-full flex items-center justify-center bg-white">
-                  <FaTwitter className="text-black text-lg" />
-                </span>
-                <div>
-                  <p className="text-[11px] tracking-[0.25em] text-gray-300 uppercase">
-                    X (TWITTER)
-                  </p>
-                  <p className="font-semibold text-sm">@dreamland_fit</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-xs">
-                Quick updates, thoughts & fitness announcements.
-              </p>
-            </a> */}
-
-            {/* Facebook */}
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-xl p-5 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-[#e7b826] transition shadow-[0_8px_25px_rgba(0,0,0,0.6)]"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="h-10 w-10 rounded-full flex items-center justify-center bg-[#1877F2]">
-                  <FaFacebookF className="text-white text-lg" />
-                </span>
-                <div>
-                  <p className="text-[11px] tracking-[0.25em] text-gray-300 uppercase">
-                    FACEBOOK
-                  </p>
-                  <p className="font-semibold text-sm">Dreamland Athletics</p>
-                </div>
-              </div>
-              <p className="text-gray-300 text-xs">
-                Event updates, photos & community highlights.
-              </p>
-            </a>
-
-          </div>
         </div>
 
         {/* RIGHT SIDE — VIDEO */}

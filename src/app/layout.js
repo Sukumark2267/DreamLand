@@ -1,9 +1,11 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { Anton } from "next/font/google";   // ⭐ NEW: Sporty display font
+import { Anton } from "next/font/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/navbar";
+
 config.autoAddCss = false;
 
 // MAIN UI FONTS (Geist)
@@ -34,13 +36,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`
-          ${geistSans.variable} 
-          ${geistMono.variable} 
-          ${anton.variable}   /* Anton now globally available */
+          ${geistSans.variable}
+          ${geistMono.variable}
+          ${anton.variable}
           antialiased
         `}
       >
-        {children}
+        <Navbar />
+        <main >
+          {children}
+        </main>
         <Toaster />
       </body>
     </html>

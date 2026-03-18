@@ -14,7 +14,9 @@ import Navbar from '@/components/navbar';
 import InstagramFeed from '@/components/instagram';
 import FounderSocials from '@/components/FounderSocials';
 import GoogleReviews from "@/components/GoogleReviews";
-
+import StudioGallerySection from '@/components/StudioGallerySection';
+import SocialMedia from '@/components/social-media';
+import GoogleMaps from '@/components/GoogleReview';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -39,16 +41,19 @@ export default function Home() {
   />
     <main className='overflow-x-hidden'>
 
-    <Navbar />
+    {/* <Navbar /> */}
 
       <HeroSection/>
       <InstagramFeed/>
+      <StudioGallerySection/>
+        <Services/>
+        <SocialMedia />
       <MembershipSection/>
-      <Services/>
+      <GoogleMaps />
       <FounderSocials/>
-      <Newsletter/>
+      {/* <Newsletter/> commented out for now, will add back in later for be the first to know section */}
       <GoogleReviews/>
-      <Banner/>
+      {/* <Banner/> commented out for now, will add back in later for get started today section */}
       <Footer />
 
     </main>

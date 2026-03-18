@@ -10,6 +10,7 @@ import GroupService from '@/components/GroupService';
 import Preloader from '@/components/Preloader';
 import dynamic from 'next/dynamic';
 
+
 const SpecialPrograms = dynamic(() => import('@/components/SpecialPrograms'), {
   ssr: false,
 });
@@ -31,7 +32,7 @@ export default function Services() {
   if (loading) return <Preloader />;
   return (
     <>
-         <Navbar />
+         {/* <Navbar /> */}
          <section className="Services overflow-x-clip">
          <div className="Servicessection1 items-center flex justify-center">
          <div className="h-[6rem] sm:h-[8rem] md:h-[11rem] lg:h-[15rem] xl:h-[20rem]  2xl:h-[25rem] w-full">
