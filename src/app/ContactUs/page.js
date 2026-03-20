@@ -42,7 +42,7 @@ export default function ContactUs() {
          <ContactSection />
          {/* <GroupService />
          <SpecialPrograms /> */}
-         <Footer />
+         {/* <Footer /> */}
          </section>
     </main>
   );

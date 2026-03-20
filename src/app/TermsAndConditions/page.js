@@ -329,7 +329,7 @@ export default function TermsAndConditions() {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

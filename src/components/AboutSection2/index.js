@@ -7,7 +7,7 @@ const aboutcontent = [
     id: 1,
     title: "Welcome to Dreamland Athletics",
     content:
-    "Dreamland Athletics is where ambition meets opportunity. Our training grounds serve as a launching pad for athletes of all levels who are ready to elevate their potential. We combine proven training methodologies with innovation and a supportive environment to help individuals achieve personal breakthroughs. From beginners to elite performers, everyone at Dreamland is treated like family. Here, dreams are nurtured, and champions are made—on and off the field.",
+    "At Dreamland Athletics, we are more than just a gym,we are a community built on growth, support, and transformation.Our mission is to help you become stronger, healthier, and more confident through personalized coaching, proper movement, and sustainable habits that fit your lifestyle. We believe fitness is not just about workouts, but about building a mindset that carries into your everyday life.No matter your starting point or goal, you’ll find guidance, accountability, and a positive environment that motivates you to keep improving. We celebrate every win big or small, and push each other to be better every day.Welcome to Dreamland, where your journey becomes our mission.",
     image: "/images/elements/dl_s1.jpg"
   },
   {

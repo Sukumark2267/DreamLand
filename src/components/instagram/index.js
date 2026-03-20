@@ -39,9 +39,9 @@ export default function SocialMediaSection() {
 >
   <div className="flex flex-col h-full justify-between">
     <div>
-      <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-2 font-medium">
+      {/* <p className="text-[11px] tracking-[0.25em] text-gray-400 uppercase mb-2 font-medium">
         ABOUT US
-      </p>
+      </p> */}
 
       <h2 className="text-xl sm:text-2xl  text-white leading-snug mb-3 tracking-tight">
         Welcome to Dreamland Athletics
@@ -50,27 +50,26 @@ export default function SocialMediaSection() {
       <div className="w-14 h-[2px] bg-[#e7b826] mb-5"></div>
 
       <p className="text-gray-300 text-sm leading-7 mb-4 font-normal">
-        Dreamland Athletics is where ambition meets opportunity. Our training
-        grounds serve as a launching pad for athletes of all levels who are
-        ready to elevate their potential.
+       At Dreamland Athletics, we are more than just a gym,we are a community built on growth,
+        support, and transformation.
+
       </p>
 
       <p className="text-gray-300 text-sm leading-7 mb-4 font-normal">
-        We combine proven training methodologies with innovation and a
-        supportive environment to help individuals achieve personal
-        breakthroughs.
+       Our mission is to help you become stronger, healthier, and more confident through personalized coaching, proper movement, 
+       and sustainable habits that fit your lifestyle. We believe fitness is not just about workouts, but about building a mindset that carries into your everyday life.
+
       </p>
 
       <p className="text-gray-300 text-sm leading-7 font-normal">
-        From beginners to elite performers, everyone at Dreamland is treated
-        like family. Here, dreams are nurtured, and champions are made—on and
-        off the field.
+       No matter your starting point or goal, you’ll find guidance, accountability, and a positive environment that motivates you to keep improving. We celebrate every win big or small, and push each other to be better every day.
+
       </p>
     </div>
 
     <div className="mt-6 rounded-lg border border-white/10 bg-white/5 px-4 py-3">
       <p className="text-sm text-[#e7b826] font-medium">
-        Where ambition becomes achievement.
+      Welcome to Dreamland, where your journey becomes our mission.
       </p>
     </div>
   </div>

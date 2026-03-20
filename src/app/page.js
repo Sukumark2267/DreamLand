@@ -54,7 +54,7 @@ export default function Home() {
       {/* <Newsletter/> commented out for now, will add back in later for be the first to know section */}
       <GoogleReviews/>
       {/* <Banner/> commented out for now, will add back in later for get started today section */}
-      <Footer />
+      {/* <Footer /> */}
 
     </main>
     </>

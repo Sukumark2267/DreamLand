@@ -40,7 +40,7 @@ export default function About() {
          <StudioTimings />
          <GalleryCarousel />
          <Newsletter />
-         <Footer />
+         {/* <Footer /> */}
           </section>
     </>
   );

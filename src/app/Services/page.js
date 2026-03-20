@@ -44,7 +44,7 @@ export default function Services() {
          <ServiceChart />
          <GroupService />
          <SpecialPrograms />
-         <Footer />
+         {/* <Footer /> */}
           </section>
     </>
   );
