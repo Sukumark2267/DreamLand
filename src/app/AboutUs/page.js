@@ -2,7 +2,6 @@
 import Image from "next/image";
 import './AboutUs.css';
 import { useState, useEffect, useLayoutEffect } from 'react';
-import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import StudioTimings from '@/components/StudioTimings';
 import AboutSection2 from '@/components/AboutSection2';
@@ -27,7 +26,7 @@ export default function About() {
   if (loading) return <Preloader />;
   return (
     <>
-         <Navbar />
+
          <section className="AboutUs">
          <div className="Aboutsection1 items-center flex justify-center">
          <div className="h-[6rem] sm:h-[8rem] md:h-[11rem] lg:h-[15rem] xl:h-[20rem]  2xl:h-[25rem] w-full">

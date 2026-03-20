@@ -1,83 +1,69 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 
-export default function MobileMenu() {
-  const [open, setOpen] = useState(false);
+export default function MobileMenu({ isOpen, onClose }) {
+  if (!isOpen) return null;
 
   return (
-    <>
-      {/* Mobile Header */}
-      <div className="lg:hidden flex items-center justify-between px-4 py-3 bg-black border-b border-neutral-800">
-        
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo/dl_primary_logo.png"
-            alt="Dreamland Athletics"
-            width={150}
-            height={50}
-            className="h-auto w-[150px]"
-            priority
-          />
+    <div className="lg:hidden fixed top-14 left-0 w-full bg-black text-white z-[9999] border-t border-neutral-800 shadow-lg">
+      <div className="flex flex-col px-6 py-5 space-y-5">
+        <Link
+          href="/"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          Home
         </Link>
 
-        {/* Menu Toggle Button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-white text-3xl"
+        <Link
+          href="/AboutUs"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
         >
-          {open ? <HiX /> : <HiMenu />}
-        </button>
+          About
+        </Link>
+
+        <Link
+          href="/WhatWeOffer"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          What We Offer
+        </Link>
+
+        <Link
+          href="/MemberShip"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          Memberships
+        </Link>
+
+        <Link
+          href="/gallery"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          Gallery
+        </Link>
+
+        <Link
+          href="/Reviews"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          Reviews
+        </Link>
+
+        <Link
+          href="/ContactUs"
+          onClick={onClose}
+          className="block text-white text-[15px] uppercase"
+        >
+          Contact
+        </Link>
       </div>
-
-      {/* Mobile Slide Menu */}
-      {open && (
-        <div className="lg:hidden bg-black text-white px-6 py-4 font-swiss text-[14px] tracking-[0.15em] uppercase">
-          <nav className="flex flex-col space-y-4">
-
-            <Link href="/" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Home
-            </Link>
-
-            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              About
-            </Link>
-
-            <Link href="/what-we-offer" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              What We Offer
-            </Link>
-
-            <Link href="/memberships" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Memberships
-            </Link>
-
-            <Link href="/gallery" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Gallery
-            </Link>
-
-            <Link href="/reviews" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Reviews
-            </Link>
-
-            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-[var(--dl-gold)] transition">
-              Contact
-            </Link>
-
-            {/* Free Pass Button */}
-            <Link
-              href="/free-pass"
-              onClick={() => setOpen(false)}
-              className="mt-4 bg-[var(--dl-gold)] text-black py-2 px-5 rounded-md font-bold text-[13px] uppercase tracking-[0.20em] text-center"
-            >
-              Free Pass
-            </Link>
-          </nav>
-        </div>
-      )}
-    </>
+    </div>
   );
 }

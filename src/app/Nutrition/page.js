@@ -27,7 +27,7 @@ export default function Nutrition() {
   if (loading) return <Preloader />;
   return (
     <>
-         <Navbar />
+        
          <section className="Nutrition">
          <div className="Nutritionsection1 items-center flex justify-center">
          <div className="h-[5rem] sm:h-[8rem] md:h-[11rem] lg:h-[15rem] xl:h-[20rem]  2xl:h-[25rem] w-full">
