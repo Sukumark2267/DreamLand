@@ -19,7 +19,7 @@ export default function TermsAndConditions() {
 
   return (
     <>
-      <Navbar />
+     
       <section className="TermsAndConditions px-6 md:px-20 py-20 text-gray-100 bg-gradient-to-b from-black via-[#050505] to-[#050505]">
         <div className="max-w-5xl mx-auto">
           {/* Page Title */}

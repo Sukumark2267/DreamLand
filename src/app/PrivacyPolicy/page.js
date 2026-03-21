@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <Navbar />
+     
       <section className="PrivacyPolicy px-6 md:px-20 py-16 text-gray-100 bg-[#0a0a0a]">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center tracking-widest">
@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
                 please contact us at:
               </p>
               <p className="mt-3">
-                <strong>Email:</strong> support@dreamlandathletics.com
+                <strong>Email:</strong> dreamlandathletics@gmail.com
                 <br />
                 <strong>Address:</strong> 860 N Park Dr, Brampton, ON L6S 4N5,
                 Canada
@@ -139,7 +139,7 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </section>
-      <Footer />
+    
     </>
   );
 }

@@ -24,7 +24,7 @@ const Footer = () => {
                   className="h-10 w-10 object-contain"
                 />
                 <div className="leading-tight">
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-gray-400">
+                 <p className="text-sm font-semibold text-white uppercase tracking-[0.16em]">
                     Dreamland
                   </p>
                   <p className="text-sm font-semibold text-white uppercase tracking-[0.16em]">
@@ -146,16 +146,15 @@ const Footer = () => {
                 <div>
                   <p className="font-semibold text-white">Contact</p>
                   <a
-                    href="tel:+19055551234"
                     className="block hover:text-[#e7b826] transition"
                   >
-                    (905) 555-1234
+                     226-577-2122, 226- 503-2486
                   </a>
                   <a
-                    href="mailto:info@dreamlandathletics.com"
+                    href="mailto:dreamlandathletics@gmail.com"
                     className="block hover:text-[#e7b826] transition"
                   >
-                    info@dreamlandathletics.com
+                    dreamlandathletics@gmail.com
                   </a>
                 </div>
               </div>

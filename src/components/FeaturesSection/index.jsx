@@ -15,8 +15,9 @@
 
                       <div className="contact-info">
                         <h4 className="text-3xl">HOURS</h4>
-                        <p className="text-lg font-light">Monday–Friday: 5am – 10pm</p>
-                        <p className="text-lg font-light">Saturday–Sunday: 7am – 8pm</p>
+                        <p className="text-lg font-light">Monday–Friday: 6am – 9pm</p>
+                         <p className="text-lg font-light">Lunch Time: 2:00 pm - 4:00 pm</p>
+                        <p className="text-lg font-light">Saturday: 10am – 2pm</p>
                       </div>
 
                       <div className="contact-info">

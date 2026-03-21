@@ -27,65 +27,19 @@ export default function StudioTimings() {
         {/* Monday */}
         <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
           <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            MONDAY
+            MONDAY TO FRIDAY
           </h3>
-          <p>6 AM - 2 PM</p>
-          <p>3:30 PM - 9 PM</p>
-        </div>
-
-        {/* Tuesday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            TUESDAY
+          <p>6 AM - 9 PM</p>
+            <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
+           LUNCH BREAK
           </h3>
-          <p>6 AM - 2 PM</p>
-          <p className="italic text-yellow-400">Break (2 PM - 3:30 PM)</p>
-          <p>3:30 PM - 9 PM</p>
-        </div>
-
-        {/* Wednesday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            WEDNESDAY
+          <p>2 PM - 4 PM</p>
+           <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
+            SATURDAY 
           </h3>
-          <p>6 AM - 2 PM</p>
-          <p>3:30 PM - 9 PM</p>
+          <p>10 AM - 2 PM</p>
         </div>
-
-        {/* Thursday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            THURSDAY
-          </h3>
-          <p>6 AM - 2 PM</p>
-          <p>3:30 PM - 9 PM</p>
-        </div>
-
-        {/* Friday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            FRIDAY
-          </h3>
-          <p>6 AM - 2 PM</p>
-          <p className="italic text-yellow-400">Break (2 PM - 3:30 PM)</p>
-          <p>3:30 PM - 9 PM</p>
-        </div>
-
-        {/* Saturday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 hover:-translate-y-1 transition-transform">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            SATURDAY
-          </h3>
-          <p>10 AM - 12 PM</p>
-        </div>
-
-        {/* Sunday */}
-        <div className="bg-[#3a3a3a27] border border-yellow-400 rounded-lg p-6 opacity-70">
-          <h3 className="bg-yellow-400 text-black text-3xl py-1 rounded mb-2">
-            SUNDAY
-          </h3>
-          <p>Closed</p>
-        </div>
+    
       </div>
 
       {/* Contact Info */}
@@ -95,11 +49,11 @@ export default function StudioTimings() {
         </p>
         <p>
           <a href="tel:2265032486" className="text-white hover:underline">
-            226-503-2486
+           226-577-2122
           </a>{" "}
           |{" "}
           <a href="tel:5488882122" className="text-white hover:underline">
-            548-888-2122
+            226- 503-2486
           </a>
         </p>
       </div>

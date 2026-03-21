@@ -131,10 +131,13 @@ const ContactSection = () => {
                   Hours
                 </h4>
                 <p className="text-sm text-gray-200">
-                  Monday–Friday: 5:00 am – 10:00 pm
+                  Monday–Friday: 6:00 am – 9:00 pm
+                </p>
+                 <p className="text-sm text-gray-200">
+                  Lunch Time: 2:00 pm - 4:00 pm
                 </p>
                 <p className="text-sm text-gray-200">
-                  Saturday–Sunday: 7:00 am – 8:00 pm
+                  Saturday: 10:00 am – 2:00 pm
                 </p>
               </div>
 
@@ -147,13 +150,13 @@ const ContactSection = () => {
                     href="tel:+19055551234"
                     className="text-gray-200 hover:text-[#e7b826] transition"
                   >
-                    (905) 555-1234
+                     226-577-2122, 226- 503-2486
                   </a>
                   <a
-                    href="mailto:info@dreamlandathletics.com"
+                    href="mailto:dreamlandathletics@gmail.com"
                     className="text-gray-200 hover:text-[#e7b826] transition"
                   >
-                    info@dreamlandathletics.com
+                    dreamlandathletics@gmail.com
                   </a>
                   <a
                     href="https://www.instagram.com/dreamland_brampton"
