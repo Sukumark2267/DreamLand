@@ -28,8 +28,50 @@ export const anton = Anton({
 });
 
 export const metadata = {
-  title: "Dreamland Athletics",
-  description: "Dreamland Athletics",
+  metadataBase: new URL("https://www.dreamlandathletics.com"),
+  title: {
+    default: "Dreamland Athletics | Gym & Fitness Studio in Brampton, Ontario",
+    template: "%s | Dreamland Athletics",
+  },
+  description:
+    "Dreamland Athletics is a community-focused gym and fitness studio in Brampton, Ontario dedicated to transformation, strength, and results.",
+  keywords: [
+    "Dreamland Athletics",
+    "Dreamland Athletics Brampton",
+    "gym in Brampton",
+    "fitness studio Brampton",
+    "best gym in Brampton",
+    "personal training Brampton",
+    "workout studio Brampton Ontario",
+    "strength training Brampton",
+    "community gym Brampton",
+  ],
+  applicationName: "Dreamland Athletics",
+  authors: [{ name: "Dreamland Athletics" }],
+  creator: "Dreamland Athletics",
+  publisher: "Dreamland Athletics",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Dreamland Athletics | Gym & Fitness Studio in Brampton, Ontario",
+    description:
+      "Join Dreamland Athletics in Brampton for community, transformation, strength, and results.",
+    url: "https://www.dreamlandathletics.com",
+    siteName: "Dreamland Athletics",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dreamland Athletics | Gym & Fitness Studio in Brampton, Ontario",
+    description:
+      "Community-focused gym and fitness studio in Brampton dedicated to strength, transformation, and results.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -44,7 +86,7 @@ export default function RootLayout({ children }) {
         `}
       >
         <Navbar />
-        <main >
+        <main>
           {children}
         </main>
         <Toaster />

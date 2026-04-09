@@ -1,81 +1,73 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Script from 'next/script';
-import Preloader from '@/components/Preloader';
-import HeroSection from '@/components/HeroSection';
-import ProgramsSection from '@/components/programs';
-import MembershipSection from '@/components/membership';
-import Services from '@/components/Services';
-import ContactSection from '@/components/contact';
-import Newsletter from '@/components/Newsletter';
-import Banner from '@/components/Banner';
-import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
-import InstagramFeed from '@/components/instagram';
-import FounderSocials from '@/components/FounderSocials';
-import GoogleReviews from "@/components/GoogleReviews";
-import StudioGallerySection from '@/components/StudioGallerySection';
-import SocialMedia from '@/components/social-media';
-import GoogleMaps from '@/components/GoogleReview';
+import HomeClient from "./HomeClient";
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
+export const metadata = {
+  title: "Best Gym & Fitness Studio in Brampton, Ontario",
+  description:
+    "Dreamland Athletics is a community-focused gym and fitness studio in Brampton, Ontario offering strength training, memberships, transformation programs, and fitness services.",
+  keywords: [
+    "Dreamland Athletics",
+    "gym in Brampton",
+    "fitness studio Brampton",
+    "best gym in Brampton",
+    "strength training Brampton",
+    "personal training Brampton",
+    "gym memberships Brampton",
+    "Dreamland Athletics Ontario",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Dreamland Athletics | Best Gym & Fitness Studio in Brampton",
+    description:
+      "Join Dreamland Athletics in Brampton for strength, transformation, memberships, and community-driven fitness.",
+    url: "https://www.dreamlandathletics.com",
+    siteName: "Dreamland Athletics",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dreamland Athletics | Best Gym & Fitness Studio in Brampton",
+    description:
+      "Community-focused fitness studio in Brampton dedicated to strength, results, and transformation.",
+  },
+};
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500); 
-
-    return () => clearTimeout(timer);
-  }, []);
-  
-
-  if (loading) return <Preloader />;
+export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Gym",
+    name: "Dreamland Athletics",
+    url: "https://www.dreamlandathletics.com",
+    description:
+      "Dreamland Athletics is a community-focused gym and fitness studio in Brampton, Ontario offering strength training, memberships, transformation programs, and fitness services.",
+    telephone: "+1-226-577-2122",
+    email: "dreamlandathletics@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "860 North Park Drive",
+      addressLocality: "Brampton",
+      addressRegion: "ON",
+      postalCode: "L6S 4N5",
+      addressCountry: "CA",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Brampton",
+    },
+    sameAs: [
+      "https://www.instagram.com/dreamland_brampton"
+    ],
+  };
 
   return (
-  <>
-    <Script
-    src="https://static.elfsight.com/platform/platform.js"
-    strategy="beforeInteractive"
-    id="elfsight-platform"
-  />
-    <main className='overflow-x-hidden'>
-
-    {/* <Navbar /> */}
-
-      <HeroSection/>
-      <InstagramFeed/>
-      <StudioGallerySection/>
-        <Services/>
-        <SocialMedia />
-      <MembershipSection/>
-      <GoogleMaps />
-      <FounderSocials/>
-      {/* <Newsletter/> commented out for now, will add back in later for be the first to know section */}
-      <GoogleReviews/>
-      {/* <Banner/> commented out for now, will add back in later for get started today section */}
-      {/* <Footer /> */}
-
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <HomeClient />
     </>
   );
 }
-
-const styles = {
-  preloaderContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    backgroundColor: '#fff',
-  },
-  spinner: {
-    border: '6px solid #f3f3f3', 
-    borderTop: '6px solid #3498db', 
-    borderRadius: '50%',
-    width: '50px',
-    height: '50px',
-    animation: 'spin 1s linear infinite',
-  },
-};
