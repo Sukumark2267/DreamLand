@@ -36,7 +36,7 @@ const socialLinks = [
   {
     name: "TikTok",
     handle: "@dreamlandathletics",
-    href: "https://tiktok.com",
+    href: "https://www.tiktok.com/@dreamlandathletics?_r=1&_t=ZS-95c2QiR8uNl",
     description: "Short-form clips, workouts, and studio energy.",
     icon: <FaTiktok className="text-white text-lg" />,
     iconBg: "bg-black border border-white/20",
