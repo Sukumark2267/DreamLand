@@ -157,6 +157,21 @@ const Footer = () => {
                     dreamlandathletics@gmail.com
                   </a>
                 </div>
+
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-[#e7b826]">India Studio</p>
+                  <p className="text-gray-300">
+                    Dinkar Vihar, Vikas Nagar,
+                    <br />
+                    Dehradun, Uttarakhand, India
+                  </p>
+                  <a
+                    href="tel:+919639202122"
+                    className="mt-2 block hover:text-[#e7b826] transition"
+                  >
+                    +91 96392 02122
+                  </a>
+                </div>
               </div>
             </div>
           </div>

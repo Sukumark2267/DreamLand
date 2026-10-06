@@ -61,11 +61,36 @@ export default function HomePage() {
     ],
   };
 
+  const indiaJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Gym",
+    name: "Dreamland Athletics India",
+    url: "https://www.dreamlandathletics.com/MemberShip#india-memberships",
+    description:
+      "Dreamland Athletics India is a fitness studio serving the Vikas Nagar and Dehradun community.",
+    telephone: "+91-96392-02122",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Dinkar Vihar, Vikas Nagar",
+      addressLocality: "Dehradun",
+      addressRegion: "Uttarakhand",
+      addressCountry: "IN",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Dehradun",
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(indiaJsonLd) }}
       />
       <HomeClient />
     </>

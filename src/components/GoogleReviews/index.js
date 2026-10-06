@@ -5,7 +5,12 @@ import { useState } from "react";
 const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycby1fW9Zp2yEZthtYjkin8LIdHIr8Dq5dYFYsHARJ8UGKPE5wVurP0W2QWvFebRkzlSM/exec";
 
-export default function ReviewForm() {
+export default function ReviewForm({
+  location = "Canada",
+  title = "Share Your Experience",
+  description =
+    "Your review helps others discover Dreamland Athletics. Thank you for supporting our community.",
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -41,7 +46,7 @@ export default function ReviewForm() {
     formData.append("phone", phone);
     formData.append("rating", rating.toString());
     formData.append("message", message);
-    formData.append("source", "Dreamland Website");
+    formData.append("source", `Dreamland Website - ${location}`);
 
     await fetch(SCRIPT_URL, {
       method: "POST",
@@ -73,11 +78,10 @@ export default function ReviewForm() {
       className="mt-12 max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-xl p-6 md:p-8 backdrop-blur"
     >
       <h2 className="text-2xl md:text-3xl font-semibold mb-2 text-white text-center">
-        Share Your Experience
+        {title}
       </h2>
       <p className="text-sm md:text-base text-gray-300 mb-6 text-center">
-        Your review helps others discover Dreamland Athletics. Thank you for
-        supporting our community.
+        {description}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">

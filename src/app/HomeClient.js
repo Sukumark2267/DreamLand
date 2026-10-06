@@ -5,6 +5,7 @@ import Preloader from '@/components/Preloader';
 import HeroSection from '@/components/HeroSection';
 import ProgramsSection from '@/components/programs';
 import MembershipSection from '@/components/membership';
+import IndiaMembershipSection from '@/components/IndiaMembershipSection';
 import Services from '@/components/Services';
 import ContactSection from '@/components/contact';
 import Newsletter from '@/components/Newsletter';
@@ -49,6 +50,7 @@ export default function Home() {
         <Services/>
         <SocialMedia />
       <MembershipSection/>
+      <IndiaMembershipSection/>
       <GoogleMaps />
       <FounderSocials/>
       {/* <Newsletter/> commented out for now, will add back in later for be the first to know section */}

@@ -1,3 +1,7 @@
+.site-header {
+  overflow: visible !important;
+}
+
 /* .login-button {
     display: flex;
     justify-content: center;
@@ -27,14 +31,13 @@
 .login-button:hover {
     background-color: transparent;
 }
-  
+
 .login-button:hover > a {
     color: var(--primary);
 }
-  
+
 .right-section {
     display: flex;
     align-items: center;
-    gap: 1.5rem; 
+    gap: 1.5rem;
   } */
-   

@@ -32,29 +32,33 @@ export default function MobileMenu({ isOpen, onClose }) {
           What We Offer
         </Link>
 
-        <Link
-          href="/MemberShip"
-          onClick={onClose}
-          className="block text-white text-[15px] uppercase"
-        >
-          Memberships
-        </Link>
-
-        <Link
-          href="/gallery"
-          onClick={onClose}
-          className="block text-white text-[15px] uppercase"
-        >
-          Gallery
-        </Link>
-
-        <Link
-          href="/Reviews"
-          onClick={onClose}
-          className="block text-white text-[15px] uppercase"
-        >
-          Reviews
-        </Link>
+        {[
+          ["Memberships", "/MemberShip", "/MemberShip#india-memberships"],
+          ["Gallery", "/gallery", "/india/gallery"],
+          ["Reviews", "/Reviews", "/india/reviews"],
+        ].map(([label, canadaHref, indiaHref]) => (
+          <div key={label} className="border-t border-white/10 pt-4">
+            <p className="text-[13px] uppercase tracking-[0.18em] text-gray-300">
+              {label}
+            </p>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <Link
+                href={canadaHref}
+                onClick={onClose}
+                className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-center text-[12px] uppercase text-white transition hover:border-[#e7b826] hover:text-[#e7b826]"
+              >
+                Canada
+              </Link>
+              <Link
+                href={indiaHref}
+                onClick={onClose}
+                className="rounded-lg border border-[#e7b826]/50 bg-[#e7b826]/10 px-3 py-2 text-center text-[12px] uppercase text-[#e7b826] transition hover:bg-[#e7b826] hover:text-black"
+              >
+                India
+              </Link>
+            </div>
+          </div>
+        ))}
 
         <Link
           href="/ContactUs"

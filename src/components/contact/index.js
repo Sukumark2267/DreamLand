@@ -116,7 +116,7 @@ const ContactSection = () => {
             <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-6 py-6 flex flex-col gap-6 shadow-[0_18px_45px_rgba(0,0,0,0.8)]">
               <div>
                 <h4 className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-1">
-                  Location
+                  Canada Location
                 </h4>
                 <p className="text-base font-semibold">
                   Dreamland Athletics Studio
@@ -177,6 +177,42 @@ const ContactSection = () => {
                   Whether you’re just starting or ready to level up, we’re here
                   to help you move slow, steady and unstoppable.
                 </p>
+              </div>
+
+              <div
+                id="india-location"
+                className="scroll-mt-24 border-t border-white/10 pt-6"
+              >
+                <h4 className="text-sm uppercase tracking-[0.2em] text-[#e7b826] mb-1">
+                  India Location
+                </h4>
+                <p className="text-base font-semibold">
+                  Dreamland Athletics India
+                </p>
+                <p className="text-sm text-gray-300">
+                  Dinkar Vihar, Vikas Nagar, Dehradun, Uttarakhand, India
+                </p>
+
+                <div className="mt-4">
+                  <h4 className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-1">
+                    Contact
+                  </h4>
+                  <a
+                    href="tel:+919639202122"
+                    className="text-sm text-gray-200 hover:text-[#e7b826] transition"
+                  >
+                    +91 96392 02122
+                  </a>
+                </div>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Dinkar+Vihar+Vikas+Nagar+Dehradun+Uttarakhand"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex rounded-full border border-[#e7b826]/50 px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#e7b826] transition hover:bg-[#e7b826] hover:text-black"
+                >
+                  Open India Location
+                </a>
               </div>
             </div>
 
@@ -253,6 +289,25 @@ const ContactSection = () => {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              allowFullScreen
+              loading="lazy"
+              style={{ border: 0 }}
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </motion.div>
+
+          <motion.div
+            className="map-container mt-8 rounded-2xl overflow-hidden border border-[#e7b826]/25 shadow-[0_20px_60px_rgba(0,0,0,0.9)]"
+            initial={{ opacity: 0, scaleX: 0.5, transformOrigin: "center" }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <iframe
+              title="Dreamland Athletics India - Vikas Nagar, Dehradun"
+              src="https://www.google.com/maps?q=Dinkar%20Vihar%2C%20Vikas%20Nagar%2C%20Dehradun%2C%20Uttarakhand&output=embed"
               width="100%"
               height="450"
               allowFullScreen

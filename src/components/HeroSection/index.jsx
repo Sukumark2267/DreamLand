@@ -159,13 +159,27 @@ export default function ComingSoon() {
             </h1>
           </div>
 
-          <div className="mt-8 fade-up" style={{ animationDelay: "0.5s" }}>
-            <Link
-              href="#memberships"
-              className="bg-black text-[#e7b826] border border-[#e7b826] font-semibold py-3 px-10 rounded-2xl transition duration-300 text-sm md:text-base uppercase tracking-wide hover:bg-[#e7b826] hover:text-black hover:scale-105"
-            >
-              View Memberships
-            </Link>
+          <div
+            className="mt-8 fade-up flex flex-col items-center"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+              <Link
+                href="/MemberShip#india-memberships"
+                className="min-w-40 bg-[#e7b826] text-black border border-[#e7b826] font-semibold py-3 px-8 rounded-2xl transition duration-300 text-sm md:text-base uppercase tracking-[0.14em] hover:bg-[#ffd84e] hover:scale-105"
+              >
+                India
+              </Link>
+              <Link
+                href="/MemberShip"
+                className="min-w-40 bg-black text-[#e7b826] border border-[#e7b826] font-semibold py-3 px-8 rounded-2xl transition duration-300 text-sm md:text-base uppercase tracking-[0.14em] hover:bg-[#e7b826] hover:text-black hover:scale-105"
+              >
+                Canada
+              </Link>
+            </div>
+            <p className="mt-4 max-w-md text-xs sm:text-sm text-gray-300 tracking-wide">
+              Select your location to explore memberships, gallery and reviews.
+            </p>
           </div>
         </div>
       </section>
