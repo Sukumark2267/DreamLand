@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "./services.css";
 
 const services = [
@@ -68,6 +69,9 @@ export default function ServicesSection() {
             <div className="service-border" />
           </div>
         ))}
+      </div>
+      <div className="mt-10 text-center">
+        <Link href="/ContactUs#contact" className="inline-flex rounded-full bg-[#e7b826] px-8 py-3 font-semibold text-black hover:bg-[#ffd84e]">Join the Elite</Link>
       </div>
     </section>
   );

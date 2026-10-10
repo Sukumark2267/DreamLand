@@ -1,110 +1,24 @@
-"use client";
-
-import Link from "next/link";
-import {
-  FaInstagram,
-  FaYoutube,
-  FaFacebookF,
-  FaTiktok,
-} from "react-icons/fa";
-
-const socialLinks = [
-  {
-    name: "Instagram",
-    handle: "@dreamland_brampton",
-    href: "https://www.instagram.com/dreamland_brampton",
-    description: "Daily stories, transformation posts & studio moments.",
-    icon: <FaInstagram className="text-white text-lg" />,
-    iconBg: "bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-400",
-  },
-  {
-    name: "YouTube",
-    handle: "Dreamland Athletics",
-    href: "https://youtube.com",
-    description: "Long-form tips, routines & coaching breakdowns.",
-    icon: <FaYoutube className="text-white text-lg" />,
-    iconBg: "bg-[#FF0000]",
-  },
-  {
-    name: "Facebook",
-    handle: "Dreamland Athletics",
-    href: "https://facebook.com",
-    description: "Event updates, photos & community highlights.",
-    icon: <FaFacebookF className="text-white text-lg" />,
-    iconBg: "bg-[#1877F2]",
-  },
-  {
-    name: "TikTok",
-    handle: "@dreamlandathletics",
-    href: "https://www.tiktok.com/@dreamlandathletics?_r=1&_t=ZS-95c2QiR8uNl",
-    description: "Short-form clips, workouts, and studio energy.",
-    icon: <FaTiktok className="text-white text-lg" />,
-    iconBg: "bg-black border border-white/20",
-  },
-];
+import { ArrowUpRight, Instagram } from "lucide-react";
+import { instagramAccounts } from "@/data/locations";
+import InstagramQr from "@/components/InstagramQr";
 
 export default function SocialMediaSection() {
   return (
-    <section className="bg-black text-white py-20 px-4 md:px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-[#e7b826] mb-3">
-            Social Media
-          </p>
-
-          <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Stay connected with Dreamland Athletics
-          </h2>
-
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-            Follow our journey across social platforms for workouts,
-            transformations, studio moments, events, and community updates.
-          </p>
-        </div>
-
-        {/* Social Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {socialLinks.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-2xl p-6 border border-white/15 bg-white/10 backdrop-blur-md hover:bg-white/15 hover:border-[#e7b826] transition duration-300 shadow-[0_8px_25px_rgba(0,0,0,0.6)]"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span
-                  className={`h-11 w-11 rounded-full flex items-center justify-center ${item.iconBg}`}
-                >
-                  {item.icon}
-                </span>
-
-                <div>
-                  <p className="text-[11px] tracking-[0.25em] text-gray-300 uppercase">
-                    {item.name}
-                  </p>
-                  <p className="font-semibold text-sm text-white">
-                    {item.handle}
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </a>
+    <section id="studio-socials" className="bg-[#111] px-5 py-14 text-white">
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-center text-xs uppercase tracking-[0.3em] text-[#e7b826]">Two locations. One Dreamland.</p>
+        <h2 className="mb-3 text-center text-3xl md:text-5xl">Follow your community</h2>
+        <p className="mb-8 text-center font-sans text-sm text-gray-300">Choose your studio or follow the official brand. Scan a code or tap a button.</p>
+        <div className="grid gap-5 md:grid-cols-3">
+          {instagramAccounts.map((account) => (
+            <article key={account.id} className="flex min-w-0 flex-col items-center rounded-3xl border border-[#e7b826]/20 bg-gradient-to-br from-[#28231a] to-[#171717] p-6 text-center">
+              <div className="flex w-full items-center justify-between"><Instagram className="h-6 w-6 text-[#e7b826]" /><span className="rounded-full border border-white/20 px-3 py-1 text-xs uppercase tracking-widest">{account.label}</span></div>
+              <h3 className="mt-5 text-2xl">{account.city}</h3>
+              <p className="mb-6 mt-2 break-all font-sans text-sm text-[#e7b826]">{account.handle}</p>
+              <div className="mt-auto"><InstagramQr account={account} /></div>
+              <a href={account.href} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#e7b826] px-5 py-3 font-sans text-sm font-semibold text-black transition hover:bg-[#ffd84e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Follow {account.label} <ArrowUpRight size={16} /></a>
+            </article>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/ContactUs"
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm uppercase tracking-[0.18em] text-white hover:bg-white hover:text-black transition"
-          >
-            Connect With Us
-          </Link>
         </div>
       </div>
     </section>

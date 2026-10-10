@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { MapPin, MessageSquareQuote, Sparkles, Star } from "lucide-react";
+import { MapPin, MessageSquareQuote, Sparkles } from "lucide-react";
 import ReviewForm from "@/components/GoogleReviews";
+import { indiaMaps, indiaMapsSearch } from "@/data/locations";
 
 export const metadata = {
   title: "India Reviews | Vikas Nagar, Dehradun",
@@ -23,11 +24,10 @@ export default function IndiaReviewsPage() {
           India Reviews
         </p>
         <h1 className="text-4xl font-bold uppercase leading-tight md:text-6xl">
-          A new community. New stories.
+          India member experiences
         </h1>
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-300 md:text-lg">
-          The India branch is new, so verified member reviews will appear here
-          as the Dehradun community grows.
+          Discover the Dreamland Athletics community in Vikas Nagar, Dehradun.
         </p>
       </section>
 
@@ -35,20 +35,11 @@ export default function IndiaReviewsPage() {
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="relative overflow-hidden rounded-[28px] border border-[#e7b826]/25 bg-gradient-to-br from-[#e7b826]/15 via-white/5 to-black p-7 md:p-10">
             <Sparkles className="mb-6 h-8 w-8 text-[#e7b826]" />
-            <h2 className="text-3xl uppercase md:text-4xl">Reviews coming soon</h2>
+            <h2 className="text-3xl uppercase md:text-4xl">India studio on Google</h2>
             <p className="mt-4 max-w-xl text-sm leading-7 text-gray-300 md:text-base">
-              We are leaving this space open for genuine India member
-              experiences instead of reusing Canada reviews or adding sample
-              testimonials.
+              Explore our India studio and read member experiences on Google Maps.
             </p>
-            <div className="mt-8 flex items-center gap-1" aria-label="Five stars">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star
-                  key={star}
-                  className="h-5 w-5 fill-[#e7b826] text-[#e7b826]"
-                />
-              ))}
-            </div>
+            <a href={indiaMaps || indiaMapsSearch} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-full bg-[#e7b826] px-6 py-3 text-sm text-black">Open India studio on Google</a>
           </div>
 
           <div className="rounded-[28px] border border-white/10 bg-white/5 p-7 md:p-10">

@@ -1,193 +1,42 @@
-// components/Footer.jsx
-"use client";
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import SocialButtons from "../SocialButtons";
+import { Instagram, ArrowUpRight } from "lucide-react";
+import { indiaInstagram, canadaInstagram, officialInstagram, indiaHours } from "@/data/locations";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 mt-16">
-      <div className="max-w-6xl mx-auto px-4 py-10 md:py-14">
-        {/* Glassy main footer block */}
-        <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl px-6 py-8 md:px-8 md:py-10 shadow-[0_24px_70px_rgba(0,0,0,0.9)]">
-          <div className="grid gap-10 md:grid-cols-4">
-            {/* Brand / About */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/images/logo/dl_icon_white_empty.png"
-                  alt="Dreamland Athletics"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 object-contain"
-                />
-                <div className="leading-tight">
-                 <p className="text-sm font-semibold text-white uppercase tracking-[0.16em]">
-                    Dreamland
-                  </p>
-                  <p className="text-sm font-semibold text-white uppercase tracking-[0.16em]">
-                    Athletics
-                  </p>
-                </div>
-              </div>
-
-              <p className="text-sm text-gray-300 max-w-xs">
-                Brampton&apos;s premier fitness studio specializing in
-                performance training, strength, conditioning and community-driven
-                results.
-              </p>
-
-              <div className="flex">
-                <SocialButtons />
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="space-y-4">
-              <h4 className="text-xs md:text-sm uppercase tracking-[0.25em] text-gray-300">
-                Quick Links
-              </h4>
-              <div className="h-[2px] w-10 bg-[#e7b826]" />
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>
-                  <Link href="/" className="hover:text-[#e7b826] transition">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/AboutUs"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/Services"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/Gallery"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    Gallery
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Support */}
-            <div className="space-y-4">
-              <h4 className="text-xs md:text-sm uppercase tracking-[0.25em] text-gray-300">
-                Support
-              </h4>
-              <div className="h-[2px] w-10 bg-[#e7b826]" />
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>
-                  <Link
-                    href="/ContactUs"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/PrivacyPolicy"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/TermsAndConditions"
-                    className="hover:text-[#e7b826] transition"
-                  >
-                    Terms &amp; Conditions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Visit / Hours */}
-            <div className="space-y-4">
-              <h4 className="text-xs md:text-sm uppercase tracking-[0.25em] text-gray-300">
-                Visit Us
-              </h4>
-              <div className="h-[2px] w-10 bg-[#e7b826]" />
-              <div className="space-y-3 text-sm text-gray-300">
-                <div>
-                  <p className="font-semibold text-white">Studio Address</p>
-                  <p className="text-gray-300">
-                    860 North Park Drive,
-                    <br />
-                    Brampton L6S 4N5 Brampton
-                    <br />
-                    ( Back side of the day care ) 
-
-                  </p>
-                </div>
-
-                <div>
-                  <p className="font-semibold text-white">Timings</p>
-                  <p>Mon–Fri: 6:00 am – 9:00 pm</p>
-                  <p>Lunch Time: 2:00 pm - 4:00 pm</p>
-                  <p>Sat: 10:00 am – 2:00 pm</p>
-                </div>
-
-                <div>
-                  <p className="font-semibold text-white">Contact</p>
-                  <a
-                    className="block hover:text-[#e7b826] transition"
-                  >
-                     226-577-2122, 226- 503-2486
-                  </a>
-                  <a
-                    href="mailto:dreamlandathletics@gmail.com"
-                    className="block hover:text-[#e7b826] transition"
-                  >
-                    dreamlandathletics@gmail.com
-                  </a>
-                </div>
-
-                <div className="border-t border-white/10 pt-4">
-                  <p className="font-semibold text-[#e7b826]">India Studio</p>
-                  <p className="text-gray-300">
-                    Dinkar Vihar, Vikas Nagar,
-                    <br />
-                    Dehradun, Uttarakhand, India
-                  </p>
-                  <a
-                    href="tel:+919639202122"
-                    className="mt-2 block hover:text-[#e7b826] transition"
-                  >
-                    +91 96392 02122
-                  </a>
-                </div>
-              </div>
-            </div>
+    <footer className="!bg-[#181818] !px-5 !py-12 !text-left border-t border-white/10 font-sans text-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-7 sm:flex-row sm:items-center">
+          <Image src="/images/logo/dl_primary_logo.png" alt="Dreamland Athletics" width={260} height={65} className="h-auto w-60" />
+          <div className="flex flex-wrap gap-5 text-sm text-gray-200">
+            <Link href="/AboutUs">About</Link><Link href="/WhatWeOffer">What We Offer</Link><Link href="/MemberShip">Memberships</Link><Link href="/ContactUs">Contact</Link>
           </div>
         </div>
-
-        {/* Bottom strip */}
-        <div className="mt-6 border-t border-white/10 pt-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] md:text-xs text-gray-400">
-          <p className="text-center md:text-left">
-            &copy; {new Date().getFullYear()} Dreamland Athletics. All rights
-            reserved.
-          </p>
-          
+        <div className="grid gap-6 py-8 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-[#222] p-6">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[#e7b826]">Canada</p>
+            <h3 className="text-2xl">Brampton, Ontario</h3>
+            <p className="mt-3 text-sm leading-6 text-gray-300">860 North Park Drive, Brampton, L6S 4N5<br />(Back side of the day care)</p>
+            <p className="mt-3 text-sm leading-6 text-gray-300">Mon–Fri: 6:00 am – 9:00 pm · Lunch: 2:00 pm – 4:00 pm<br />Sat: 10:00 am – 2:00 pm</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm"><a href="tel:+12265772122">226-577-2122</a><a href="tel:+12265032486">226-503-2486</a></div>
+            <a href={canadaInstagram} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm text-[#e7b826]"><Instagram size={18} /> @dreamland_brampton <ArrowUpRight size={16} /></a>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-[#222] p-6">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[#e7b826]">India</p>
+            <h3 className="text-2xl">Vikas Nagar, Dehradun</h3>
+            <p className="mt-3 text-sm leading-6 text-gray-300">Dinkar Vihar, Vikas Nagar<br />Dehradun, Uttarakhand, India</p>
+            <p className="mt-3 text-sm leading-6 text-gray-300">{indiaHours}<br />Saturday: Closed</p>
+            <a href="tel:+919639202122" className="mt-4 block text-sm">+91 96392 02122</a>
+            <a href={indiaInstagram} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm text-[#e7b826]"><Instagram size={18} /> @dreamland_vikasnagar <ArrowUpRight size={16} /></a>
+          </div>
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-5">
+          <a href="mailto:dreamlandathletics@gmail.com" className="text-sm text-gray-200">dreamlandathletics@gmail.com</a>
+          <a href={officialInstagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-[#e7b826]"><Instagram size={18} /> Official brand Instagram <ArrowUpRight size={16} /></a>
+        </div>
+        <div className="mt-6 flex flex-col justify-between gap-3 border-t border-white/15 pt-5 text-xs text-gray-400 sm:flex-row"><p>© {new Date().getFullYear()} Dreamland Athletics</p><div className="flex gap-5"><Link href="/PrivacyPolicy">Privacy Policy</Link><Link href="/TermsAndConditions">Terms &amp; Conditions</Link></div></div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -2,12 +2,15 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { indiaInstagram, canadaInstagram, indiaMaps, indiaMapsSearch, indiaHours } from "@/data/locations";
 import Image from "next/image";
 import "./contact.css";
 
 const ContactSection = () => {
   const controls = useAnimation();
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState(null);
   const [ref, inView] = useInView({
     threshold: 0.4,
     triggerOnce: false,
@@ -36,17 +39,13 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const formData = {
-      fname: form[0].value,
-      email: form[1].value,
-      phone: form[2].value,
-      message: form[3].value,
-    };
+    if (submitting) return;
+    const form = e.currentTarget;
+    const formData = Object.fromEntries(new FormData(form));
+    setSubmitting(true);
+    setStatus(null);
 
     try {
-      console.log(formData);
-
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -56,14 +55,15 @@ const ContactSection = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message);
+        setStatus({ success: true, text: data.message });
         form.reset();
       } else {
-        alert(data.error || "Something went wrong!");
+        setStatus({ success: false, text: data.error || "Unable to send your message. Please email or call us." });
       }
     } catch (err) {
-      alert("Network error. Please try again.");
-      console.error(err);
+      setStatus({ success: false, text: "Unable to connect. Please email or call the studio." });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -93,7 +93,7 @@ const ContactSection = () => {
       {/* CONTACT SECTION */}
       <section
         id="contact"
-        className="relative bg-black py-16 px-4 text-white"
+        className="relative bg-[#0c0c0c] py-8 sm:py-10 px-5 sm:px-8 text-white"
       >
         <div className="max-w-6xl mx-auto">
           {/* Heading */}
@@ -101,7 +101,7 @@ const ContactSection = () => {
             <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-[#e7b826] mb-2">
               Contact
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               Get in Touch
             </h2>
             <p className="mt-3 text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
@@ -111,9 +111,10 @@ const ContactSection = () => {
           </div>
 
           {/* Glassy 2-column layout: info + form */}
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 items-start">
             {/* Left: Studio info */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-6 py-6 flex flex-col gap-6 shadow-[0_18px_45px_rgba(0,0,0,0.8)]">
+            <div className="flex flex-col gap-6">
+            <div className="rounded-2xl border border-white/10 bg-[#171717] p-6 flex flex-col gap-5">
               <div>
                 <h4 className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-1">
                   Canada Location
@@ -147,11 +148,12 @@ const ContactSection = () => {
                 </h4>
                 <div className="flex flex-col gap-1 text-sm">
                   <a
-                    href="tel:+19055551234"
+                    href="tel:+12265772122"
                     className="text-gray-200 hover:text-[#e7b826] transition"
                   >
-                     226-577-2122, 226- 503-2486
+                     226-577-2122
                   </a>
+                  <a href="tel:+12265032486" className="text-gray-200 hover:text-[#e7b826]">226-503-2486</a>
                   <a
                     href="mailto:dreamlandathletics@gmail.com"
                     className="text-gray-200 hover:text-[#e7b826] transition"
@@ -159,7 +161,7 @@ const ContactSection = () => {
                     dreamlandathletics@gmail.com
                   </a>
                   <a
-                    href="https://www.instagram.com/dreamland_brampton"
+                    href={canadaInstagram}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-200 hover:text-[#e7b826] transition"
@@ -169,19 +171,10 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="pt-2">
-                <p className="text-xs uppercase tracking-[0.22em] text-gray-400 mb-2">
-                  Visit / Call / Message
-                </p>
-                <p className="text-sm text-gray-300">
-                  Whether you’re just starting or ready to level up, we’re here
-                  to help you move slow, steady and unstoppable.
-                </p>
               </div>
-
               <div
                 id="india-location"
-                className="scroll-mt-24 border-t border-white/10 pt-6"
+                className="scroll-mt-28 rounded-2xl border border-[#e7b826]/25 bg-[#171717] p-6"
               >
                 <h4 className="text-sm uppercase tracking-[0.2em] text-[#e7b826] mb-1">
                   India Location
@@ -194,6 +187,9 @@ const ContactSection = () => {
                 </p>
 
                 <div className="mt-4">
+                  <h4 className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-1">Hours</h4>
+                  <p className="text-sm text-gray-200">{indiaHours}</p>
+                  <p className="text-sm text-gray-200 mb-4">Saturday: Closed</p>
                   <h4 className="text-sm uppercase tracking-[0.2em] text-gray-300 mb-1">
                     Contact
                   </h4>
@@ -203,10 +199,11 @@ const ContactSection = () => {
                   >
                     +91 96392 02122
                   </a>
+                  <a href={indiaInstagram} target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-[#e7b826]">@dreamland_vikasnagar</a>
                 </div>
 
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Dinkar+Vihar+Vikas+Nagar+Dehradun+Uttarakhand"
+                  href={indiaMaps || indiaMapsSearch}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 inline-flex rounded-full border border-[#e7b826]/50 px-4 py-2 text-xs uppercase tracking-[0.16em] text-[#e7b826] transition hover:bg-[#e7b826] hover:text-black"
@@ -217,17 +214,27 @@ const ContactSection = () => {
             </div>
 
             {/* Right: Form */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md px-6 py-6 shadow-[0_18px_45px_rgba(0,0,0,0.8)]">
+            <div className="rounded-2xl border border-white/10 bg-[#171717] p-6 sm:p-8">
               <h3 className="text-lg font-semibold mb-4 uppercase tracking-[0.18em]">
                 Send Us a Message
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
+                  <label htmlFor="contact-location" className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">Studio</label>
+                  <select id="contact-location" name="location" className="w-full rounded-md border border-white/15 bg-black px-3 py-2 text-white">
+                    <option value="Canada">Canada — Brampton</option>
+                    <option value="India">India — Vikas Nagar</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="contact-name" className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
                     Name
                   </label>
                   <input
                     type="text"
+                    name="fname"
+                    id="contact-name"
+                    maxLength={120}
                     placeholder="Your Name"
                     required
                     className="w-full px-3 py-2 rounded-md bg-black/60 border border-white/15 text-sm outline-none focus:border-[#e7b826] focus:ring-1 focus:ring-[#e7b826] transition"
@@ -235,11 +242,14 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
+                  <label htmlFor="contact-email" className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
                     Email
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    id="contact-email"
+                    maxLength={254}
                     placeholder="Your Email"
                     required
                     className="w-full px-3 py-2 rounded-md bg-black/60 border border-white/15 text-sm outline-none focus:border-[#e7b826] focus:ring-1 focus:ring-[#e7b826] transition"
@@ -247,21 +257,27 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
+                  <label htmlFor="contact-phone" className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
                     Phone
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    id="contact-phone"
+                    maxLength={40}
                     placeholder="Phone Number (optional)"
                     className="w-full px-3 py-2 rounded-md bg-black/60 border border-white/15 text-sm outline-none focus:border-[#e7b826] focus:ring-1 focus:ring-[#e7b826] transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
+                  <label htmlFor="contact-message" className="block text-xs uppercase tracking-[0.18em] text-gray-400 mb-1">
                     Message
                   </label>
                   <textarea
+                    name="message"
+                    id="contact-message"
+                    maxLength={5000}
                     placeholder="Tell us about your goals, questions or how we can help."
                     required
                     rows={4}
@@ -271,11 +287,14 @@ const ContactSection = () => {
 
                 <button
                   type="submit"
+                  disabled={submitting}
                   className="w-full cta-button mt-2 bg-[#e7b826] hover:bg-[#ffd84e] text-black font-semibold py-2.5 rounded-md text-xs md:text-sm uppercase tracking-[0.18em] transition"
                 >
-                  Send Message
+                  {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
+              {status && <p role="status" aria-live="polite" className={`mt-4 text-sm ${status.success ? "text-green-300" : "text-amber-200"}`}>{status.text}</p>}
+              <a href="mailto:dreamlandathletics@gmail.com" className="mt-4 inline-block text-sm text-[#e7b826] underline">Email us directly</a>
             </div>
           </div>
 
@@ -290,7 +309,7 @@ const ContactSection = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d720.7687165970583!2d-79.74951353497413!3d43.72977157442773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b173a1b0a0e17%3A0xdadb9bd5d608dd4e!2sDreamland%20Athletics!5e0!3m2!1sen!2sin!4v1747585502192!5m2!1sen!2sin"
               width="100%"
-              height="450"
+              height="260"
               allowFullScreen
               loading="lazy"
               style={{ border: 0 }}
@@ -307,9 +326,9 @@ const ContactSection = () => {
           >
             <iframe
               title="Dreamland Athletics India - Vikas Nagar, Dehradun"
-              src="https://www.google.com/maps?q=Dinkar%20Vihar%2C%20Vikas%20Nagar%2C%20Dehradun%2C%20Uttarakhand&output=embed"
+              src="https://www.google.com/maps?q=Dreamland%20Athletics%20Vikasnagar%20Dehradun&output=embed"
               width="100%"
-              height="450"
+              height="260"
               allowFullScreen
               loading="lazy"
               style={{ border: 0 }}

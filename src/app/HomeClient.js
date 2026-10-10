@@ -48,13 +48,13 @@ export default function Home() {
       <InstagramFeed/>
       <StudioGallerySection/>
         <Services/>
-        <SocialMedia />
       <MembershipSection/>
       <IndiaMembershipSection/>
       <GoogleMaps />
       <FounderSocials/>
       {/* <Newsletter/> commented out for now, will add back in later for be the first to know section */}
       <GoogleReviews/>
+      <SocialMedia />
       {/* <Banner/> commented out for now, will add back in later for get started today section */}
       {/* <Footer /> */}
 

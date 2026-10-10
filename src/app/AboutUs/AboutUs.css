@@ -1,5 +1,5 @@
 .AboutUs {
-  background: url('/images/elements/S.webp') no-repeat center center fixed;
+  background: #000;
   background-color: #000;
   max-width: 100vw;
   width: 100vw;
@@ -18,7 +18,7 @@
 .Aboutsection1 text {
   font-family: 'Swiss721Bold';
   font-weight: bold;
-  word-break: break-word; 
+  word-break: break-word;
 }
 
 .Aboutsection3 {

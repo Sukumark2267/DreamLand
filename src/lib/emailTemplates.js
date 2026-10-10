@@ -41,9 +41,15 @@ export function customerNewsletterTemplate({ fname }) {
 }
 
 export function contactTemplate({ fname, email, phone, message }) {
+  const plainText = `Name: ${fname}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\nMessage: ${message}`;
+  const escapeHtml = (value) => String(value || "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
+  fname = escapeHtml(fname);
+  email = escapeHtml(email);
+  phone = escapeHtml(phone || "Not provided");
+  message = escapeHtml(message);
   return {
     subject: "We have recieved your request",
-    text: `Name: ${fname}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    text: plainText,
     html: `
   <body style="margin: 0; padding: 0; background-color: #f5f5f5;">
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #e5e5e5; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">

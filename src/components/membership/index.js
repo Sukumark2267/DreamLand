@@ -2,6 +2,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import "./membership.css";
 
 // Icons
@@ -62,7 +63,7 @@ const MembershipSection = () => {
           </p>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase">
-            Studio Membership (Online Purchase)
+            Studio Membership — Canada
           </h2>
 
           <p className="mt-3 text-sm md:text-base text-gray-300 max-w-2xl mx-auto">
@@ -124,9 +125,9 @@ const MembershipSection = () => {
                 ))}
               </ul>
 
-           <button className="dl-btn-primary w-full py-3 rounded-lg text-sm uppercase tracking-wide">
-  PURCHASE NOW
-</button>
+              <Link href="/ContactUs#contact" className="dl-btn-primary w-full py-3 rounded-lg text-sm uppercase tracking-wide text-center">
+                Enquire Now
+              </Link>
 
 
             </div>

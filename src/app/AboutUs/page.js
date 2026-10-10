@@ -8,7 +8,6 @@ import AboutSection2 from '@/components/AboutSection2';
 import GalleryCarousel from '@/components/GalleryCarousel';
 import Newsletter from '@/components/Newsletter';
 import Preloader from '@/components/Preloader';
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 
 
@@ -28,12 +27,15 @@ export default function About() {
     <>
 
          <section className="AboutUs">
-         <div className="Aboutsection1 items-center flex justify-center">
-         <div className="h-[6rem] sm:h-[8rem] md:h-[11rem] lg:h-[15rem] xl:h-[20rem]  2xl:h-[25rem] w-full">
-         <TextHoverEffect className="about-us-text font-bold" text="ABOUT US" />
-
-         {/* <TextHoverEffect h1>ABOUT US</h1> */}
-         </div>
+         <div className="relative grid min-h-[360px] items-center overflow-hidden bg-[#f5f1e7] md:grid-cols-2">
+           <div className="p-8 md:p-16 text-black">
+             <p className="mb-3 text-sm tracking-[0.25em] uppercase text-[#80620c]">Canada & India</p>
+             <h1 className="text-4xl md:text-6xl uppercase">One passion. Two communities.</h1>
+             <p className="mt-5 max-w-lg font-sans text-lg text-neutral-700">Train with purpose. Grow with a community that supports every step of your journey.</p>
+           </div>
+           <div className="relative h-72 md:h-[440px]">
+             <Image src="/screenthreeimages/2.jpeg" alt="Dreamland Athletics community training" fill priority sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+           </div>
          </div>
          {/* <AboutCards />    */}
          <AboutSection2 />
